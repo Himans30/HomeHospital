@@ -5,10 +5,8 @@ const schema = new mongoose.Schema({
     email: String,
     password: String,
     age: Number,
-    interests: Array,
     created: Date,
     isadmin: Boolean,
-    enrolled: { type: mongoose.Types.ObjectId, ref: "Courses" },
     avatar: String
 })
 

@@ -1,5 +1,6 @@
 import { Formik } from "formik";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { UserContext } from "../../providers/userContext";
 
 const Register = () => {
@@ -7,9 +8,12 @@ const Register = () => {
     const userService = useContext(UserContext);
 
     const registerForm = {
-        username: '',
+        fullname: '',
         email: '',
-        password: ''
+        password: '',
+        age: '',
+        created: new Date(),
+        isadmin: true
     };
 
     const onFormSubmit = (value, { setSubmitting }) => {
@@ -39,22 +43,23 @@ const Register = () => {
 
                                 <h3 className="text-center">Register Here</h3>
 
-                                <label className="mt-5">Name</label>
-                                <input type="text" className="form-control" id="username" onChange={handleChange} value={values.username} />
+                                <label className="mt-5">Full Name</label>
+                                <input type="text" className="form-control" id="fullname" onChange={handleChange} value={values.fullname} />
 
                                 <label className="mt-4">Email</label>
-                                <input type="text" className="form-control" id="email" onChange={handleChange} value={values.email} />
+                                <input type="email" className="form-control" id="email" onChange={handleChange} value={values.email} />
 
                                 <label className="mt-4">Password</label>
-                                <input type="text" className="form-control" id="password" onChange={handleChange} value={values.password} />
+                                <input type="password" className="form-control" id="password" onChange={handleChange} value={values.password} />
 
-
+                                <label className="mt-4">Age</label>
+                                <input type="text" className="form-control" id="age" onChange={handleChange} value={values.age} />
 
                                 <div className="text-center">
                                     <button className="btn btn-warning mt-5 w-100" disabled={isSubmitting}>Submit</button>
                                 </div>
 
-                                <p className="mt-3 text-center">Already Registered? <a href="loginpage.html">Login Here</a></p>
+                                <p className="mt-3 text-center">Already Registered? <Link to="/app/login">Login Here</Link></p>
 
                             </form>
                         )}

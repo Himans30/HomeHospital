@@ -84,7 +84,7 @@ const Login = () => {
                                     <button className="btn btn-warning mt-5 w-100" disabled={isSubmitting}>Submit</button>
                                 </div>
 
-                                <p className="mt-3 text-center">Register Instead? <Link to="/login">Register Here</Link></p>
+                                <p className="mt-3 text-center">Register Instead? <Link to="/app/register">Register Here</Link></p>
 
                             </form>
                         )}

@@ -11,8 +11,12 @@ import { blue, green, purple } from '@material-ui/core/colors';
 import Admin from './components/admin';
 import ManageUser from './components/admin/manageuser';
 import UserDashboard from './components/user';
+import Checkout from './components/checkout';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+import MainComponent from './components/authentication';
 
-
+const stripePromise = loadStripe("pk_test_Vmvhpm2TASsGcgF4RcyQfkF000KwucQJR1");
 
 function App() {
 
@@ -34,35 +38,38 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Router>
-        <UserProvider>
+      <Elements stripe={stripePromise}>
+        <Router>
+          <UserProvider>
 
-          <Route exact path="/">
-            <Redirect to="/admin" />
-          </Route>
+            <Route exact path="/">
+              <Redirect to="/app" />
+            </Route>
 
-          <Route path="/register">
-            <Register />
-          </Route>
+            <Route path="/admin/manageuser">
+              <ManageUser />
+            </Route>
 
-          <Route path="/login">
-            <Login />
-          </Route>
+            <Route path="/admin">
+              <Admin />
+            </Route>
 
-          <Route path="/admin/manageuser">
-            <ManageUser />
-          </Route>
+            <Route path="/app">
+              <MainComponent />
+            </Route>
 
-          <Route path="/admin">
-            <Admin />
-          </Route>
+            <Route path="/user">
+              <UserDashboard />
+            </Route>
 
-          <Route path="/user">
-            <UserDashboard />
-          </Route>
+            <Route path="/checkout">
+              <Checkout />
+            </Route>
 
-        </UserProvider>
-      </Router>
+          </UserProvider>
+        </Router>
+
+      </Elements>
     </ThemeProvider>
   );
 }
