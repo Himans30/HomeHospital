@@ -1,22 +1,27 @@
 import { Formik } from "formik";
-import { useContext } from "react";
-import { UserContext } from "../../providers/userContext";
+import { equipmentContext } from "react";
+import { EquipmentContext } from "../../providers/equipmentContext";
 
 const AddEquipment = () => {
 
-    const userService = useContext(UserContext);
+    const equipmentService = equipmentContext(EquipmentContext);
 
-    const registerForm = {
-        username: '',
-        email: '',
-        password: ''
+    const equipmentForm = {
+        name: '',
+        description: '',
+        features: '',
+        price:'',
+        rentprice:'',
+        rentable:'',
+        category:'',
+        avatar:''
     };
 
     const onFormSubmit = (value, { setSubmitting }) => {
         console.log(value);
         setSubmitting = true;
 
-        userService.addUser(value)
+        equipmentService.addEquipment(value)
 
             .then(res => console.log(res));
     }
@@ -26,7 +31,7 @@ const AddEquipment = () => {
             <div className="card">
                 <div className="card-body">
                     <Formik
-                        initialValues={registerForm}
+                        initialValues={equipmentForm}
                         onSubmit={onFormSubmit}
                     >
                         {({
@@ -37,16 +42,34 @@ const AddEquipment = () => {
                         }) => (
                             <form onSubmit={handleSubmit}>
 
-                                <h3 className="text-center">Register Here</h3>
+                                <h3 className="text-center">Add Equipment Here</h3>
 
                                 <label className="mt-5">Name</label>
-                                <input type="text" className="form-control" id="username" onChange={handleChange} value={values.username} />
+                                <input type="text" className="form-control" id="name" onChange={handleChange} value={values.equipmentname} />
 
-                                <label className="mt-4">Email</label>
-                                <input type="text" className="form-control" id="email" onChange={handleChange} value={values.email} />
+                                <label className="mt-4">Description</label>
+                                <input type="text" className="form-control" id="Description" onChange={handleChange} value={values.Description} />
 
-                                <label className="mt-4">Password</label>
-                                <input type="text" className="form-control" id="password" onChange={handleChange} value={values.password} />
+                                <label className="mt-4">Features</label>
+                                <input type="text" className="form-control" id="features" onChange={handleChange} value={values.features} />
+
+                                <label className="mt-4">Features</label>
+                                <input type="text" className="form-control" id="features" onChange={handleChange} value={values.features} />
+
+                                <label className="mt-4">Price</label>
+                                <input type="text" className="form-control" id="price" onChange={handleChange} value={values.price} />
+
+                                <label className="mt-4">Rent Price</label>
+                                <input type="text" className="form-control" id="rentPrice" onChange={handleChange} value={values.rentPrice} />
+
+                                <label className="mt-4">Rentable</label>
+                                <input type="text" className="form-control" id="rentable" onChange={handleChange} value={values.rentable} />
+
+                                <label className="mt-4">Category</label>
+                                <input type="text" className="form-control" id="category" onChange={handleChange} value={values.category} />
+
+                                <label className="mt-4">Avatar</label>
+                                <input type="text" className="form-control" id="avatar" onChange={handleChange} value={values.avatar} />
 
 
 
