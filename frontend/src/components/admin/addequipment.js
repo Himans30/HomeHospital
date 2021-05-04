@@ -2,7 +2,7 @@ import { Formik } from "formik";
 import { useContext } from "react";
 import { UserContext } from "../../providers/userContext";
 
-const Register = () => {
+const AddEquipment = () => {
 
     const userService = useContext(UserContext);
 
@@ -66,4 +66,4 @@ const Register = () => {
 
 }
 
-export default Register;
+export default AddEquipment;

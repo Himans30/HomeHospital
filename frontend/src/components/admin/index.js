@@ -10,6 +10,7 @@ import AdminDashboard from './dashboard';
 import Profile from '../profile';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core';
+import AddEquipment from './addequipment';
 
 const drawerWidth = 240;
 
@@ -90,9 +91,8 @@ const Admin = () => {
                     <Route path={`${path}/profile`} component={Profile} />
                     <Route path={`${path}/dashboard`} component={AdminDashboard} />
                     <Route path={`${path}/manageuser`} component={ManageUser} />
-                    <Route exact path={`${path}`}>
-                        <Profile />
-                    </Route>
+                    <Route path={`${path}/manageuser`} component={AddEquipment} />
+
                 </Switch>
 
             </div>

@@ -1,8 +1,5 @@
 import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom';
 
-import Header from "./components/header";
-import Register from "./components/authentication/register";
-import Login from "./components/authentication/login";
 import { UserProvider } from "./providers/userContext";
 
 import { ThemeProvider } from "@material-ui/core";
@@ -14,7 +11,8 @@ import UserDashboard from './components/user';
 import Checkout from './components/checkout';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
-import MainComponent from './components/authentication';
+import MainComponent from './components/main';
+import { EquipmentProvider } from './providers/equipmentContext';
 
 const stripePromise = loadStripe("pk_test_Vmvhpm2TASsGcgF4RcyQfkF000KwucQJR1");
 
@@ -42,29 +40,31 @@ function App() {
         <Router>
           <UserProvider>
 
-            <Route exact path="/">
-              <Redirect to="/app" />
-            </Route>
+            <EquipmentProvider>
+              <Route exact path="/">
+                <Redirect to="/app" />
+              </Route>
 
-            <Route path="/admin/manageuser">
-              <ManageUser />
-            </Route>
+              <Route path="/admin/manageuser">
+                <ManageUser />
+              </Route>
 
-            <Route path="/admin">
-              <Admin />
-            </Route>
+              <Route path="/admin">
+                <Admin />
+              </Route>
 
-            <Route path="/app">
-              <MainComponent />
-            </Route>
+              <Route path="/app">
+                <MainComponent />
+              </Route>
 
-            <Route path="/user">
-              <UserDashboard />
-            </Route>
+              <Route path="/user">
+                <UserDashboard />
+              </Route>
 
-            <Route path="/checkout">
-              <Checkout />
-            </Route>
+              <Route path="/checkout">
+                <Checkout />
+              </Route>
+            </EquipmentProvider>
 
           </UserProvider>
         </Router>

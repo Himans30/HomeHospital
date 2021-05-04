@@ -7,7 +7,7 @@ router.post('/add', (req, res) => {
 
     new Model(data).save()
         .then(data => {
-            console.log('user data saved');
+            console.log('equipment data saved');
             res.status(200).json({ message: 'success' });
         })
         .catch(err => {
@@ -32,7 +32,7 @@ router.get('/getbyid/:id', (req, res) => {
 
     Model.findById(req.params.id)
         .then(data => {
-            console.log('user data fetched by id');
+            console.log('equipment data fetched by id');
             res.status(200).json(data);
         })
         .catch(err => {

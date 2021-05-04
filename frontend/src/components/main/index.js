@@ -6,6 +6,7 @@ import { useRouteMatch, Switch, Route, Redirect } from 'react-router';
 import Profile from '../profile';
 import Login from './login';
 import Register from './register';
+import ListEquipments from './listEquipments';
 
 const drawerWidth = 240;
 
@@ -42,6 +43,7 @@ const MainComponent = () => {
                 </Route>
                 <Route path={`${path}/login`} component={Login} />
                 <Route path={`${path}/register`} component={Register} />
+                <Route path={`${path}/listequipment`} component={ListEquipments} />
             </Switch>
         </div>
     )
