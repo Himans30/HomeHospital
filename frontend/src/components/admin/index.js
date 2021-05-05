@@ -11,6 +11,7 @@ import Profile from '../profile';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core';
 import AddEquipment from './addequipment';
+import AddStaff from './addstaff';
 
 const drawerWidth = 240;
 
@@ -63,6 +64,11 @@ const Admin = () => {
             icon: <PeopleIcon />,
             link: "/admin/manageequipment"
         },
+        {
+            name: "AddStaff",
+            icon: <PeopleIcon />,
+            link: "/admin/managestaff"
+        }
     ]
 
     const handleDrawerOpen = () => {
@@ -91,7 +97,8 @@ const Admin = () => {
                     <Route path={`${path}/profile`} component={Profile} />
                     <Route path={`${path}/dashboard`} component={AdminDashboard} />
                     <Route path={`${path}/manageuser`} component={ManageUser} />
-                    <Route path={`${path}/manageuser`} component={AddEquipment} />
+                    <Route path={`${path}/manageequipment`} component={AddEquipment} />
+                    <Route path={`${path}/managestaff`} component={AddEquipment} />
 
                 </Switch>
 

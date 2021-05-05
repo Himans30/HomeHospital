@@ -13,6 +13,7 @@ import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import MainComponent from './components/main';
 import { EquipmentProvider } from './providers/equipmentContext';
+import { StaffProvider } from './providers/staffContext';
 
 const stripePromise = loadStripe("pk_test_Vmvhpm2TASsGcgF4RcyQfkF000KwucQJR1");
 
@@ -41,7 +42,8 @@ function App() {
           <UserProvider>
 
             <EquipmentProvider>
-              <Route exact path="/">
+             <StaffProvider>
+             <Route exact path="/">
                 <Redirect to="/app" />
               </Route>
 
@@ -64,6 +66,7 @@ function App() {
               <Route path="/checkout">
                 <Checkout />
               </Route>
+             </StaffProvider>
             </EquipmentProvider>
 
           </UserProvider>
