@@ -1,14 +1,15 @@
 import { Formik } from "formik";
+import React from "react";
 import { staffContext } from "react";
 import { StaffContext } from "../../providers/staffContext";
 
-const StaffEquipment = () => {
+const AddStaff = () => {
 
     const staffService = React.useContext(StaffContext);
 
     const staffForm = {
         name: '',
-        avatar:'',
+        avatar: '',
         designation: '',
         rentPrice: ''
     };
@@ -44,15 +45,15 @@ const StaffEquipment = () => {
                                 <input type="text" className="form-control" id="name" onChange={handleChange} value={values.equipmentname} />
 
                                 <label className="mt-4">Designation</label>
-                                <input type="text" className="form-control" id="  designation" onChange={handleChange} value={values. designation} />
+                                <input type="text" className="form-control" id="  designation" onChange={handleChange} value={values.designation} />
 
-                         
-                               
+
+
 
                                 <label className="mt-4">Rent Price</label>
                                 <input type="text" className="form-control" id="rentPrice" onChange={handleChange} value={values.rentPrice} />
 
-                    
+
 
                                 <label className="mt-4">Avatar</label>
                                 <input type="text" className="form-control" id="avatar" onChange={handleChange} value={values.avatar} />

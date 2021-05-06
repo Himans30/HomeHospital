@@ -98,7 +98,7 @@ const Admin = () => {
                     <Route path={`${path}/dashboard`} component={AdminDashboard} />
                     <Route path={`${path}/manageuser`} component={ManageUser} />
                     <Route path={`${path}/manageequipment`} component={AddEquipment} />
-                    <Route path={`${path}/managestaff`} component={AddEquipment} />
+                    <Route path={`${path}/managestaff`} component={AddStaff} />
 
                 </Switch>
 

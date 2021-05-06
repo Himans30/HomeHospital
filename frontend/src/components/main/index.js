@@ -7,6 +7,8 @@ import Profile from '../profile';
 import Login from './login';
 import Register from './register';
 import listEquipments from './listEquipments';
+import ListEquipments from './listEquipments';
+import ListStaff from './liststaff';
 
 const drawerWidth = 240;
 

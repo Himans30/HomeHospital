@@ -1,12 +1,13 @@
 import { Formik } from "formik";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Swal from "sweetalert2";
 import { UserContext } from "../../providers/userContext";
 
 const Login = () => {
 
     const userService = useContext(UserContext);
+    const history = useHistory();
 
     const loginForm = {
         email: '',
@@ -30,11 +31,11 @@ const Login = () => {
                             sessionStorage.setItem('user', JSON.stringify(userdata));
                             userService.setCurrentUser(userdata);
 
-                            // if (userdata['isadmin']) {
-                            //   this.router.navigate(['/admin']);
-                            // } else {
-                            //   this.router.navigate(['/user']);
-                            // }
+                            if (userdata['isadmin']) {
+                                history.push('/admin/dashboard');
+                            } else {
+                                history.push('/user');
+                            }
                         });
                     } else {
                         Swal.fire({

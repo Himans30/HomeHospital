@@ -8,7 +8,8 @@ const schema = new mongoose.Schema({
     rentPrice: Number,
     rentable: Boolean,
     category: String,
-    avatar: String
+    avatar: String,
+    created: Date
 })
 
 
