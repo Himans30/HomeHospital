@@ -1,20 +1,21 @@
 import { Formik } from "formik";
-import { equipmentContext } from "react";
+import React from "react";
 import { EquipmentContext } from "../../providers/equipmentContext";
 
 const AddEquipment = () => {
 
-    const equipmentService = useContext(EquipmentContext);
+    const equipmentService = React.useContext(EquipmentContext);
 
     const equipmentForm = {
         name: '',
         description: '',
         features: '',
-        price:'',
-        rentprice:'',
-        rentable:'',
-        category:'',
-        avatar:''
+        price: '',
+        rentprice: '',
+        rentable: '',
+        category: '',
+        avatar: '',
+        created: new Date()
     };
 
     const onFormSubmit = (value, { setSubmitting }) => {
@@ -44,11 +45,17 @@ const AddEquipment = () => {
 
                                 <h3 className="text-center">Add Equipment Here</h3>
 
-                                <label className="mt-5">Name</label>
-                                <input type="text" className="form-control" id="name" onChange={handleChange} value={values.equipmentname} />
 
-                                <label className="mt-4">Description</label>
-                                <input type="text" className="form-control" id="Description" onChange={handleChange} value={values.Description} />
+                                <div className="form-floating mb-3">
+                                    <input type="text" className="form-control" id="name" onChange={handleChange} value={values.name} placeholder=" " />
+                                    <label for="name">Name</label>
+                                </div>
+
+                                <div className="form-floating mb-3">
+                                    <textarea type="text" className="form-control" id="description" onChange={handleChange} value={values.description} placeholder=" " ></textarea>
+                                    <label for="description">Description</label>
+                                </div>
+
 
                                 <label className="mt-4">Features</label>
                                 <input type="text" className="form-control" id="features" onChange={handleChange} value={values.features} />
