@@ -25,7 +25,9 @@ const ListEquipments = () => {
                 <CardContent>
                     <List>
                         <ListItem>
-
+                            <div>
+                                
+                            </div>
                         </ListItem>
                     </List>
                 </CardContent>
