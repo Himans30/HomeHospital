@@ -1,3 +1,4 @@
+import { Card, CardContent } from "@material-ui/core";
 import { Formik } from "formik";
 import React from "react";
 import { EquipmentContext } from "../../providers/equipmentContext";
@@ -28,9 +29,9 @@ const AddEquipment = () => {
     }
 
     return (
-        <div className="col-md-6 mx-auto">
-            <div className="card">
-                <div className="card-body">
+        <div className="col-md-10 mx-auto">
+            <Card>
+                <CardContent>
                     <Formik
                         initialValues={equipmentForm}
                         onSubmit={onFormSubmit}
@@ -45,47 +46,61 @@ const AddEquipment = () => {
 
                                 <h3 className="text-center">Add Equipment Here</h3>
 
-
-                                <div className="form-floating mb-3">
-                                    <input type="text" className="form-control" id="name" onChange={handleChange} value={values.name} placeholder=" " />
-                                    <label for="name">Name</label>
+                                <div className="row">
+                                    <div className="col-md">
+                                        <div className="form-floating mb-3">
+                                            <input type="text" className="form-control" id="name" onChange={handleChange} value={values.name} placeholder=" " />
+                                            <label htmlFor="name">Name</label>
+                                        </div>
+                                    </div>
+                                    <div className="col-md">
+                                        <div className="form-floating mb-3">
+                                            <input type="text" className="form-control" id="price" onChange={handleChange} value={values.price} placeholder=" " />
+                                            <label htmlFor="name">Price</label>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div className="form-floating mb-3">
-                                    <textarea type="text" className="form-control" id="description" onChange={handleChange} value={values.description} placeholder=" " ></textarea>
-                                    <label for="description">Description</label>
-                                </div>
-
-                                <div className="form-floating mb-3">
-                                    <textarea type="text" className="form-control" id="features" onChange={handleChange} value={values.features} placeholder=" " ></textarea>
-                                    <label for="name">Features</label>
-                                </div>
 
 
-                                <div className="form-floating mb-3">
-                                    <input type="text" className="form-control" id="price" onChange={handleChange} value={values.price} placeholder=" " />
-                                    <label for="name">Price</label>
-                                </div>
+
+
+
+
+
+
 
                                 <div className="form-floating mb-3">
                                     <input type="text" className="form-control" id="rentPrice" onChange={handleChange} value={values.rentPrice} placeholder=" " />
-                                    <label for="name">Rent Price</label>
+                                    <label htmlFor="name">Rent Price</label>
                                 </div>
 
                                 <div className="form-floating mb-3">
                                     <input type="text" className="form-control" id="rentable" onChange={handleChange} value={values.rentable} placeholder=" " />
-                                    <label for="name">Rentable</label>
+                                    <label htmlFor="name">Rentable</label>
                                 </div>
 
-
-                                 <div className="form-floating mb-3">
-                                    <input type="text" className="form-control" id="category" onChange={handleChange} value={values.category} placeholder=" " />
-                                    <label for="name">Category</label>
-                                </div>
 
                                 <div className="form-floating mb-3">
-                                    <input type="text" className="form-control" id="avatar" onChange={handleChange} value={values.avatar} placeholder=" " />
-                                    <label for="name">Avatar</label>
+                                    <input type="text" className="form-control" id="category" onChange={handleChange} value={values.category} placeholder=" " />
+                                    <label htmlFor="name">Category</label>
+                                </div>
+
+                                <input type="file" className="form-control mb-3" id="avatar" onChange={handleChange} value={values.avatar} placeholder=" " />
+
+                                <div className="row">
+                                    <div className="col-md">
+                                        <div className="form-floating mb-3">
+                                            <textarea style={{ height: "100px" }} type="text" className="form-control" id="description" onChange={handleChange} value={values.description} placeholder=" " ></textarea>
+                                            <label htmlFor="description">Description</label>
+                                        </div>
+                                    </div>
+                                    <div className="col-md">
+                                        <div className="form-floating mb-3">
+                                            <textarea style={{ height: "100px" }} type="text" className="form-control" id="features" onChange={handleChange} value={values.features} placeholder=" " ></textarea>
+                                            <label htmlFor="name">Features</label>
+                                        </div>
+                                    </div>
                                 </div>
 
 
@@ -93,13 +108,14 @@ const AddEquipment = () => {
                                     <button className="btn btn-warning mt-5 w-100" disabled={isSubmitting}>Submit</button>
                                 </div>
 
-                                
+
 
                             </form>
                         )}
                     </Formik>
-                </div>
-            </div>
+
+                </CardContent>
+            </Card>
         </div>
     )
 
