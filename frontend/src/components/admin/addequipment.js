@@ -56,35 +56,44 @@ const AddEquipment = () => {
                                     <label for="description">Description</label>
                                 </div>
 
+                                <div className="form-floating mb-3">
+                                    <textarea type="text" className="form-control" id="features" onChange={handleChange} value={values.features} placeholder=" " ></textarea>
+                                    <label for="name">Features</label>
+                                </div>
 
-                                <label className="mt-4">Features</label>
-                                <input type="text" className="form-control" id="features" onChange={handleChange} value={values.features} />
 
-                                <label className="mt-4">Features</label>
-                                <input type="text" className="form-control" id="features" onChange={handleChange} value={values.features} />
+                                <div className="form-floating mb-3">
+                                    <input type="text" className="form-control" id="price" onChange={handleChange} value={values.price} placeholder=" " />
+                                    <label for="name">Price</label>
+                                </div>
 
-                                <label className="mt-4">Price</label>
-                                <input type="text" className="form-control" id="price" onChange={handleChange} value={values.price} />
+                                <div className="form-floating mb-3">
+                                    <input type="text" className="form-control" id="rentPrice" onChange={handleChange} value={values.rentPrice} placeholder=" " />
+                                    <label for="name">Rent Price</label>
+                                </div>
 
-                                <label className="mt-4">Rent Price</label>
-                                <input type="text" className="form-control" id="rentPrice" onChange={handleChange} value={values.rentPrice} />
+                                <div className="form-floating mb-3">
+                                    <input type="text" className="form-control" id="rentable" onChange={handleChange} value={values.rentable} placeholder=" " />
+                                    <label for="name">Rentable</label>
+                                </div>
 
-                                <label className="mt-4">Rentable</label>
-                                <input type="text" className="form-control" id="rentable" onChange={handleChange} value={values.rentable} />
 
-                                <label className="mt-4">Category</label>
-                                <input type="text" className="form-control" id="category" onChange={handleChange} value={values.category} />
+                                 <div className="form-floating mb-3">
+                                    <input type="text" className="form-control" id="category" onChange={handleChange} value={values.category} placeholder=" " />
+                                    <label for="name">Category</label>
+                                </div>
 
-                                <label className="mt-4">Avatar</label>
-                                <input type="text" className="form-control" id="avatar" onChange={handleChange} value={values.avatar} />
-
+                                <div className="form-floating mb-3">
+                                    <input type="text" className="form-control" id="avatar" onChange={handleChange} value={values.avatar} placeholder=" " />
+                                    <label for="name">Avatar</label>
+                                </div>
 
 
                                 <div className="text-center">
                                     <button className="btn btn-warning mt-5 w-100" disabled={isSubmitting}>Submit</button>
                                 </div>
 
-                                <p className="mt-3 text-center">Already Registered? <a href="loginpage.html">Login Here</a></p>
+                                
 
                             </form>
                         )}

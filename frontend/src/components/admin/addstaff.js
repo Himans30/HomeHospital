@@ -40,31 +40,27 @@ const AddStaff = () => {
                             <form onSubmit={handleSubmit}>
 
                                 <h3 className="text-center">Add staff Here</h3>
-
-                                <label className="mt-5">Name</label>
-                                <input type="text" className="form-control" id="name" onChange={handleChange} value={values.equipmentname} />
-
-                                <label className="mt-4">Designation</label>
-                                <input type="text" className="form-control" id="  designation" onChange={handleChange} value={values.designation} />
-
-
-
-
-                                <label className="mt-4">Rent Price</label>
-                                <input type="text" className="form-control" id="rentPrice" onChange={handleChange} value={values.rentPrice} />
-
-
-
-                                <label className="mt-4">Avatar</label>
-                                <input type="text" className="form-control" id="avatar" onChange={handleChange} value={values.avatar} />
-
-
-
-                                <div className="text-center">
-                                    <button className="btn btn-warning mt-5 w-100" disabled={isSubmitting}>Submit</button>
+                                <div className="form-floating mb-3">
+                                    <input type="text" className="form-control" id="name" onChange={handleChange} value={values.name} placeholder=" " />
+                                    <label for="name">Name</label>
                                 </div>
 
-                                <p className="mt-3 text-center">Already Registered? <a href="loginpage.html">Login Here</a></p>
+                                <div className="form-floating mb-3">
+                                    <input type="text" className="form-control" id="designation" onChange={handleChange} value={values.designation} placeholder=" " />
+                                    <label for="name">Designation</label>
+                                </div>
+                                <div className="form-floating mb-3">
+                                    <input type="text" className="form-control" id="rentPrice" onChange={handleChange} value={values.rentPrice} placeholder=" " />
+                                    <label for="name">Rent Price</label>
+                                </div>
+                                <div className="form-floating mb-3">
+                                    <input type="text" className="form-control" id="avatar" onChange={handleChange} value={values.avatar} placeholder=" " />
+                                    <label for="name">Avatar</label>
+                                </div>
+
+                                    <div className="text-center">
+                                    <button className="btn btn-warning mt-5 w-100" disabled={isSubmitting}>Submit</button>
+                                </div>
 
                             </form>
                         )}
