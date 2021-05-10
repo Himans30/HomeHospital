@@ -14,6 +14,7 @@ import AddEquipment from './addequipment';
 import AddStaff from './addstaff';
 import ManageEquipment from './manageequipment';
 import ManageStaff from './managestaff';
+import AddBoxIcon from '@material-ui/icons/AddBox';
 
 const drawerWidth = 240;
 
@@ -63,12 +64,12 @@ const Admin = () => {
         },
         {
             name: "AddEquipment",
-            icon: <PeopleIcon />,
+            icon: <AddBoxIcon />,
             link: "/admin/addequipment"
         },
         {
             name: "AddStaff",
-            icon: <PeopleIcon />,
+            icon: <AddBoxIcon />,
             link: "/admin/addstaff"
         },
         {
