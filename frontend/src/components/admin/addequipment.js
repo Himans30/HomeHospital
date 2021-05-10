@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@material-ui/core";
 import { Formik } from "formik";
+
 import React from "react";
 import { EquipmentContext } from "../../providers/equipmentContext";
 
@@ -19,6 +20,7 @@ const AddEquipment = () => {
         created: new Date()
     };
 
+ 
     const onFormSubmit = (value, { setSubmitting }) => {
         console.log(value);
         setSubmitting = true;
@@ -27,6 +29,7 @@ const AddEquipment = () => {
 
             .then(res => console.log(res));
     }
+    
 
     return (
         <div className="col-md-10 mx-auto">
@@ -62,23 +65,19 @@ const AddEquipment = () => {
                                 </div>
 
 
-
-
-
-
-
-
-
-
                                 <div className="form-floating mb-3">
                                     <input type="text" className="form-control" id="rentPrice" onChange={handleChange} value={values.rentPrice} placeholder=" " />
                                     <label htmlFor="name">Rent Price</label>
                                 </div>
 
-                                <div className="form-floating mb-3">
-                                    <input type="text" className="form-control" id="rentable" onChange={handleChange} value={values.rentable} placeholder=" " />
-                                    <label htmlFor="name">Rentable</label>
-                                </div>
+
+                           
+                             <div className="form-floating mb-3">
+                                
+                                <input type="text" className="form-control" id="rentable" onChange={handleChange} value={values.rentable} placeholder=" " />
+                                <label htmlFor="name">Rentable</label>
+                            </div>
+                           
 
 
                                 <div className="form-floating mb-3">
@@ -86,7 +85,9 @@ const AddEquipment = () => {
                                     <label htmlFor="name">Category</label>
                                 </div>
 
+                                
                                 <input type="file" className="form-control mb-3" id="avatar" onChange={handleChange} value={values.avatar} placeholder=" " />
+                                
 
                                 <div className="row">
                                     <div className="col-md">
