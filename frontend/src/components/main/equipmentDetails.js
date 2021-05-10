@@ -5,4 +5,5 @@ const EquipmentDetails = () => {
     )
 }
 
+
 export default EquipmentDetails;

@@ -12,6 +12,8 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core';
 import AddEquipment from './addequipment';
 import AddStaff from './addstaff';
+import ManageEquipment from './manageequipment';
+import ManageStaff from './managestaff';
 
 const drawerWidth = 240;
 
@@ -62,13 +64,23 @@ const Admin = () => {
         {
             name: "AddEquipment",
             icon: <PeopleIcon />,
-            link: "/admin/manageequipment"
+            link: "/admin/addequipment"
         },
         {
             name: "AddStaff",
             icon: <PeopleIcon />,
+            link: "/admin/addstaff"
+        },
+        {
+            name: "ManageEquipment",
+            icon: <PeopleIcon />,
+            link: "/admin/manageequipment"
+        },
+        {
+            name: "ManageStaff",
+            icon: <PeopleIcon />,
             link: "/admin/managestaff"
-        }
+        },
     ]
 
     const handleDrawerOpen = () => {
@@ -97,8 +109,10 @@ const Admin = () => {
                     <Route path={`${path}/profile`} component={Profile} />
                     <Route path={`${path}/dashboard`} component={AdminDashboard} />
                     <Route path={`${path}/manageuser`} component={ManageUser} />
-                    <Route path={`${path}/manageequipment`} component={AddEquipment} />
-                    <Route path={`${path}/managestaff`} component={AddStaff} />
+                    <Route path={`${path}/addequipment`} component={AddEquipment} />
+                    <Route path={`${path}/addstaff`} component={AddStaff} />
+                    <Route path={`${path}/manageequipment`} component={ManageEquipment} />
+                    <Route path={`${path}/managestaff`} component={ManageStaff} />
 
                 </Switch>
 

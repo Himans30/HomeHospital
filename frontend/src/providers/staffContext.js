@@ -27,9 +27,25 @@ export const StaffProvider = props => {
             .then(response => response.json());
     }
 
+    const uploadImage = data => {
+        const requestOptions = {
+            method: 'POST',
+            body: data
+        }
+
+        return fetch(app_config.api_url + '/util/addimg', requestOptions)
+            .then(response => response.json());
+    }
+
     const getStaffById = id => {
 
         return fetch(url + '/getbyid/' + id)
+            .then(response => response.json());
+    }
+
+    const deleteStaff = id => {
+
+        return fetch(url + '/delete/' + id, { method: 'DELETE' })
             .then(response => response.json());
     }
 
@@ -44,7 +60,9 @@ export const StaffProvider = props => {
 
         addStaff,
         getStaffById,
-        getAll
+        getAll,
+        uploadImage,
+        deleteStaff
     }
 
     return (

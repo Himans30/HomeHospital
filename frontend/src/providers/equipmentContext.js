@@ -27,6 +27,16 @@ export const EquipmentProvider = props => {
             .then(response => response.json());
     }
 
+    const uploadImage = data => {
+        const requestOptions = {
+            method: 'POST',
+            body: data
+        }
+
+        return fetch(app_config.api_url + '/util/uploadfile', requestOptions)
+            .then(response => response.json());
+    }
+
     const getEquipmentById = id => {
 
         return fetch(url + '/getbyid/' + id)
@@ -44,7 +54,8 @@ export const EquipmentProvider = props => {
 
         addEquipment,
         getEquipmentById,
-        getAll
+        getAll,
+        uploadImage
     }
 
     return (

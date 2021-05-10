@@ -7,7 +7,7 @@ router.post('/add', (req, res) => {
 
     new Model(data).save()
         .then(data => {
-            console.log('user data saved');
+            console.log('STAFF data saved');
             res.status(200).json({ message: 'success' });
         })
         .catch(err => {
@@ -20,7 +20,7 @@ router.get('/getall', (req, res) => {
 
     Model.find({})
         .then(data => {
-            console.log('user data fetched');
+            console.log('staff data fetched');
             res.status(200).json(data);
         })
         .catch(err => {
@@ -34,7 +34,7 @@ router.get('/getbyid/:id', (req, res) => {
 
     Model.findById(req.params.id)
         .then(data => {
-            console.log('user data fetched by id');
+            console.log('staff data fetched by id');
             res.status(200).json(data);
         })
         .catch(err => {
@@ -46,7 +46,7 @@ router.get('/getbyname/:name', (req, res) => {
 
     Model.findByName(req.params.name)
         .then(data => {
-            console.log('user data fetched by name');
+            console.log('staff data fetched by name');
             res.status(200).json(data);
         })
         .catch(err => {
@@ -61,7 +61,7 @@ router.put('/update/:id', (req, res) => {
 
     Model.findByIdAndUpdate(req.params.id, data)
         .then(data => {
-            console.log('user data updated');
+            console.log('staff data updated');
             res.status(200).json(data);
         })
         .catch(err => {
@@ -74,7 +74,7 @@ router.delete('/delete/:id', (req, res) => {
 
     Model.findByIdAndDelete(req.params.id)
         .then(data => {
-            console.log('user data deleted');
+            console.log('staff data deleted');
             res.status(200).json(data);
         })
         .catch(err => {
