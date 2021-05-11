@@ -79,18 +79,7 @@ const Profile = props => {
                 </CardContent>
             </Card>
 
-            <Card className={clsx(baseClasses.card, customClasses.card)}>
-                <CardContent>
-                    <TextField label="Full Name" variant="filled" name="fullname" className={baseClasses.input} />
-                    <TextField label="Email" variant="filled" name="email" className={baseClasses.input} />
-                    <TextField type="password" label="Password" name="password" variant="filled" className={baseClasses.input} />
-
-                    <div className="text-center">
-                        <Button className="mt-5 w-100" >Submit</Button>
-                    </div>
-
-                </CardContent>
-            </Card>
+         
         </div>
     )
 }
