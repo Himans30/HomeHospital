@@ -59,7 +59,7 @@ const Home = () => {
             <section id="hero" className="d-flex align-items-center">
                 <div className="container">
                     <h1>Welcome to HomeHospital</h1>
-                    <h2>We are team of talented designers making websites with Bootstrap</h2>
+                    {/* <h2>We are team of talented designers making websites with Bootstrap</h2> */}
                     <a href="#about" className="btn-get-started scrollto">Get Started</a>
                 </div>
             </section>
@@ -73,10 +73,9 @@ const Home = () => {
                             <div className="col-lg-4 d-flex align-items-stretch">
                                 <div className="content">
                                     <h3>Why Choose HomeHospital?</h3>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-                                        Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
-                  </p>
+                                    <p>Home Hospital delivers hospital care in the comfort and privacy of your own home.
+                                    You don’t need to stay in hospital to receive the care you need, we bring the care to you.
+                                  </p>
                                     <div className="text-center">
                                         <a href="#" className="more-btn">Learn More <i className="bx bx-chevron-right"></i></a>
                                     </div>
@@ -88,22 +87,22 @@ const Home = () => {
                                         <div className="col-xl-4 d-flex align-items-stretch">
                                             <div className="icon-box mt-4 mt-xl-0">
                                                 <i className="bx bx-receipt"></i>
-                                                <h4>Corporis voluptates sit</h4>
-                                                <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                                                <h4>Keeping patients healthy and happy</h4>
+                                                <p>There are also proven mental and psychological benefits of care at home that translate into better, less expensive outcomes .</p>
                                             </div>
                                         </div>
                                         <div className="col-xl-4 d-flex align-items-stretch">
                                             <div className="icon-box mt-4 mt-xl-0">
                                                 <i className="bx bx-cube-alt"></i>
-                                                <h4>Ullamco laboris ladore pan</h4>
-                                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                                                <h4>Holistic</h4>
+                                                <p>Treating you as a whole person, and balancing your clinical, cultural and personal needs in a flexible holistic approach.</p>
                                             </div>
                                         </div>
                                         <div className="col-xl-4 d-flex align-items-stretch">
                                             <div className="icon-box mt-4 mt-xl-0">
                                                 <i className="bx bx-images"></i>
-                                                <h4>Labore consequatur</h4>
-                                                <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                                                <h4>Preventing more expensive care</h4>
+                                                <p>Providing care in the home not only reduces overall mortality rates but also helps prevent common expensive . </p>
                                             </div>
                                         </div>
                                     </div>
@@ -116,20 +115,21 @@ const Home = () => {
 
                 <section id="about" className="about">
                     <div className="container-fluid">
-
-                        <div className="row">
+    
+                            <div className="row">
                             <div className="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch position-relative">
-                                <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" className="glightbox play-btn mb-4"></a>
+                                
                             </div>
 
                             <div className="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
-                                <h3>Enim quis est voluptatibus aliquid consequatur fugiat</h3>
-                                <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi. Libero laboriosam sint et id nulla tenetur. Suscipit aut voluptate.</p>
+                                
+                                <h3>About us</h3>
+                                <p>HomeHospital delivers quality care with compassion. We bring world class medical care into our patients’ homes and aim to make primary healthcare not only more accessible, but also more affordable and accountable to our patients’ needs..</p>
 
                                 <div className="icon-box">
                                     <div className="icon"><i className="bx bx-fingerprint"></i></div>
-                                    <h4 className="title"><a href="">Lorem Ipsum</a></h4>
-                                    <p className="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                                    <h4 className="title"><a href="">Vision</a></h4>
+                                    <p className="description">HomeHospital HomeCare aims to provide home healthcare of international standards in India. It is a constant endeavor to provide excellence in healthcare through our proactive partnerships with patients, their families and other healthcare providers</p>
                                 </div>
 
                                 <div className="icon-box">
@@ -204,7 +204,7 @@ const Home = () => {
                             <div className="col-lg-4 col-md-6 d-flex align-items-stretch">
                                 <div className="icon-box">
                                     <div className="icon"><i className="fas fa-heartbeat"></i></div>
-                                    <h4><a href="">Lorem Ipsum</a></h4>
+                                    <h4><a href="">Critical Care</a></h4>
                                     <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
                                 </div>
                             </div>
@@ -212,7 +212,7 @@ const Home = () => {
                             <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
                                 <div className="icon-box">
                                     <div className="icon"><i className="fas fa-pills"></i></div>
-                                    <h4><a href="">Sed ut perspiciatis</a></h4>
+                                    <h4><a href="">Elder Care</a></h4>
                                     <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
                                 </div>
                             </div>
@@ -220,7 +220,7 @@ const Home = () => {
                             <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
                                 <div className="icon-box">
                                     <div className="icon"><i className="fas fa-hospital-user"></i></div>
-                                    <h4><a href="">Magni Dolores</a></h4>
+                                    <h4><a href="">Trained Attendants</a></h4>
                                     <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
                                 </div>
                             </div>
@@ -228,7 +228,7 @@ const Home = () => {
                             <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
                                 <div className="icon-box">
                                     <div className="icon"><i className="fas fa-dna"></i></div>
-                                    <h4><a href="">Nemo Enim</a></h4>
+                                    <h4><a href="">New born Baby & Mother Care</a></h4>
                                     <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
                                 </div>
                             </div>
@@ -236,7 +236,7 @@ const Home = () => {
                             <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
                                 <div className="icon-box">
                                     <div className="icon"><i className="fas fa-wheelchair"></i></div>
-                                    <h4><a href="">Dele cardo</a></h4>
+                                    <h4><a href="">Nursing</a></h4>
                                     <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
                                 </div>
                             </div>
@@ -244,7 +244,7 @@ const Home = () => {
                             <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
                                 <div className="icon-box">
                                     <div className="icon"><i className="fas fa-notes-medical"></i></div>
-                                    <h4><a href="">Divera don</a></h4>
+                                    <h4><a href="">Medical Equipments</a></h4>
                                     <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
                                 </div>
                             </div>
