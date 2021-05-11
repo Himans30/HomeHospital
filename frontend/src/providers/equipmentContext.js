@@ -43,6 +43,12 @@ export const EquipmentProvider = props => {
             .then(response => response.json());
     }
 
+    const deleteEquipment = id => {
+
+        return fetch(url + '/delete/' + id, { method: 'DELETE' })
+            .then(response => response.json());
+    }
+
     const getAll = () => {
 
         return fetch(url + '/getall')
@@ -55,7 +61,8 @@ export const EquipmentProvider = props => {
         addEquipment,
         getEquipmentById,
         getAll,
-        uploadImage
+        uploadImage,
+        deleteEquipment
     }
 
     return (

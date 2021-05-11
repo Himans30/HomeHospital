@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@material-ui/core";
+import { Card, CardContent, Checkbox, FormControlLabel } from "@material-ui/core";
 import { Formik } from "formik";
 import React from "react";
 import { EquipmentContext } from "../../providers/equipmentContext";
@@ -62,29 +62,26 @@ const AddEquipment = () => {
                                 </div>
 
 
-
-
-
-
-
-
-
-
                                 <div className="form-floating mb-3">
-                                    <input type="text" className="form-control" id="rentPrice" onChange={handleChange} value={values.rentPrice} placeholder=" " />
+                                    <input type="text" className="form-control" id="rentprice" onChange={handleChange} value={values.rentprice} placeholder=" " />
                                     <label htmlFor="name">Rent Price</label>
                                 </div>
 
-                                <div className="form-floating mb-3">
-                                    <input type="text" className="form-control" id="rentable" onChange={handleChange} value={values.rentable} placeholder=" " />
-                                    <label htmlFor="name">Rentable</label>
-                                </div>
+                                <FormControlLabel
+                                    control={<Checkbox checked={values.rentPrice} id="rentable" onChange={handleChange} />}
+                                    label="Rentable"
+                                />
 
 
                                 <div className="form-floating mb-3">
-                                    <input type="text" className="form-control" id="category" onChange={handleChange} value={values.category} placeholder=" " />
+                                    <input type="text" list="categories" className="form-control" id="category" onChange={handleChange} value={values.category} placeholder=" " />
                                     <label htmlFor="name">Category</label>
                                 </div>
+                                <datalist id="categories">
+                                    <option value="A" />
+                                    <option value="B" />
+                                    <option value="C" />
+                                </datalist>
 
                                 <input type="file" className="form-control mb-3" id="avatar" onChange={handleChange} value={values.avatar} placeholder=" " />
 

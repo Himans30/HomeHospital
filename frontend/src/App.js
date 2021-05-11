@@ -4,7 +4,7 @@ import { UserProvider } from "./providers/userContext";
 
 import { ThemeProvider } from "@material-ui/core";
 import { createMuiTheme } from '@material-ui/core/styles';
-import { blue, green, purple } from '@material-ui/core/colors';
+import { blue, green } from '@material-ui/core/colors';
 import Admin from './components/admin';
 import ManageUser from './components/admin/manageuser';
 import UserDashboard from './components/user';
