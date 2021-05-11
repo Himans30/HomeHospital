@@ -1,5 +1,6 @@
 import { Card, CardContent, Checkbox, FormControlLabel } from "@material-ui/core";
 import { Formik } from "formik";
+
 import React from "react";
 import { EquipmentContext } from "../../providers/equipmentContext";
 
@@ -19,6 +20,7 @@ const AddEquipment = () => {
         created: new Date()
     };
 
+
     const onFormSubmit = (value, { setSubmitting }) => {
         console.log(value);
         setSubmitting = true;
@@ -27,6 +29,7 @@ const AddEquipment = () => {
 
             .then(res => console.log(res));
     }
+
 
     return (
         <div className="col-md-10 mx-auto">
@@ -83,7 +86,9 @@ const AddEquipment = () => {
                                     <option value="C" />
                                 </datalist>
 
+
                                 <input type="file" className="form-control mb-3" id="avatar" onChange={handleChange} value={values.avatar} placeholder=" " />
+
 
                                 <div className="row">
                                     <div className="col-md">
