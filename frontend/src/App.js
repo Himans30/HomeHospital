@@ -14,6 +14,7 @@ import { loadStripe } from '@stripe/stripe-js';
 import MainComponent from './components/main';
 import { EquipmentProvider } from './providers/equipmentContext';
 import { StaffProvider } from './providers/staffContext';
+import Home from './components/home';
 
 const stripePromise = loadStripe("pk_test_Vmvhpm2TASsGcgF4RcyQfkF000KwucQJR1");
 
@@ -42,31 +43,35 @@ function App() {
           <UserProvider>
 
             <EquipmentProvider>
-             <StaffProvider>
-             <Route exact path="/">
-                <Redirect to="/app" />
-              </Route>
+              <StaffProvider>
+                <Route exact path="/">
+                  <Redirect to="/app" />
+                </Route>
 
-              <Route path="/admin/manageuser">
-                <ManageUser />
-              </Route>
+                <Route path="/admin/manageuser">
+                  <ManageUser />
+                </Route>
 
-              <Route path="/admin">
-                <Admin />
-              </Route>
+                <Route path="/admin">
+                  <Admin />
+                </Route>
 
-              <Route path="/app">
-                <MainComponent />
-              </Route>
+                <Route path="/app">
+                  <MainComponent />
+                </Route>
 
-              <Route path="/user">
-                <UserDashboard />
-              </Route>
+                <Route path="/user">
+                  <UserDashboard />
+                </Route>
 
-              <Route path="/checkout">
-                <Checkout />
-              </Route>
-             </StaffProvider>
+                <Route path="/checkout">
+                  <Checkout />
+                </Route>
+
+                <Route path="/home">
+                  <Home />
+                </Route>
+              </StaffProvider>
             </EquipmentProvider>
 
           </UserProvider>
