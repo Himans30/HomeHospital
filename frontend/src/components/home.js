@@ -20,7 +20,7 @@ const Home = () => {
             <header id="header" className="fixed-top">
                 <div className="container d-flex align-items-center">
 
-                    <h1 className="logo me-auto"><a href="index.html">Medilab</a></h1>
+                    <h1 className="logo me-auto"><a href="index.html">HomeHospital</a></h1>
 
                     <nav id="navbar" className="navbar order-last order-lg-0">
                         <ul>
@@ -58,7 +58,7 @@ const Home = () => {
 
             <section id="hero" className="d-flex align-items-center">
                 <div className="container">
-                    <h1>Welcome to Medilab</h1>
+                    <h1>Welcome to HomeHospital</h1>
                     <h2>We are team of talented designers making websites with Bootstrap</h2>
                     <a href="#about" className="btn-get-started scrollto">Get Started</a>
                 </div>
@@ -72,7 +72,7 @@ const Home = () => {
                         <div className="row">
                             <div className="col-lg-4 d-flex align-items-stretch">
                                 <div className="content">
-                                    <h3>Why Choose Medilab?</h3>
+                                    <h3>Why Choose HomeHospital?</h3>
                                     <p>
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
                                         Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
@@ -808,7 +808,7 @@ const Home = () => {
                         <div className="row">
 
                             <div className="col-lg-3 col-md-6 footer-contact">
-                                <h3>Medilab</h3>
+                                <h3>HomeHospital</h3>
                                 <p>
                                     A108 Adam Street <br />
                   New York, NY 535022<br />
@@ -856,7 +856,7 @@ const Home = () => {
 
                     <div className="me-md-auto text-center text-md-start">
                         <div className="copyright">
-                            &copy; Copyright <strong><span>Medilab</span></strong>. All Rights Reserved
+                            &copy; Copyright <strong><span>HomeHospital</span></strong>. All Rights Reserved
             </div>
                         <div className="credits">
                             Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
