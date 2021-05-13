@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { EquipmentContext } from "../../providers/equipmentContext";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import cssClasses from "../cssClasses";
+import { Link } from "react-router-dom";
 
 const ManageEquipment = props => {
 
@@ -66,6 +67,10 @@ const ManageEquipment = props => {
 
                         })
                     }
+
+                    <Button>
+                        <Link to="/app/listequipments">View on Page</Link>
+                    </Button>
                 </CardContent>
             </Card>
         </div>

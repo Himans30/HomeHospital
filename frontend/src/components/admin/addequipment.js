@@ -3,10 +3,12 @@ import { Formik } from "formik";
 
 import React from "react";
 import { EquipmentContext } from "../../providers/equipmentContext";
+import cssClasses from "../cssClasses";
 
 const AddEquipment = () => {
 
     const equipmentService = React.useContext(EquipmentContext);
+    const baseStyles = cssClasses();
 
     const equipmentForm = {
         name: '',
@@ -14,7 +16,7 @@ const AddEquipment = () => {
         features: '',
         price: '',
         rentprice: '',
-        rentable: '',
+        rentable: false,
         category: '',
         avatar: '',
         created: new Date()
@@ -33,7 +35,7 @@ const AddEquipment = () => {
 
     return (
         <div className="col-md-10 mx-auto">
-            <Card>
+            <Card className={baseStyles.card}>
                 <CardContent>
                     <Formik
                         initialValues={equipmentForm}
@@ -50,13 +52,13 @@ const AddEquipment = () => {
                                 <h3 className="text-center">Add Equipment Here</h3>
 
                                 <div className="row">
-                                    <div className="col-md">
+                                    <div className="col-md mt-5">
                                         <div className="form-floating mb-3">
                                             <input type="text" className="form-control" id="name" onChange={handleChange} value={values.name} placeholder=" " />
                                             <label htmlFor="name">Name</label>
                                         </div>
                                     </div>
-                                    <div className="col-md">
+                                    <div className="col-md mt-5">
                                         <div className="form-floating mb-3">
                                             <input type="text" className="form-control" id="price" onChange={handleChange} value={values.price} placeholder=" " />
                                             <label htmlFor="name">Price</label>
@@ -71,7 +73,7 @@ const AddEquipment = () => {
                                 </div>
 
                                 <FormControlLabel
-                                    control={<Checkbox checked={values.rentPrice} id="rentable" onChange={handleChange} />}
+                                    control={<Checkbox checked={values.rentable} value={values.rentable} id="rentable" onChange={handleChange} />}
                                     label="Rentable"
                                 />
 
