@@ -25,7 +25,7 @@ const ManageEquipment = props => {
         fetchUsers();
     }, [])
 
-    const deleteUser = (id) => {
+    const deleteEquipment = (id) => {
         equipmentService.deleteEquipment(id)
             .then(res => {
                 console.log(res);
@@ -33,49 +33,67 @@ const ManageEquipment = props => {
             })
     }
 
-    return (
-        <div className="col-md-10 mx-auto">
-            <Card className={baseClasses.card}>
-                <CardContent>
-                    <h1>Manage Equipments</h1>
-                    {
-                        equipmentList.map((equipment, index) => {
-                            if (!loading) {
-                                return (
-                                    <Accordion key={index}>
-                                        <AccordionSummary
-                                            expandIcon={<ExpandMoreIcon />}
-                                            aria-controls="panel1a-content"
-                                            id="panel1a-header"
-                                        >
-                                            <Typography>{equipment.name}</Typography>
-                                        </AccordionSummary>
-                                        <AccordionDetails>
-                                            <h5>{equipment.description}</h5><br />
-                                            <h5>{equipment.features}</h5><br />
-                                            <h5>{equipment.price}</h5><br />
+    const displayEquipments = () => {
+        return equipmentList.map((equipment, index) => {
+            if (!loading) {
+                return (
+                    <Accordion key={index}>
+                        <AccordionSummary
+                            expandIcon={<ExpandMoreIcon />}
+                            aria-controls="panel1a-content"
+                            id="panel1a-header"
+                        >
+                            <Typography>{equipment.name}</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
 
-                                            <Button varaint="outline">Update</Button>
-                                            <Button varaint="outline" color="secondary" onClick={e => deleteUser(equipment._id)}>Delete</Button>
+                            <div className="row">
+                                <div className="col-4">
+                                    <p>Description</p>
+                                </div>
+                                <div className="col-8">
+                                    <p>{equipment.description}</p>
+                                </div>
+                            </div>
+                            <br />
 
-                                        </AccordionDetails>
-                                    </Accordion>
-                                )
-                            } else {
-                                return;
-                            }
+                            <div className="row">
+                                <div className="col-4">
+                                    <p>Features</p>
+                                </div>
+                                <div className="col-8">
+                                    <p>{equipment.features}</p>
+                                </div>
+                            </div>
+                            <br />
 
-                        })
-                    }
+                            <div className="row">
+                                <div className="col-4">
+                                    <p>Price</p>
+                                </div>
+                                <div className="col-8">
+                                    <p>{equipment.price}</p>
+                                </div>
+                            </div>
 
-                    <Button>
-                        <Link to="/app/listequipments">View on Page</Link>
-                    </Button>
-                </CardContent>
-            </Card>
-        </div>
+                            <Button varaint="outline">Update</Button>
+                            <Button
+                                varaint="outline"
+                                color="secondary"
+                                onClick={(e) => deleteEquipment(equipment._id)}
+                            >
+                                Delete
+                  </Button>
+                        </AccordionDetails>
+                    </Accordion>
+                );
+            } else {
+                return;
+            }
+        });
+    };
 
-    )
+    return <div style={{ marginTop: "5rem" }}>{displayEquipments()}</div>;
 }
 
 export default ManageEquipment;

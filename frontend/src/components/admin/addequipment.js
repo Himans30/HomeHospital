@@ -8,6 +8,8 @@ import cssClasses from "../cssClasses";
 const AddEquipment = () => {
 
     const equipmentService = React.useContext(EquipmentContext);
+    const [avatar, setAvatar] = React.useState("");
+    const [imgpath, setImgPath] = React.useState("");
     const baseStyles = cssClasses();
 
     const equipmentForm = {
@@ -24,6 +26,7 @@ const AddEquipment = () => {
 
 
     const onFormSubmit = (value, { setSubmitting }) => {
+        value['avatar'] = avatar;
         console.log(value);
         setSubmitting = true;
 
@@ -32,11 +35,42 @@ const AddEquipment = () => {
             .then(res => console.log(res));
     }
 
+    const showAvatar = () => {
+        if (imgpath) {
+            return (
+                <img src={imgpath} className="img-fluid" />
+            )
+        }
+    }
+
+    const uploadImage = (event) => {
+        const data = new FormData();
+        data.append('image', event.target.files[0]);
+        setAvatar(event.target.files[0].name);
+        equipmentService.uploadImage(data)
+            .then(res => console.log(res));
+
+        var mimeType = event.target.files[0].type;
+        if (mimeType.match(/image\/*/) == null) {
+            // erroMsg = 'Only images are supported.';
+            return;
+        }
+
+        var reader = new FileReader();
+        reader.readAsDataURL(event.target.files[0]);
+        reader.onload = (_event) => {
+            setImgPath(reader.result);
+        };
+    }
+
+
 
     return (
         <div className="col-md-10 mx-auto">
             <Card className={baseStyles.card}>
                 <CardContent>
+                    {showAvatar()}
+                    <input className="form-control" type="file" onChange={uploadImage} />
                     <Formik
                         initialValues={equipmentForm}
                         onSubmit={onFormSubmit}
@@ -88,10 +122,6 @@ const AddEquipment = () => {
                                     <option value="C" />
                                 </datalist>
 
-
-                                <input type="file" className="form-control mb-3" id="avatar" onChange={handleChange} value={values.avatar} placeholder=" " />
-
-
                                 <div className="row">
                                     <div className="col-md">
                                         <div className="form-floating mb-3">
@@ -109,7 +139,7 @@ const AddEquipment = () => {
 
 
                                 <div className="text-center">
-                                    <button className="btn btn-warning mt-5 w-100" disabled={isSubmitting}>Submit</button>
+                                    <button className="btn btn-warning mt-5 w-100">Submit</button>
                                 </div>
 
 

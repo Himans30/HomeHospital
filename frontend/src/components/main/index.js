@@ -9,6 +9,7 @@ import Register from './register';
 import listEquipments from './listEquipments';
 import ListEquipments from './listEquipments';
 import ListStaff from './liststaff';
+import EquipmentDetails from './equipmentDetails';
 
 const drawerWidth = 240;
 
@@ -46,6 +47,7 @@ const MainComponent = () => {
                 <Route path={`${path}/login`} component={Login} />
                 <Route path={`${path}/register`} component={Register} />
                 <Route path={`${path}/listequipments`} component={ListEquipments} />
+                <Route path={`${path}/equipmentdetails/:id`} component={EquipmentDetails} />
                 <Route path={`${path}/liststaff`} component={ListStaff} />
             </Switch>
         </div>

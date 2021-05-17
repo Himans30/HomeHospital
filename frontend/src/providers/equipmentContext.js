@@ -33,7 +33,7 @@ export const EquipmentProvider = props => {
             body: data
         }
 
-        return fetch(app_config.api_url + '/util/uploadfile', requestOptions)
+        return fetch(app_config.api_url + '/util/addimg', requestOptions)
             .then(response => response.json());
     }
 

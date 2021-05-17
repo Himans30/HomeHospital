@@ -7,6 +7,7 @@ import TextInfoContent from '@mui-treasury/components/content/textInfo';
 import { useWideCardMediaStyles } from '@mui-treasury/styles/cardMedia/wide';
 import { useN01TextInfoContentStyles } from '@mui-treasury/styles/textInfoContent/n01';
 import { useBouncyShadowStyles } from '@mui-treasury/styles/shadow/bouncy';
+import { Link } from "react-router-dom";
 
 
 const useStyles = makeStyles(() => ({
@@ -75,7 +76,7 @@ const ListEquipments = () => {
                                                 <div className="row">
                                                     <div className="col">
                                                         <Button color={'primary'} fullWidth className={styles.cta}>
-                                                            Buy Now <ChevronRightRounded />
+                                                            <Link to={`/app/equipmentdetails/${equipment._id}`}>Buy Now</Link> <ChevronRightRounded />
                                                         </Button>
                                                     </div>
                                                     <div className="col">
