@@ -77,15 +77,16 @@ const Login = () => {
                                 <input type="text" className="form-control" id="email" onChange={handleChange} value={values.email} />
 
                                 <label className="mt-4">Password</label>
-                                <input type="text" className="form-control" id="password" onChange={handleChange} value={values.password} />
+                                <input type="password" className="form-control" id="password" onChange={handleChange} value={values.password} />
 
 
 
                                 <div className="text-center">
                                     <button className="btn btn-warning mt-5 w-100">Submit</button>
                                 </div>
-
+                                
                                 <p className="mt-3 text-center">Register Instead? <Link to="/app/register">Register Here</Link></p>
+                                
 
                             </form>
                         )}
