@@ -5,14 +5,14 @@ const Home = () => {
             <div id="topbar" className="d-flex align-items-center fixed-top">
                 <div className="container d-flex justify-content-between">
                     <div className="contact-info d-flex align-items-center">
-                        <i className="bi bi-envelope"></i> <a href="mailto:contact@example.com">contact@example.com</a>
-                        <i className="bi bi-phone"></i> +1 5589 55488 55
+                        <i className="bi bi-envelope"></i> <a href="mailto:contact@example.com">homehospital@gmail.com</a>
+                        <i className="bi bi-phone"></i> +91 9839426001
           </div>
                     <div className="d-none d-lg-flex social-links align-items-center">
-                        <a href="#" className="twitter"><i className="bi bi-twitter"></i></a>
+                        {/* <a href="#" className="twitter"><i className="bi bi-twitter"></i></a> */}
                         <a href="#" className="facebook"><i className="bi bi-facebook"></i></a>
                         <a href="#" className="instagram"><i className="bi bi-instagram"></i></a>
-                        <a href="#" className="linkedin"><i className="bi bi-linkedin"></i></a>
+                        {/* <a href="#" className="linkedin"><i className="bi bi-linkedin"></i></a> */}
                     </div>
                 </div>
             </div>
@@ -76,9 +76,9 @@ const Home = () => {
                                     <p>Home Hospital delivers hospital care in the comfort and privacy of your own home.
                                     You don’t need to stay in hospital to receive the care you need, we bring the care to you.
                                   </p>
-                                    <div className="text-center">
+                                    {/* <div className="text-center">
                                         <a href="#" className="more-btn">Learn More <i className="bx bx-chevron-right"></i></a>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                             <div className="col-lg-8 d-flex align-items-stretch">
@@ -781,11 +781,11 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="social-links text-center text-md-right pt-3 pt-md-0">
-                        <a href="#" className="twitter"><i className="bx bxl-twitter"></i></a>
+                        {/* <a href="#" className="twitter"><i className="bx bxl-twitter"></i></a> */}
                         <a href="#" className="facebook"><i className="bx bxl-facebook"></i></a>
                         <a href="#" className="instagram"><i className="bx bxl-instagram"></i></a>
-                        <a href="#" className="google-plus"><i className="bx bxl-skype"></i></a>
-                        <a href="#" className="linkedin"><i className="bx bxl-linkedin"></i></a>
+                        {/* <a href="#" className="google-plus"><i className="bx bxl-skype"></i></a> */}
+                        {/* <a href="#" className="linkedin"><i className="bx bxl-linkedin"></i></a> */}
                     </div>
                 </div>
             </footer>
