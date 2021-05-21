@@ -5,14 +5,14 @@ const Home = () => {
             <div id="topbar" className="d-flex align-items-center fixed-top">
                 <div className="container d-flex justify-content-between">
                     <div className="contact-info d-flex align-items-center">
-                        <i className="bi bi-envelope"></i> <a href="mailto:contact@example.com">contact@example.com</a>
-                        <i className="bi bi-phone"></i> +1 5589 55488 55
+                        <i className="bi bi-envelope"></i> <a href="mailto:contact@example.com">homehospital@gmail.com</a>
+                        <i className="bi bi-phone"></i> +91 9839426001
           </div>
                     <div className="d-none d-lg-flex social-links align-items-center">
-                        <a href="#" className="twitter"><i className="bi bi-twitter"></i></a>
+                        {/* <a href="#" className="twitter"><i className="bi bi-twitter"></i></a> */}
                         <a href="#" className="facebook"><i className="bi bi-facebook"></i></a>
                         <a href="#" className="instagram"><i className="bi bi-instagram"></i></a>
-                        <a href="#" className="linkedin"><i className="bi bi-linkedin"></i></a>
+                        {/* <a href="#" className="linkedin"><i className="bi bi-linkedin"></i></a> */}
                     </div>
                 </div>
             </div>
@@ -28,7 +28,7 @@ const Home = () => {
                             <li><a className="nav-link scrollto" href="#about">About</a></li>
                             <li><a className="nav-link scrollto" href="#services">Services</a></li>
                             <li><a className="nav-link scrollto" href="#departments">Departments</a></li>
-                            <li><a className="nav-link scrollto" href="#doctors">Doctors</a></li>
+                            
                             <li className="dropdown"><a href="#"><span>Drop Down</span> <i className="bi bi-chevron-down"></i></a>
                                 <ul>
                                     <li><a href="#">Drop Down 1</a></li>
@@ -76,9 +76,9 @@ const Home = () => {
                                     <p>Home Hospital delivers hospital care in the comfort and privacy of your own home.
                                     You don’t need to stay in hospital to receive the care you need, we bring the care to you.
                                   </p>
-                                    <div className="text-center">
+                                    {/* <div className="text-center">
                                         <a href="#" className="more-btn">Learn More <i className="bx bx-chevron-right"></i></a>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                             <div className="col-lg-8 d-flex align-items-stretch">
@@ -414,89 +414,7 @@ const Home = () => {
                     </div>
                 </section>
 
-                <section id="doctors" className="doctors">
-                    <div className="container">
-
-                        <div className="section-title">
-                            <h2>Doctors</h2>
-                            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-                        </div>
-
-                        <div className="row">
-
-                            <div className="col-lg-6">
-                                <div className="member d-flex align-items-start">
-                                    <div className="pic"><img src="assets/img/doctors/doctors-1.jpg" className="img-fluid" alt="" /></div>
-                                    <div className="member-info">
-                                        <h4>Walter White</h4>
-                                        <span>Chief Medical Officer</span>
-                                        <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
-                                        <div className="social">
-                                            <a href=""><i className="ri-twitter-fill"></i></a>
-                                            <a href=""><i className="ri-facebook-fill"></i></a>
-                                            <a href=""><i className="ri-instagram-fill"></i></a>
-                                            <a href=""> <i className="ri-linkedin-box-fill"></i> </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="col-lg-6 mt-4 mt-lg-0">
-                                <div className="member d-flex align-items-start">
-                                    <div className="pic"><img src="assets/img/doctors/doctors-2.jpg" className="img-fluid" alt="" /></div>
-                                    <div className="member-info">
-                                        <h4>Sarah Jhonson</h4>
-                                        <span>Anesthesiologist</span>
-                                        <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
-                                        <div className="social">
-                                            <a href=""><i className="ri-twitter-fill"></i></a>
-                                            <a href=""><i className="ri-facebook-fill"></i></a>
-                                            <a href=""><i className="ri-instagram-fill"></i></a>
-                                            <a href=""> <i className="ri-linkedin-box-fill"></i> </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="col-lg-6 mt-4">
-                                <div className="member d-flex align-items-start">
-                                    <div className="pic"><img src="assets/img/doctors/doctors-3.jpg" className="img-fluid" alt="" /></div>
-                                    <div className="member-info">
-                                        <h4>William Anderson</h4>
-                                        <span>Cardiology</span>
-                                        <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
-                                        <div className="social">
-                                            <a href=""><i className="ri-twitter-fill"></i></a>
-                                            <a href=""><i className="ri-facebook-fill"></i></a>
-                                            <a href=""><i className="ri-instagram-fill"></i></a>
-                                            <a href=""> <i className="ri-linkedin-box-fill"></i> </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="col-lg-6 mt-4">
-                                <div className="member d-flex align-items-start">
-                                    <div className="pic"><img src="assets/img/doctors/doctors-4.jpg" className="img-fluid" alt="" /></div>
-                                    <div className="member-info">
-                                        <h4>Amanda Jepson</h4>
-                                        <span>Neurosurgeon</span>
-                                        <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
-                                        <div className="social">
-                                            <a href=""><i className="ri-twitter-fill"></i></a>
-                                            <a href=""><i className="ri-facebook-fill"></i></a>
-                                            <a href=""><i className="ri-instagram-fill"></i></a>
-                                            <a href=""> <i className="ri-linkedin-box-fill"></i> </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </section>
-
+         
                 <section id="faq" className="faq section-bg">
                     <div className="container">
 
@@ -737,7 +655,7 @@ const Home = () => {
                     </div>
 
                     <div>
-                        <iframe style={{ border: '0', width: '100%', height: '350px' }} src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameBorder="0" allowFullScreen></iframe>
+                        <iframe style={{ border: '0', width: '100%', height: '350px' }} src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14264.200484140358!2d83.58775757579052!3d26.6468776305389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1621525596951!5m2!1sen!2sin" frameBorder="0" allowFullScreen></iframe>
                     </div>
 
                     <div className="container">
@@ -748,19 +666,19 @@ const Home = () => {
                                     <div className="address">
                                         <i className="bi bi-geo-alt"></i>
                                         <h4>Location:</h4>
-                                        <p>A108 Adam Street, New York, NY 535022</p>
+                                        <p>Chauri Chaura Gorakhpur UP 273201 India</p>
                                     </div>
 
                                     <div className="email">
                                         <i className="bi bi-envelope"></i>
                                         <h4>Email:</h4>
-                                        <p>info@example.com</p>
+                                        <p>homehospital@gmail.com</p>
                                     </div>
 
                                     <div className="phone">
                                         <i className="bi bi-phone"></i>
                                         <h4>Call:</h4>
-                                        <p>+1 5589 55488 55s</p>
+                                        <p>+91 9839426001</p>
                                     </div>
 
                                 </div>
@@ -810,11 +728,11 @@ const Home = () => {
                             <div className="col-lg-3 col-md-6 footer-contact">
                                 <h3>HomeHospital</h3>
                                 <p>
-                                    A108 Adam Street <br />
-                  New York, NY 535022<br />
-                  United States <br /><br />
-                                    <strong>Phone:</strong> +1 5589 55488 55<br />
-                                    <strong>Email:</strong> info@example.com<br />
+                                    Chauri Chaura <br />
+                  Gorakhpur, UP 273201<br />
+                  India <br /><br />
+                                    <strong>Phone:</strong> +91 9839426001<br />
+                                    <strong>Email:</strong> homehospital@gmail.com<br />
                                 </p>
                             </div>
 
@@ -831,18 +749,18 @@ const Home = () => {
 
                             <div className="col-lg-3 col-md-6 footer-links">
                                 <h4>Our Services</h4>
-                                <ul>
+                                {/* <ul>
                                     <li><i className="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
                                     <li><i className="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
                                     <li><i className="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
                                     <li><i className="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
                                     <li><i className="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-                                </ul>
+                                </ul> */}
                             </div>
 
                             <div className="col-lg-4 col-md-6 footer-newsletter">
                                 <h4>Join Our Newsletter</h4>
-                                <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+                                {/* <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p> */}
                                 <form action="" method="post">
                                     <input type="email" name="email" /><input type="submit" value="Subscribe" />
                                 </form>
@@ -859,15 +777,15 @@ const Home = () => {
                             &copy; Copyright <strong><span>HomeHospital</span></strong>. All Rights Reserved
             </div>
                         <div className="credits">
-                            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                            Designed by <a href="https://bootstrapmade.com/">Khan's Team</a>
                         </div>
                     </div>
                     <div className="social-links text-center text-md-right pt-3 pt-md-0">
-                        <a href="#" className="twitter"><i className="bx bxl-twitter"></i></a>
+                        {/* <a href="#" className="twitter"><i className="bx bxl-twitter"></i></a> */}
                         <a href="#" className="facebook"><i className="bx bxl-facebook"></i></a>
                         <a href="#" className="instagram"><i className="bx bxl-instagram"></i></a>
-                        <a href="#" className="google-plus"><i className="bx bxl-skype"></i></a>
-                        <a href="#" className="linkedin"><i className="bx bxl-linkedin"></i></a>
+                        {/* <a href="#" className="google-plus"><i className="bx bxl-skype"></i></a> */}
+                        {/* <a href="#" className="linkedin"><i className="bx bxl-linkedin"></i></a> */}
                     </div>
                 </div>
             </footer>

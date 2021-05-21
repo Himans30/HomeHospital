@@ -92,8 +92,7 @@ const AddEquipment = () => {
             </Snackbar>
             <Card className={baseStyles.card}>
                 <CardContent>
-                    {showAvatar()}
-                    <input className="form-control" type="file" onChange={uploadImage} />
+                   
                     <Formik
                         initialValues={equipmentForm}
                         onSubmit={onFormSubmit}
@@ -134,6 +133,7 @@ const AddEquipment = () => {
                                     label="Rentable"
                                 />
 
+                      
 
                                 <div className="form-floating mb-3">
                                     <input type="text" list="categories" className="form-control" id="category" onChange={handleChange} value={values.category} placeholder=" " />
@@ -144,6 +144,11 @@ const AddEquipment = () => {
                                     <option value="B" />
                                     <option value="C" />
                                 </datalist>
+
+                               <div >
+                               {showAvatar()}
+                                 <input className="form-control" type="file" onChange={uploadImage} />
+                               </div>
 
                                 <div className="row">
                                     <div className="col-md">
