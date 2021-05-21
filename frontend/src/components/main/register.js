@@ -46,18 +46,14 @@ const Register = () => {
 
                                 <div className="row">
                                     <div className="col-md mt-5">
-                                    <label className="mt-5">First Name</label>
-                                <input type="text" className="form-control" id="firstname" onChange={handleChange} value={values.firstname} />
+                                        <label className="mt-5">Full Name</label>
+                                        <input type="text" className="form-control" id="firstname" onChange={handleChange} value={values.firstname} />
                                     </div>
 
-                                    <div className="col-md mt-5">
-                                    <label className="mt-5">Last Name</label>
-                                <input type="text" className="form-control" id="lastname" onChange={handleChange} value={values.lastname} />
-                                    </div>
                                 </div>
 
                                 <label className="mt-4">Age</label>
-                                <input type="date" className="form-control" id="age" onChange={handleChange} value={values.age} />
+                                <input type="number" className="form-control" id="age" onChange={handleChange} value={values.age} />
 
                                 <label className="mt-4">Email</label>
                                 <input type="email" className="form-control" id="email" onChange={handleChange} value={values.email} />
@@ -65,10 +61,10 @@ const Register = () => {
                                 <label className="mt-4">Password</label>
                                 <input type="password" className="form-control" id="password" onChange={handleChange} value={values.password} />
 
-                                
+
 
                                 <div className="text-center">
-                                    <button className="btn btn-warning mt-5 w-100" disabled={isSubmitting}>Submit</button>
+                                    <button className="btn btn-warning mt-5 w-100">Submit</button>
                                 </div>
 
                                 <p className="mt-3 text-center">Already Registered? <Link to="/app/login">Login Here</Link></p>

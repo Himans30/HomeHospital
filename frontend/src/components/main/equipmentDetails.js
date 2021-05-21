@@ -62,6 +62,21 @@ const EquipmentDetails = () => {
             })
     }
 
+    const renderReviews = () => {
+        if (equipmentData.reviews)
+            return equipmentData.reviews.map((review, index) => {
+                return (
+                    <Card key={index}>
+                        <CardContent>
+                            <h3>{review.user.fullname}</h3>
+                            <Rating value={review.rating}></Rating>
+                            <p>{review.text}</p>
+                        </CardContent>
+                    </Card>
+                )
+            })
+    }
+
     if (equipmentData)
         return (
             <div className="col-md-10 mx-auto" >
@@ -88,20 +103,7 @@ const EquipmentDetails = () => {
                 <h3>Reviews</h3>
                 <hr />
                 {
-                    () => {
-                        if (equipmentData.reviews)
-                            return equipmentData.reviews.map((review, index) => {
-                                return (
-                                    <Card key={index}>
-                                        <CardContent>
-                                            <h3>{review.user.fullname}</h3>
-                                            <Rating value={review.rating}></Rating>
-                                            <p>{review.text}</p>
-                                        </CardContent>
-                                    </Card>
-                                )
-                            })
-                    }
+                    renderReviews()
                 }
 
                 <Card>
