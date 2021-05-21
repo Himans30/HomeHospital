@@ -5,12 +5,14 @@ import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import app_config from '../config';
 import clsx from "clsx";
+import { UserContext } from "../providers/userContext";
 
 const Header = props => {
 
     const open = props.open;
     const drawerWidth = props.drawerWidth;
     const handleDrawerOpen = props.handleDrawerOpen;
+    const userService = useContext(UserContext);
 
 
     const useStyles = makeStyles((theme) => ({
@@ -66,6 +68,35 @@ const Header = props => {
         }
     }
 
+
+    const renderLoggedIn = () => {
+        let user = userService.currentUser;
+        console.log(user);
+        if (user) {
+
+            return (
+                <div>
+                    <Link to="/admin/dashboard" className={classes.link}>
+                        <Button color="inherit">Dashboard</Button>
+                    </Link>
+                </div>
+            )
+        } else {
+            return (
+                <div>
+                    <Link to="/app/login" className={classes.link}>
+                        <Button color="inherit">Login</Button>
+                    </Link>
+
+                    <Link to="/app/register" className={classes.link}>
+                        <Button color="inherit">Register</Button>
+                    </Link>
+                </div>
+            )
+        }
+
+    }
+
     return (
         <AppBar
             position="sticky"
@@ -77,13 +108,7 @@ const Header = props => {
                 <Typography variant="h6" className={classes.title}>
                     {app_config.projectTitle}
                 </Typography>
-                <Link to="/login" className={classes.link}>
-                    <Button color="inherit">Login</Button>
-                </Link>
-
-                <Link to="/register" className={classes.link}>
-                    <Button color="inherit">Register</Button>
-                </Link>
+                {renderLoggedIn()}
 
             </Toolbar>
         </AppBar>

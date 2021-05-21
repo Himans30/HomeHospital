@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Home = () => {
 
     return (
@@ -28,7 +30,7 @@ const Home = () => {
                             <li><a className="nav-link scrollto" href="#about">About</a></li>
                             <li><a className="nav-link scrollto" href="#services">Services</a></li>
                             <li><a className="nav-link scrollto" href="#departments">Departments</a></li>
-                            
+
                             <li className="dropdown"><a href="#"><span>Drop Down</span> <i className="bi bi-chevron-down"></i></a>
                                 <ul>
                                     <li><a href="#">Drop Down 1</a></li>
@@ -50,8 +52,7 @@ const Home = () => {
                         </ul>
                         <i className="bi bi-list mobile-nav-toggle"></i>
                     </nav>
-
-                    <a href="#appointment" className="appointment-btn scrollto"><span className="d-none d-md-inline">Make an</span> Appointment</a>
+                    <Link to="/app/listequipments" className="appointment-btn scrollto">View Equipments</Link>
 
                 </div>
             </header>
@@ -115,14 +116,14 @@ const Home = () => {
 
                 <section id="about" className="about">
                     <div className="container-fluid">
-    
-                            <div className="row">
+
+                        <div className="row">
                             <div className="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch position-relative">
-                                
+
                             </div>
 
                             <div className="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
-                                
+
                                 <h3>About us</h3>
                                 <p>HomeHospital delivers quality care with compassion. We bring world class medical care into our patients’ homes and aim to make primary healthcare not only more accessible, but also more affordable and accountable to our patients’ needs..</p>
 
@@ -414,7 +415,7 @@ const Home = () => {
                     </div>
                 </section>
 
-         
+
                 <section id="faq" className="faq section-bg">
                     <div className="container">
 
