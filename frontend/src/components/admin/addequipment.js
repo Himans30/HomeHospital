@@ -1,4 +1,5 @@
-import { Card, CardContent, Checkbox, FormControlLabel } from "@material-ui/core";
+import { Card, CardContent, Checkbox, Fade, FormControlLabel, Snackbar } from "@material-ui/core";
+import Alert from "@material-ui/lab/Alert";
 import { Formik } from "formik";
 
 import React from "react";
@@ -11,6 +12,7 @@ const AddEquipment = () => {
     const [avatar, setAvatar] = React.useState("");
     const [imgpath, setImgPath] = React.useState("");
     const baseStyles = cssClasses();
+    const [open, setOpen] = React.useState(false);
 
     const equipmentForm = {
         name: '',
@@ -21,7 +23,8 @@ const AddEquipment = () => {
         rentable: false,
         category: '',
         avatar: '',
-        created: new Date()
+        created: new Date(),
+        reviews: Array
     };
 
 
@@ -32,7 +35,10 @@ const AddEquipment = () => {
 
         equipmentService.addEquipment(value)
 
-            .then(res => console.log(res));
+            .then(res => {
+                console.log(res)
+                setOpen(true);
+            });
     }
 
     const showAvatar = () => {
@@ -63,10 +69,27 @@ const AddEquipment = () => {
         };
     }
 
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        setOpen(false);
+    };
 
 
     return (
         <div className="col-md-10 mx-auto">
+            <Snackbar
+                onClose={handleClose}
+                autoHideDuration={2000}
+                anchorOrigin={{ vertical: "top", horizontal: "right" }}
+                open={open}
+                TransitionComponent={Fade}
+            >
+
+                <Alert onClose={handleClose} severity="success">Equipment Successfully Added</Alert>
+            </Snackbar>
             <Card className={baseStyles.card}>
                 <CardContent>
                     {showAvatar()}

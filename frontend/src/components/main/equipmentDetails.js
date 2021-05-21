@@ -1,10 +1,12 @@
-import { Backdrop, CircularProgress, makeStyles } from "@material-ui/core";
+import { Backdrop, Button, Card, CardContent, CircularProgress, makeStyles, TextField, Typography } from "@material-ui/core";
 import { createRef, useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import app_config from "../../config";
 import { EquipmentContext } from "../../providers/equipmentContext";
 import cssClasses from "../cssClasses";
 import clsx from 'clsx';
+import Rating from '@material-ui/lab/Rating';
+import { UserContext } from "../../providers/userContext";
 
 
 
@@ -23,7 +25,10 @@ const EquipmentDetails = () => {
     const classes = useStyles();
     const [equipmentData, setEquipmentData] = useState({});
     const equipmentService = useContext(EquipmentContext);
+    const userService = useContext(UserContext);
     const [loading, setLoading] = useState(true);
+    const [rating, setRating] = useState(3)
+    const [text, setText] = useState("");
     const { id } = useParams();
     const wrapper = createRef();
     const url = app_config.api_url + '/';
@@ -42,28 +47,88 @@ const EquipmentDetails = () => {
         setLoading(false);
     };
 
-    return (
-        <div className="col-md-10 mx-auto" >
-            <h2 className="text-center">Options</h2>
-            <hr />
+    const handleRate = (e) => {
+        setRating(parseInt(e.target.value));
+    }
 
-            <div className="row">
-                <div className="col-md-6">
-                    <img src={`${url}${equipmentData.avatar}`} className={clsx(cssClasses.image, "img-fluid")} />
+    const handleText = (e) => {
+        setText(e.target.value);
+    }
+
+    const addRating = (e) => {
+        equipmentService.AddRating(equipmentData._id, { rating: rating, text: text, user: userService.currentUser._id })
+            .then(res => {
+                console.log(res);
+            })
+    }
+
+    if (equipmentData)
+        return (
+            <div className="col-md-10 mx-auto" >
+                <h2 className="text-center">Options</h2>
+                <hr />
+
+                <div className="row">
+                    <div className="col-md-6">
+                        <img src={`${url}${equipmentData.avatar}`} className={clsx(cssClasses.image, "img-fluid")} />
+                    </div>
+                    <div className="col-md-6">
+                        <h3>{equipmentData.name}</h3>
+                        <Rating name={'rating'} value={2} />
+                        <Typography variant={'body2'} >
+                            4.0
+                        </Typography>
+                        <p>{equipmentData.description}</p>
+                        <p>{equipmentData.features}</p>
+                        <h1>{equipmentData.price}</h1>
+
+                    </div>
                 </div>
-                <div className="col-md-6">
-                    <h3>{equipmentData.name}</h3>
-                    <p>{equipmentData.description}</p>
-                    <p>{equipmentData.features}</p>
-                    <h1>{equipmentData.price}</h1>
-                </div>
+
+                <h3>Reviews</h3>
+                <hr />
+                {
+                    () => {
+                        if (equipmentData.reviews)
+                            return equipmentData.reviews.map((review, index) => {
+                                return (
+                                    <Card key={index}>
+                                        <CardContent>
+                                            <h3>{review.user.fullname}</h3>
+                                            <Rating value={review.rating}></Rating>
+                                            <p>{review.text}</p>
+                                        </CardContent>
+                                    </Card>
+                                )
+                            })
+                    }
+                }
+
+                <Card>
+                    <CardContent>
+                        <Rating onChange={handleRate} value={rating}></Rating>
+                        <TextField
+                            className="w-100"
+                            label="Review Text"
+                            multiline
+                            rows={5}
+                            value={text}
+                            onChange={handleText}
+                            variant="filled"
+                        />
+
+                        <Button onClick={addRating}>Add Review</Button>
+                    </CardContent>
+                </Card>
+
+
+                <Backdrop ref={wrapper} className={classes.backdrop} open={loading} onClick={handleClose}>
+                    <CircularProgress color="inherit" />
+                </Backdrop>
             </div>
-
-            <Backdrop ref={wrapper} className={classes.backdrop} open={loading} onClick={handleClose}>
-                <CircularProgress color="inherit" />
-            </Backdrop>
-        </div>
-    )
+        )
+    else
+        return <h1>Nothing Here</h1>
 }
 
 

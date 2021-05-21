@@ -77,11 +77,11 @@ const Header = props => {
                 <Typography variant="h6" className={classes.title}>
                     {app_config.projectTitle}
                 </Typography>
-                <Link to="/login" className={classes.link}>
+                <Link to="/app/login" className={classes.link}>
                     <Button color="inherit">Login</Button>
                 </Link>
 
-                <Link to="/register" className={classes.link}>
+                <Link to="/app/register" className={classes.link}>
                     <Button color="inherit">Register</Button>
                 </Link>
 

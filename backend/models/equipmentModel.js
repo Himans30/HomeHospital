@@ -9,7 +9,8 @@ const schema = new mongoose.Schema({
     rentable: Boolean,
     category: String,
     avatar: String,
-    created: Date
+    created: Date,
+    reviews: [{ type: mongoose.Types.ObjectId, ref: "Reviews" }]
 })
 
 

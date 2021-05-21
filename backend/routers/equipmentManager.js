@@ -17,7 +17,7 @@ router.post('/add', (req, res) => {
 })
 router.get('/getall', (req, res) => {
 
-    Model.find({})
+    Model.find({}).populate('reviews')
         .then(data => {
             console.log('user data fetched');
             res.status(200).json(data);
@@ -48,6 +48,21 @@ router.put('/update/:id', (req, res) => {
     Model.findByIdAndUpdate(req.params.id, data)
         .then(data => {
             console.log('user data updated');
+            res.status(200).json(data);
+        })
+        .catch(err => {
+            console.error(err);
+            res.status(500).json(err);
+        })
+})
+
+router.put('/addreview/:id', (req, res) => {
+
+    let data = req.body;
+
+    Model.findByIdAndUpdate(req.params.id, { $push: data })
+        .then(data => {
+            console.log('equipment data updated');
             res.status(200).json(data);
         })
         .catch(err => {

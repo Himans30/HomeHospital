@@ -4,15 +4,15 @@ import React from "react";
 import { EquipmentContext } from "../../providers/equipmentContext";
 import ChevronRightRounded from '@material-ui/icons/ChevronRightRounded';
 import TextInfoContent from '@mui-treasury/components/content/textInfo';
-import { useWideCardMediaStyles } from '@mui-treasury/styles/cardMedia/wide';
+import { useFourThreeCardMediaStyles } from '@mui-treasury/styles/cardMedia/fourThree';
 import { useN01TextInfoContentStyles } from '@mui-treasury/styles/textInfoContent/n01';
 import { useBouncyShadowStyles } from '@mui-treasury/styles/shadow/bouncy';
 import { Link } from "react-router-dom";
+import app_config from "../../config";
 
 
 const useStyles = makeStyles(() => ({
     root: {
-        maxWidth: 304,
         margin: 'auto',
         boxShadow: 'none',
         borderRadius: 0,
@@ -24,6 +24,9 @@ const useStyles = makeStyles(() => ({
         marginTop: 24,
         textTransform: 'initial',
     },
+    cardImg: {
+        height: '10rem'
+    }
 }));
 
 const ListEquipments = () => {
@@ -32,9 +35,11 @@ const ListEquipments = () => {
     const [equipmentList, setEquipmentList] = React.useState([])
 
     const styles = useStyles();
-    const mediaStyles = useWideCardMediaStyles();
+    const mediaStyles = useFourThreeCardMediaStyles();
     const textCardContentStyles = useN01TextInfoContentStyles();
     const shadowStyles = useBouncyShadowStyles();
+
+    const url = app_config.api_url + '/';
 
     React.useEffect(() => {
 
@@ -56,12 +61,12 @@ const ListEquipments = () => {
                             {
                                 equipmentList.map(equipment => (
 
-                                    <div className="col-md-3" key={equipment._id}>
+                                    <div className="col-md-3 mt-5" key={equipment._id}>
                                         <Card className={clsx(styles.root, shadowStyles.root)}>
                                             <CardMedia
                                                 classes={mediaStyles}
                                                 image={
-                                                    'https://images.unsplash.com/photo-1468774871041-fc64dd5522f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2689&q=80'
+                                                    url + equipment.avatar
                                                 }
                                             />
                                             <CardContent className={styles.content}>
