@@ -133,15 +133,11 @@ const Home = () => {
 
                                 <div className="icon-box">
                                     <div className="icon"><i className="bx bx-gift"></i></div>
-                                    <h4 className="title"><a href="">Nemo Enim</a></h4>
-                                    <p className="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+                                    <h4 className="title"><a href="">Mission</a></h4>
+                                    <p className="description">Our goal has always been to build trust and reliability. Now with Apollo HomeCare, we look forward to doing so, within the comfort and convenience of the patient's home.</p>
                                 </div>
 
-                                <div className="icon-box">
-                                    <div className="icon"><i className="bx bx-atom"></i></div>
-                                    <h4 className="title"><a href="">Dine Pad</a></h4>
-                                    <p className="description">Explicabo est voluptatum asperiores consequatur magnam. Et veritatis odit. Sunt aut deserunt minus aut eligendi omnis</p>
-                                </div>
+                               
 
                            
                         </div>
@@ -154,38 +150,31 @@ const Home = () => {
 
                         <div className="row">
 
-                            <div className="col-lg-3 col-md-6">
+                            <div className="col-md mt-5">
                                 <div className="count-box">
                                     <i className="fas fa-user-md"></i>
                                     <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="1" className="purecounter"></span>
-                                    <p>Doctors</p>
+                                    <p>Nurses</p>
                                 </div>
                             </div>
 
-                            <div className="col-lg-3 col-md-6 mt-5 mt-md-0">
+                            <div className="col-md mt-5">
                                 <div className="count-box">
                                     <i className="far fa-hospital"></i>
                                     <span data-purecounter-start="0" data-purecounter-end="18" data-purecounter-duration="1" className="purecounter"></span>
-                                    <p>Departments</p>
+                                    <p>Ward Boys</p>
                                 </div>
                             </div>
 
-                            <div className="col-lg-3 col-md-6 mt-5 mt-lg-0">
+                            <div className="col-md mt-5">
                                 <div className="count-box">
                                     <i className="fas fa-flask"></i>
                                     <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1" className="purecounter"></span>
-                                    <p>Research Labs</p>
+                                    <p>Equipments</p>
                                 </div>
                             </div>
 
-                            <div className="col-lg-3 col-md-6 mt-5 mt-lg-0">
-                                <div className="count-box">
-                                    <i className="fas fa-award"></i>
-                                    <span data-purecounter-start="0" data-purecounter-end="150" data-purecounter-duration="1" className="purecounter"></span>
-                                    <p>Awards</p>
-                                </div>
-                            </div>
-
+                           
                         </div>
 
                     </div>
@@ -260,52 +249,53 @@ const Home = () => {
 
                         <div className="section-title">
                             <h2>Frequently Asked Questions</h2>
-                            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                            
                         </div>
 
                         <div className="faq-list">
                             <ul>
                                 <li data-aos="fade-up">
-                                    <i className="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" className="collapse" data-bs-target="#faq-list-1">Non consectetur a erat nam at lectus urna duis? <i className="bx bx-chevron-down icon-show"></i><i className="bx bx-chevron-up icon-close"></i></a>
+                                    <i className="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" className="collapse" data-bs-target="#faq-list-1">What payment methods do you accept? <i className="bx bx-chevron-down icon-show"></i><i className="bx bx-chevron-up icon-close"></i></a>
                                     <div id="faq-list-1" className="collapse show" data-bs-parent=".faq-list">
-                                        <p>
-                                            Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                                        <p>We accept Visa and MasterCard on our website.
+
+Our sales staff can also process other payment types manually, including checks and internet banking. To pay using one of these methods, please contact us to place your order.
                     </p>
                                     </div>
                                 </li>
 
                                 <li data-aos="fade-up" data-aos-delay="100">
-                                    <i className="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" className="collapsed">Feugiat scelerisque varius morbi enim nunc? <i className="bx bx-chevron-down icon-show"></i><i className="bx bx-chevron-up icon-close"></i></a>
+                                    <i className="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" className="collapsed">What is your returns policy?<i className="bx bx-chevron-down icon-show"></i><i className="bx bx-chevron-up icon-close"></i></a>
                                     <div id="faq-list-2" className="collapse" data-bs-parent=".faq-list">
                                         <p>
-                                            Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                                        Define Instruments will accept product returns for credit or exchange up to 30 DAYS after the dispatch date, provided that the returned product(s) are unused, and in original condition - complete with original documents and packaging.
                     </p>
                                     </div>
                                 </li>
 
                                 <li data-aos="fade-up" data-aos-delay="200">
-                                    <i className="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" className="collapsed">Dolor sit amet consectetur adipiscing elit? <i className="bx bx-chevron-down icon-show"></i><i className="bx bx-chevron-up icon-close"></i></a>
+                                    <i className="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" className="collapsed">How do I contact Nurses & Ward Boys at Home Hospital? <i className="bx bx-chevron-down icon-show"></i><i className="bx bx-chevron-up icon-close"></i></a>
                                     <div id="faq-list-3" className="collapse" data-bs-parent=".faq-list">
                                         <p>
-                                            Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+                                        To contact our Nurses online, you can send your questions  by completing the form in the Contact Us section .
                     </p>
                                     </div>
                                 </li>
 
                                 <li data-aos="fade-up" data-aos-delay="300">
-                                    <i className="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" className="collapsed">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i className="bx bx-chevron-down icon-show"></i><i className="bx bx-chevron-up icon-close"></i></a>
+                                    <i className="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" className="collapsed">How do I cancel my Nurse,WardBoy & Equipment Booking? <i className="bx bx-chevron-down icon-show"></i><i className="bx bx-chevron-up icon-close"></i></a>
                                     <div id="faq-list-4" className="collapse" data-bs-parent=".faq-list">
                                         <p>
-                                            Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in.
+                                        If you wish to cancel your order, you can send an email request to homehospital@gmail.com. Please note that in case your order has already been charged or delivered, we cannot cancel it.
                     </p>
                                     </div>
                                 </li>
 
                                 <li data-aos="fade-up" data-aos-delay="400">
-                                    <i className="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" className="collapsed">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i className="bx bx-chevron-down icon-show"></i><i className="bx bx-chevron-up icon-close"></i></a>
+                                    <i className="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" className="collapsed">What if my product is damaged, wrong or missing? <i className="bx bx-chevron-down icon-show"></i><i className="bx bx-chevron-up icon-close"></i></a>
                                     <div id="faq-list-5" className="collapse" data-bs-parent=".faq-list">
                                         <p>
-                                            Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque.
+                                        If damaged, or wrong, please send the Order ID and a picture of the damaged or wrong item, complete with the batch number clearly visible, to homehospital@gmail.com. If an item is missing, send an email, to homehospital@gmail.com. Please indicate if you prefer a refund or a replacement.
                     </p>
                                     </div>
                                 </li>
