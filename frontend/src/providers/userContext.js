@@ -14,6 +14,7 @@ export const UserProvider = props => {
 
     useEffect(() => {
         let user = sessionStorage.getItem('user');
+        console.log(user);
         if (user) {
             setLoggedin(true);
             setCurrentUser(JSON.parse(user));
@@ -29,6 +30,17 @@ export const UserProvider = props => {
         }
 
         return fetch(url + '/add', requestOptions)
+            .then(response => response.json());
+    }
+
+    const updateUser = (id, data) => {
+        const requestOptions = {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        }
+
+        return fetch(url + '/update/' + id, requestOptions)
             .then(response => response.json());
     }
 
@@ -53,6 +65,7 @@ export const UserProvider = props => {
         setCurrentUser,
 
         addUser,
+        updateUser,
         getUserByEmail,
         Logout
     }

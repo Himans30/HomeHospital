@@ -109,7 +109,13 @@ const Header = props => {
                     {app_config.projectTitle}
                 </Typography>
                 {renderLoggedIn()}
+                <Link to="/app/listequipments" className={classes.link}>
+                    <Button color="inherit">Equipments</Button>
+                </Link>
 
+                <Link to="/app/liststaff" className={classes.link}>
+                    <Button color="inherit">Services</Button>
+                </Link>
             </Toolbar>
         </AppBar>
     )

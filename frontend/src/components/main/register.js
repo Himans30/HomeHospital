@@ -8,8 +8,7 @@ const Register = () => {
     const userService = useContext(UserContext);
 
     const registerForm = {
-        firstname: '',
-        lastname: '',
+        fullname: '',
         email: '',
         password: '',
         age: '',

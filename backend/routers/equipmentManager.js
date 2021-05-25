@@ -30,7 +30,7 @@ router.get('/getall', (req, res) => {
 
 router.get('/getbyid/:id', (req, res) => {
 
-    Model.findById(req.params.id).populate('reviews').populate('user')
+    Model.findById(req.params.id).populate({ path: 'reviews', populate: { path: 'user' } })
         .then(data => {
             console.log('equipment data fetched by id');
             res.status(200).json(data);
