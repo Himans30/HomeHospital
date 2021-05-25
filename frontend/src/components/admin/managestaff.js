@@ -26,10 +26,10 @@ const styles = makeStyles(theme => ({
     avatar: {
         width: 50,
         height: 50,
-        border: '2px solid #fff',
+        border: '2px solid lightblue',
         margin: '-48px 32px 0 auto',
         '& > img': {
-            margin: 0,
+            margin: 5,
         },
     },
 }))
@@ -84,7 +84,7 @@ const ManageStaff = props => {
             return (
                 staffList.map(staff => {
                     return (
-                        <div key={staff._id} className="col-md-2">
+                        <div key={staff._id} className="col-md-4">
                             <Card className={clsx(baseClasses.root, shadowStyles.root)}>
                                 <CardMedia
                                     classes={mediaStyles}

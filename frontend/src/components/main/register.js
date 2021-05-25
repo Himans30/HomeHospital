@@ -27,7 +27,12 @@ const Register = () => {
     }
 
     return (
-        <div className="col-md-6 mx-auto">
+       <div className="row">
+           <div className="col-md-5">
+            <img src="reg_image.png"/>
+           </div>
+           
+           <div className="col-md-6 mx-auto">
             <div className="card">
                 <div className="card-body">
                     <Formik
@@ -75,6 +80,8 @@ const Register = () => {
                 </div>
             </div>
         </div>
+           </div>
+     
     )
 
 }

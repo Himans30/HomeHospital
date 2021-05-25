@@ -1,8 +1,11 @@
+import { Checkbox, FormControlLabel, Grid } from "@material-ui/core";
 import { Formik } from "formik";
 import { useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import Swal from "sweetalert2";
 import { UserContext } from "../../providers/userContext";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 const Login = () => {
 
@@ -56,7 +59,12 @@ const Login = () => {
     }
 
     return (
-        <div className="col-md-6 mx-auto">
+        <div className="row">
+            <div className="col-md-5 mx-auto">
+
+            </div>
+            
+            <div className="col-md-6 mx-auto">
             <div className="card">
                 <div className="card-body">
                     <Formik
@@ -77,16 +85,33 @@ const Login = () => {
                                 <input type="text" className="form-control" id="email" onChange={handleChange} value={values.email} />
 
                                 <label className="mt-4">Password</label>
+                                
                                 <input type="password" className="form-control" id="password" onChange={handleChange} value={values.password} />
 
-
+                              <div>
+                              <Grid container alignItems="center" justify="space-between" />
+                        <Grid item>
+                            <FormControlLabel control={
+                                <Checkbox
+                                    color="primary"
+                                />
+                            } label="Remember me" />
+                        </Grid>
+                              </div>
 
                                 <div className="text-center">
                                     <button className="btn btn-warning mt-5 w-100">Submit</button>
                                 </div>
+                               <div className="row">
 
-                                <p className="mt-3 text-center">Register Instead? <Link to="/app/register">Register Here</Link></p>
+                               <div className="col-md-5 mx-auto">
+                                <p className="mt-3 text-left">Register Instead? <Link to="/app/register">Register Here</Link></p>
+                                </div>
+                                <div className="col-md-5 mx-auto">
+                                <p className="mt-3 text-right"> Forgot Password <Link to ="">Forgot Password</Link></p>
+                                </div>
 
+                               </div>
 
                             </form>
                         )}
@@ -94,8 +119,12 @@ const Login = () => {
                 </div>
             </div>
         </div>
+            </div>
+     
     )
 
 }
 
 export default Login;
+
+
