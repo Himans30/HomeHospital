@@ -86,7 +86,7 @@ const ListEquipments = () => {
                                                     </div>
                                                     <div className="col">
                                                         <Button color={'primary'} fullWidth className={styles.cta}>
-                                                            Rent Now <ChevronRightRounded />
+                                                        <Link to={`/app/equipmentdetails/${equipment._id}`}>Rent Now</Link> <ChevronRightRounded />
                                                         </Button>
                                                     </div>
                                                 </div>
