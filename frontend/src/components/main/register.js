@@ -30,10 +30,7 @@ const Register = () => {
 
     return (
        
-           <div className="row">
-           <div className="col-md-5">
-            <img/>
-           </div>
+         
            
            <div className="col-md-6 mx-auto">
             <div className="card">
@@ -83,7 +80,7 @@ const Register = () => {
                 </div>
             </div>
         </div>
-           </div>
+        
      
       
     )

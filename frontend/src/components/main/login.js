@@ -59,10 +59,7 @@ const Login = () => {
     }
 
     return (
-        <div className="row">
-            <div className="col-md-5 mx-auto">
-
-            </div>
+      
             
             <div className="col-md-6 mx-auto">
             <div className="card">
@@ -119,7 +116,7 @@ const Login = () => {
                 </div>
             </div>
         </div>
-            </div>
+      
      
     )
 
