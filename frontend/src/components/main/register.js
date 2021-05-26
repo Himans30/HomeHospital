@@ -3,6 +3,8 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../providers/userContext";
 
+
+
 const Register = () => {
 
     const userService = useContext(UserContext);
@@ -27,9 +29,10 @@ const Register = () => {
     }
 
     return (
-       <div className="row">
+       
+           <div className="row">
            <div className="col-md-5">
-            <img src="D:\HomeHospital\frontend\src\components\main\reg_img.png"/>
+            <img/>
            </div>
            
            <div className="col-md-6 mx-auto">
@@ -82,6 +85,7 @@ const Register = () => {
         </div>
            </div>
      
+      
     )
 
 }

@@ -61,7 +61,7 @@ const ListEquipments = () => {
                             {
                                 equipmentList.map(equipment => (
 
-                                    <div className="col-md-3 mt-5" key={equipment._id}>
+                                    <div className="col-md-4 mt-5" key={equipment._id}>
                                         <Card className={clsx(styles.root, shadowStyles.root)}>
                                             <CardMedia
                                                 classes={mediaStyles}

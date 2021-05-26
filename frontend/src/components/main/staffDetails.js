@@ -2,7 +2,7 @@ import { Backdrop, Button, Card, CardContent, CircularProgress, makeStyles, Text
 import { createRef, useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import app_config from "../../config";
-import { EquipmentContext } from "../../providers/equipmentContext";
+import { StaffContext } from "../../providers/staffContext";
 import cssClasses from "../cssClasses";
 import clsx from 'clsx';
 import Rating from '@material-ui/lab/Rating';
@@ -20,11 +20,11 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const EquipmentDetails = () => {
+const StaffDetails = () => {
 
     const classes = useStyles();
-    const [equipmentData, setEquipmentData] = useState({});
-    const equipmentService = useContext(EquipmentContext);
+    const [staffData, setStaffData] = useState({});
+    const staffService = useContext(StaffContext);
     const userService = useContext(UserContext);
     const [loading, setLoading] = useState(true);
     const [rating, setRating] = useState(3)
@@ -35,10 +35,10 @@ const EquipmentDetails = () => {
 
     useEffect(() => {
 
-        equipmentService.getEquipmentById(id)
+        staffService.getStaffById(id)
             .then(data => {
                 console.log(data);
-                setEquipmentData(data);
+                setStaffData(data);
                 setLoading(false);
             })
     }, [])
@@ -56,15 +56,15 @@ const EquipmentDetails = () => {
     }
 
     const addRating = (e) => {
-        equipmentService.AddRating(equipmentData._id, { rating: rating, text: text, user: userService.currentUser._id })
+        staffService.AddRating(staffData._id, { rating: rating, text: text, user: userService.currentUser._id })
             .then(res => {
                 console.log(res);
             })
     }
 
     const renderReviews = () => {
-        if (equipmentData.reviews)
-            return equipmentData.reviews.map((review, index) => {
+        if (staffData.reviews)
+            return stafftData.reviews.map((review, index) => {
                 return (
                     <Card key={index}>
                         <CardContent>
@@ -77,7 +77,7 @@ const EquipmentDetails = () => {
             })
     }
 
-    if (equipmentData)
+    if (staffData)
         return (
             <div className="col-md-10 mx-auto" >
                 <h2 className="text-center">Details</h2>
@@ -85,17 +85,17 @@ const EquipmentDetails = () => {
 
                 <div className="row">
                     <div className="col-md-6">
-                        <img src={`${url}${equipmentData.avatar}`} className={clsx(cssClasses.image, "img-fluid")} />
+                        <img src={`${url}${staffData.avatar}`} className={clsx(cssClasses.image, "img-fluid")} />
                     </div>
                     <div className="col-md-6">
-                        <h3>{equipmentData.name}</h3>
+                       <h3>staffData.name}</h3>
                         <Rating name={'rating'} value={2} />
                         <Typography variant={'body2'} >
                             4.0
                         </Typography>
-                        <p>{equipmentData.description}</p>
-                        <p>{equipmentData.features}</p>
-                        <h1>{equipmentData.price}</h1>
+                        <p>{staffData.description}</p>
+                        <p>{staffData.features}</p>
+                        <h1>{staffData.price}</h1>
 
                     </div>
                 </div>
@@ -134,4 +134,4 @@ const EquipmentDetails = () => {
 }
 
 
-export default EquipmentDetails;
+export default StaffDetails;
