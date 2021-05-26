@@ -29,7 +29,7 @@ const Register = () => {
     return (
        <div className="row">
            <div className="col-md-5">
-            <img src="reg_image.png"/>
+            <img src="D:\HomeHospital\frontend\src\components\main\reg_img.png"/>
            </div>
            
            <div className="col-md-6 mx-auto">
