@@ -79,18 +79,13 @@ const ListStaff = () => {
                                                        staff.description
                                                     }
                                                 />
-                                                <div className="row">
+                                                                                                 
                                                     <div className="col">
                                                         <Button color={'primary'} fullWidth className={styles.cta}>
-                                                            <Link to={`/app/staffdetails._id}`}>Buy Now</Link> <ChevronRightRounded />
+                                                        <Link to={`/app/staffDetails/${staff._id}`}>Rent Now</Link> <ChevronRightRounded />
                                                         </Button>
                                                     </div>
-                                                    <div className="col">
-                                                        <Button color={'primary'} fullWidth className={styles.cta}>
-                                                        <Link to={`/app/staffdetails/${staff._id}`}>Rent Now</Link> <ChevronRightRounded />
-                                                        </Button>
-                                                    </div>
-                                                </div>
+                                           
                                             </CardContent>
                                         </Card>
                                     </div>
