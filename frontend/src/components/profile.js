@@ -87,7 +87,7 @@ const Profile = props => {
                 <CardContent>
                     <div className="row">
                         <div className="col-md-4">
-                            <img />
+                            <img src="register.jpg"/>
                         </div>
                         <div className="col-md-8">
                             {

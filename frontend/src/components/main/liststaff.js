@@ -3,14 +3,30 @@ import clsx from "clsx";
 import React from "react";
 import { StaffContext } from "../../providers/staffContext";
 
-const useStyles = makeStyles(theme => ({
+
+const useStyles = makeStyles(() => ({
+    root: {
+        margin: 'auto',
+        boxShadow: 'none',
+        borderRadius: 0,
+    },
+    content: {
+        padding: 24,
+    },
+    cta: {
+        marginTop: 24,
+        textTransform: 'initial',
+    },
+    cardImg: {
+        height: '10rem'
+    },
     card: {
         marginTop: '5rem'
     },
     cardBody: {
         height: '15rem'
     }
-}))
+}));
 
 const ListStaff = () => {
 

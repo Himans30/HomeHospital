@@ -28,13 +28,13 @@ const Home = () => {
                         <ul>
                             <li><a className="nav-link scrollto active" href="#hero">Home</a></li>
                             <li><a className="nav-link scrollto" href="#about">About</a></li>
-                            <li><a className="nav-link scrollto" href="#services">Services</a></li>
+                            {/* <li><a className="nav-link scrollto" href="#services">Services</a></li> */}
                             
 
-                            <li className="dropdown"><a href="#"><span>Drop Down</span> <i className="bi bi-chevron-down"></i></a>
+                            <li className="dropdown"><a href="#services"><span>Services</span> <i className="bi bi-chevron-down"></i></a>
                                 <ul>
-                                    <li><a href="#">Drop Down 1</a></li>
-                                    <li className="dropdown"><a href="#"><span>Deep Drop Down</span> <i className="bi bi-chevron-right"></i></a>
+                                    <li><a href="/app/liststaff">Nurses</a></li>
+                                    {/* <li className="dropdown"><a href="#"><span>Deep Drop Down</span> <i className="bi bi-chevron-right"></i></a>
                                         <ul>
                                             <li><a href="#">Deep Drop Down 1</a></li>
                                             <li><a href="#">Deep Drop Down 2</a></li>
@@ -42,10 +42,10 @@ const Home = () => {
                                             <li><a href="#">Deep Drop Down 4</a></li>
                                             <li><a href="#">Deep Drop Down 5</a></li>
                                         </ul>
-                                    </li>
-                                    <li><a href="#">Drop Down 2</a></li>
-                                    <li><a href="#">Drop Down 3</a></li>
-                                    <li><a href="#">Drop Down 4</a></li>
+                                    </li> */}
+                                    <li><a href="#">Ward Boy</a></li>
+                                    <li><a href="/app/listequipments">Medical Equipment</a></li>
+                                   
                                 </ul>
                             </li>
                             <li><a className="nav-link scrollto" href="#contact">Contact</a></li>
@@ -115,14 +115,11 @@ const Home = () => {
                 </section>
 
                 <section id="about" className="about">
-                    <div className="container-fluid">
-
-                        
-
+                    <div className="container">
 
                            <div>
 
-                                <h3>About us</h3>
+                                <h3 className="section-title">About us</h3>
                                 <p>HomeHospital delivers quality care with compassion. We bring world class medical care into our patients’ homes and aim to make primary healthcare not only more accessible, but also more affordable and accountable to our patients’ needs..</p>
 
                                 <div className="icon-box">
@@ -189,51 +186,59 @@ const Home = () => {
                         </div>
 
                         <div className="row">
-                            <div className="col-lg-4 col-md-6 d-flex align-items-stretch">
+                            {/* <div className="col-lg-4 col-md-6 d-flex align-items-stretch">
                                 <div className="icon-box">
                                     <div className="icon"><i className="fas fa-heartbeat"></i></div>
                                     <h4><a href="">Critical Care</a></h4>
                                     <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
                                 </div>
-                            </div>
-
+                            </div> */}
+{/* 
                             <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
                                 <div className="icon-box">
                                     <div className="icon"><i className="fas fa-pills"></i></div>
                                     <h4><a href="">Elder Care</a></h4>
                                     <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
                                 </div>
-                            </div>
-
+                            </div> */}
+{/* 
                             <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
                                 <div className="icon-box">
                                     <div className="icon"><i className="fas fa-hospital-user"></i></div>
                                     <h4><a href="">Trained Attendants</a></h4>
                                     <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
                                 </div>
-                            </div>
+                            </div> */}
 
                             <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+                                <div className="icon-box">
+                                    <div className="icon"><i className="fas fa-heartbeat"></i></div>
+                                    <h4><a href="">Ward Boy's</a></h4>
+                                    <p>Ward boys are primarily responsible for providing care to a patient, an elderly person, chronically sick person or to a mentally and physically disabled person</p>
+                                </div>
+                            </div>
+
+                            {/* <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
                                 <div className="icon-box">
                                     <div className="icon"><i className="fas fa-dna"></i></div>
                                     <h4><a href="">New born Baby & Mother Care</a></h4>
                                     <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
                                 </div>
-                            </div>
+                            </div> */}
 
                             <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
                                 <div className="icon-box">
                                     <div className="icon"><i className="fas fa-wheelchair"></i></div>
-                                    <h4><a href="">Nursing</a></h4>
-                                    <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
+                                    <h4><a href="/app/liststaff">Nurses</a></h4>
+                                    <p>Nurse treat patients, record their medical history, provide emotional support, and provide follow-up care. Nurses also help doctors perform diagnostic tests.</p>
                                 </div>
                             </div>
 
                             <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
                                 <div className="icon-box">
                                     <div className="icon"><i className="fas fa-notes-medical"></i></div>
-                                    <h4><a href="">Medical Equipments</a></h4>
-                                    <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
+                                    <h4><a href="/app/listequipments">Medical Equipments</a></h4>
+                                    <p>Medical equipment is used for the specific purposes of diagnosis and treatment of disease or rehabilitation following disease or injury; it can be used either alone or in combination with any accessory, consumable or other piece of medical equipment.</p>
                                 </div>
                             </div>
 
@@ -579,13 +584,12 @@ Our sales staff can also process other payment types manually, including checks 
 
                             <div className="col-lg-3 col-md-6 footer-links">
                                 <h4>Our Services</h4>
-                                {/* <ul>
-                                    <li><i className="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                                    <li><i className="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                                    <li><i className="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                                    <li><i className="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                                    <li><i className="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-                                </ul> */}
+                                <ul>
+                                    <li><i className="bx bx-chevron-right"></i> <a href="#">Nurse</a></li>
+                                    <li><i className="bx bx-chevron-right"></i> <a href="#">Ward Boy</a></li>
+                                    <li><i className="bx bx-chevron-right"></i> <a href="#">Medical Equipment</a></li>
+                                    
+                                </ul>
                             </div>
 
                             <div className="col-lg-4 col-md-6 footer-newsletter">

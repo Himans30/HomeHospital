@@ -3,6 +3,8 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../providers/userContext";
 
+
+
 const Register = () => {
 
     const userService = useContext(UserContext);
@@ -26,7 +28,10 @@ const Register = () => {
     }
 
     return (
-        <div className="col-md-6 mx-auto">
+       
+         
+           
+           <div className="col-md-6 mx-auto">
             <div className="card">
                 <div className="card-body">
                     <Formik
@@ -74,6 +79,9 @@ const Register = () => {
                 </div>
             </div>
         </div>
+        
+     
+      
     )
 
 }
