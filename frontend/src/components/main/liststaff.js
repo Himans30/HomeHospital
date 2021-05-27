@@ -51,22 +51,25 @@ const ListStaff = () => {
 
             <Card className={clsx(styles.card)}>
                 <CardContent className={styles.cardBody}>
-                    <h1>Category 1</h1>
+                    <h1>Newborn Baby and Mother Care</h1>
                     <Button>Hire Now</Button>
                 </CardContent>
             </Card>
 
             <Card className={clsx(styles.card)}>
                 <CardContent className={styles.cardBody}>
-                    <h1>Category 1</h1>
+                    <h1>Nursing</h1>
+                    <Button>Hire Now</Button>
                 </CardContent>
             </Card>
 
             <Card className={clsx(styles.card)}>
                 <CardContent className={styles.cardBody}>
-                    <h1>Category 1</h1>
+                    <h1>Critical Care</h1>
+                    <Button>Hire Now</Button>
                 </CardContent>
             </Card>
+           
         </div>
     )
 }
