@@ -8,17 +8,19 @@ import { blue, green } from '@material-ui/core/colors';
 import Admin from './components/admin';
 import ManageUser from './components/admin/manageuser';
 import UserDashboard from './components/user';
-import Checkout from './components/checkout';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import MainComponent from './components/main';
 import { EquipmentProvider } from './providers/equipmentContext';
 import { StaffProvider } from './providers/staffContext';
 import Home from './components/home';
-
-const stripePromise = loadStripe("pk_test_Vmvhpm2TASsGcgF4RcyQfkF000KwucQJR1");
+import Checkout from './components/checkout';
 
 function App() {
+
+  const stripe = loadStripe(
+    "pk_test_51Ipo7TSDDpZ34k6P9IaeHYV7pWYXIAgKvLW69GubrVnlAzqOJw9gmLUIrpltZ7sIxwCty7bCeVtmvm3L074TyX26009MOlwjs1"
+  );
 
   const theme = createMuiTheme({
     palette: {
@@ -38,7 +40,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Elements stripe={stripePromise}>
+      <Elements stripe={stripe}>
         <Router>
           <UserProvider>
 

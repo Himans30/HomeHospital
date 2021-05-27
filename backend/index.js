@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 
 const port = require('./config').port;
+const stripe_sk = require('./config').stripe_sk;
+
 
 const userRouter = require('./routers/userManager');
 const equipmentRouter = require('./routers/equipmentManager');
@@ -24,6 +26,17 @@ app.use(express.static('./uploads'));
 app.get('/home', (req, res) => {
     res.send("Welcome Home");
 })
+
+const stripe = require("stripe")(stripe_sk);
+
+app.post("/create-payment-intent", async (req, res) => {
+    const data = req.body;
+    const paymentIntent = await stripe.paymentIntents.create({
+        amount: data.amount,
+        currency: 'inr'
+    });
+    res.status(200).json(paymentIntent);
+});
 
 app.listen(port, () => {
     console.log('server started at port 5000')
