@@ -44,5 +44,5 @@ router.post('/sendmail', (req, res) => {
 })
 
 
-  
+
 module.exports = router;
