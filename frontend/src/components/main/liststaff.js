@@ -1,6 +1,7 @@
 import { Button, Card, CardContent, List, ListItem, makeStyles } from "@material-ui/core";
 import clsx from "clsx";
 import React from "react";
+import { Link } from "react-router-dom";
 import { StaffContext } from "../../providers/staffContext";
 
 
@@ -52,14 +53,15 @@ const ListStaff = () => {
             <Card className={clsx(styles.card)}>
                 <CardContent className={styles.cardBody}>
                     <h1>Newborn Baby and Mother Care</h1>
-                    <Button>Hire Now</Button>
+                    <Link to="/app/liststaff"> Hire Now</Link>
                 </CardContent>
             </Card>
 
             <Card className={clsx(styles.card)}>
                 <CardContent className={styles.cardBody}>
                     <h1>Nursing</h1>
-                    <Button>Hire Now</Button>
+                    <Link to="/app/serviceform"> Hire Now</Link>
+
                 </CardContent>
             </Card>
 
@@ -69,7 +71,7 @@ const ListStaff = () => {
                     <Button>Hire Now</Button>
                 </CardContent>
             </Card>
-           
+
         </div>
     )
 }

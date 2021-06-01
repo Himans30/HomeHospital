@@ -24,9 +24,12 @@ const Profile = props => {
     useEffect(() => {
 
         if (userService.currentUser) {
-            console.log(userService.currentUser);
-            updateForm = userService.currentUser;
-            setLoading(false);
+            const user = userService.currentUser;
+            if (user) {
+                console.log(userService.currentUser);
+                updateForm = userService.currentUser;
+                setLoading(false);
+            }
         }
 
     }, [])
@@ -87,7 +90,7 @@ const Profile = props => {
                 <CardContent>
                     <div className="row">
                         <div className="col-md-4">
-                            <img src="register.jpg"/>
+                            <img src="register.jpg" />
                         </div>
                         <div className="col-md-8">
                             {
