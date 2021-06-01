@@ -104,7 +104,7 @@ const Login = () => {
                                         <p className="mt-3 text-left">Register Instead? <Link to="/app/register">Register Here</Link></p>
                                     </div>
                                     <div className="col-md-5 mx-auto">
-                                        <p className="mt-3 text-right"> Forgot Password <Link to="">Forgot Password</Link></p>
+                                        <p className="mt-3 text-right"> Forgot Password <Link to="/app/reset">Forgot Password</Link></p>
                                     </div>
 
                                 </div>

@@ -1,5 +1,6 @@
-// const mailjs = require('emailjs/email');
+const nodemailer = require('nodemailer');
 const express = require("express")
+const config = require('../config');
 const router = express.Router();
 const multer = require('multer');
 
@@ -18,7 +19,7 @@ router.post('/addimg', upload.single('image'), (req, res) => {
     res.json({ message: "File upload success" })
 })
 
-const transporter = nodemailer.createTransport({
+const transporter = nodemailer .createTransport({
     service: 'gmail',
     auth: {
         user: config.email,
