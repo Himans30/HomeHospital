@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 
 const UserDashboard = () => {
 
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
     const classes = useStyles();
 
     const handleDrawerOpen = () => {
