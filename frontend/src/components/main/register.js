@@ -1,17 +1,26 @@
+import { Card, CardContent, makeStyles } from "@material-ui/core";
+import clsx from "clsx";
 import { Formik } from "formik";
-import React from "react";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { UserContext } from "../../providers/userContext";
 import Swal from "sweetalert2";
+import { UserContext } from "../../providers/userContext";
+import cssClasses from "../cssClasses";
 
+const useStyles = makeStyles(theme => ({
+    card: {
+        marginTop: '5rem'
+    }
+}))
 
 const Register = () => {
 
     const userService = useContext(UserContext);
-    const [avatar, setAvatar] = React .useState("");
-    const [imgpath, setImgPath] = React.useState("");
+    const [imgpath, setImgPath] = useState("");
+    const [avatar, setAvatar] = useState("");
 
+    const globalStyles = cssClasses();
+    const styles = useStyles();
 
     const history = useHistory();
 
@@ -30,7 +39,8 @@ const Register = () => {
         value['avatar'] = avatar;
         userService.addUser(value)
 
-            .then(res => {console.log(res)
+            .then(res => {
+                console.log(res)
                 Swal.fire({
                     icon: 'success',
                     title: 'Signup Success',
@@ -38,8 +48,8 @@ const Register = () => {
                 })
                     .then(d => {
                         history.push('/app/login');
-                    })    
-    });
+                    })
+            });
     }
 
 
@@ -53,14 +63,12 @@ const Register = () => {
 
     const uploadImage = (event) => {
         const data = new FormData();
-        data.append('image', event.target.files[0]);
+        data.append("image", event.target.files[0]);
         setAvatar(event.target.files[0].name);
-        userService.uploadImage(data)
-            .then(res => console.log(res));
+        userService.uploadImage(data).then((res) => console.log(res));
 
         var mimeType = event.target.files[0].type;
         if (mimeType.match(/image\/*/) == null) {
-            // erroMsg = 'Only images are supported.';
             return;
         }
 
@@ -69,15 +77,16 @@ const Register = () => {
         reader.onload = (_event) => {
             setImgPath(reader.result);
         };
-    }
+    };
+
 
     return (
-       
-         
-           
-           <div className="col-md-6 mx-auto">
-            <div className="card">
-                <div className="card-body">
+
+
+
+        <div className="col-md-6 mx-auto">
+            <Card className={clsx(globalStyles.card, styles.card)}>
+                <CardContent>
                     <Formik
                         initialValues={registerForm}
                         onSubmit={onFormSubmit}
@@ -95,7 +104,7 @@ const Register = () => {
                                 <div className="row">
                                     <div className="col-md mt-5">
                                         <label className="mt-5">Full Name</label>
-                                        <input type="text" className="form-control" id="firstname" onChange={handleChange} value={values.firstname} />
+                                        <input type="text" className="form-control" id="fullname" onChange={handleChange} value={values.fullname} />
                                     </div>
 
                                 </div>
@@ -110,7 +119,11 @@ const Register = () => {
                                 <input type="password" className="form-control" id="password" onChange={handleChange} value={values.password} />
 
                                 {showAvatar()}
-                                <input className="form-control mt-5" type="file" onChange={uploadImage} />
+                                <input
+                                    className="form-control mt-5"
+                                    type="file"
+                                    onChange={uploadImage}
+                                />
 
                                 <div className="text-center">
                                     <button className="btn btn-warning mt-5 w-100">Submit</button>
@@ -121,12 +134,12 @@ const Register = () => {
                             </form>
                         )}
                     </Formik>
-                </div>
-            </div>
-        </div>
-        
-     
-      
+                </CardContent>
+            </Card >
+        </div >
+
+
+
     )
 
 }
