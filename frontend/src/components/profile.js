@@ -19,58 +19,19 @@ const Profile = props => {
 
     const userService = useContext(UserContext);
     const [loading, setLoading] = useState(true)
-    let updateForm;
+    const [updateForm, setUpdateForm] = useState({})
 
     useEffect(() => {
 
         if (userService.currentUser) {
             const user = userService.currentUser;
             if (user) {
-                console.log(userService.currentUser);
-                updateForm = userService.currentUser;
+                setUpdateForm(user);
                 setLoading(false);
             }
         }
 
     }, [])
-
-    const renderForm = () => {
-        if (!loading) {
-            return (
-                <Formik
-                    initialValues={updateForm}
-                    onSubmit={onFormSubmit}
-                >
-                    {({
-                        values,
-                        handleChange,
-                        handleSubmit,
-                        isSubmitting
-                    }) => (
-                        <form onSubmit={handleSubmit}>
-
-                            <h3 className="text-center">Register Here</h3>
-
-                            <TextField label="Full Name" variant="filled" name="fullname" className={baseClasses.input} onChange={handleChange} value={values.username} />
-                            <TextField label="Email" variant="filled" name="email" className={baseClasses.input} onChange={handleChange} value={values.email} />
-                            <TextField label="Age" variant="filled" name="age" className={baseClasses.input} onChange={handleChange} value={values.age} />
-                            <TextField type="password" label="Password" name="password" variant="filled" className={baseClasses.input} onChange={handleChange} value={values.password} />
-
-                            <div className="text-center">
-                                <Button className="mt-5 w-100">Submit</Button>
-                            </div>
-
-                        </form>
-                    )}
-                </Formik>
-
-            )
-        } else {
-            return (
-                <CircularProgress />
-            )
-        }
-    }
 
     const onFormSubmit = (value, { setSubmitting }) => {
 
@@ -93,9 +54,33 @@ const Profile = props => {
                             <img src="register.jpg" />
                         </div>
                         <div className="col-md-8">
-                            {
-                                renderForm()
-                            }
+                            <Formik
+                                enableReinitialize={true}
+                                initialValues={updateForm}
+                                onSubmit={onFormSubmit}
+                            >
+                                {({
+                                    values,
+                                    handleChange,
+                                    handleSubmit,
+                                    isSubmitting
+                                }) => (
+                                    <form onSubmit={handleSubmit}>
+
+                                        <h3 className="text-center">Register Here</h3>
+
+                                        <TextField label="Full Name" variant="filled" name="fullname" className={baseClasses.input} onChange={handleChange} value={values.username} />
+                                        <TextField label="Email" variant="filled" name="email" className={baseClasses.input} onChange={handleChange} value={values.email} />
+                                        <TextField label="Age" variant="filled" name="age" className={baseClasses.input} onChange={handleChange} value={values.age} />
+                                        <TextField type="password" label="Password" name="password" variant="filled" className={baseClasses.input} onChange={handleChange} value={values.password} />
+
+                                        <div className="text-center">
+                                            <Button className="mt-5 w-100">Submit</Button>
+                                        </div>
+
+                                    </form>
+                                )}
+                            </Formik>
                         </div>
                     </div>
                 </CardContent>

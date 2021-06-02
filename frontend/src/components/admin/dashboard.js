@@ -1,13 +1,14 @@
 import { Button, Card, CardActions, CardContent, makeStyles, Typography } from "@material-ui/core";
 import clsx from "clsx";
 import cssClasses from '../cssClasses';
-import { Doughnut } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 import { EquipmentContext } from "../../providers/equipmentContext";
 import { useContext, useEffect, useState } from "react";
 
 const customStyles = makeStyles(theme => ({
     card: {
-        marginTop: '2rem'
+        marginTop: '2rem',
+        height: '20rem',
     }
 }))
 
@@ -39,6 +40,25 @@ const AdminDashboard = props => {
 
     }, [])
 
+    const prepareRegData = () => {
+
+    }
+
+    const drawBar = (labels, data, legend) => {
+
+        let options = {
+            maintainAspectRatio: false,
+        }
+
+        return (
+            <Bar data={{
+                labels: labels,
+                datasets: [{ label: legend, data: data }]
+            }}
+                options={options} />
+        )
+    }
+
 
     return (
         <div className="col-md-11 mx-auto">
@@ -46,10 +66,6 @@ const AdminDashboard = props => {
                 <div className="col-md-6">
                     <Card className={clsx(baseClasses.card, customClasses.card)}>
                         <CardContent>
-                            {
-
-                                equipmentList ? <Doughnut data={equipmentList} /> : ""
-                            }
 
                         </CardContent>
                         <CardActions>

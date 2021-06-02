@@ -5,7 +5,7 @@ const { useContext } = require("react");
 
 
 const ServiceForm = props => {
-    const service = useContext(ServiceContext);
+    // const service = useContext(ServiceContext);
 
     const serviceForm = {
         fullname: '',
@@ -17,9 +17,9 @@ const ServiceForm = props => {
         console.log(value);
         setSubmitting = true;
 
-        service.addUser(value)
+        // service.addUser(value)
 
-            .then(res => console.log(res));
+        //     .then(res => console.log(res));
     }
 
     return (

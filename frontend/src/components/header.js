@@ -2,7 +2,7 @@ import { AppBar, Button, IconButton, Toolbar, Typography } from "@material-ui/co
 import MenuIcon from '@material-ui/icons/Menu';
 import { makeStyles } from '@material-ui/core/styles';
 import { useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import app_config from '../config';
 import clsx from "clsx";
 import { UserContext } from "../providers/userContext";
@@ -13,6 +13,7 @@ const Header = props => {
     const drawerWidth = props.drawerWidth;
     const handleDrawerOpen = props.handleDrawerOpen;
     const userService = useContext(UserContext);
+    const history = useHistory();
 
 
     const useStyles = makeStyles((theme) => ({
@@ -48,6 +49,14 @@ const Header = props => {
 
     }));
 
+
+    const handleLogout = (e) => {
+        sessionStorage.removeItem("user");
+        userService.setLoggedin(false);
+        userService.setCurrentUser(null);
+        history.push("/app/login");
+    };
+
     const classes = useStyles();
 
     const showMenuButton = () => {
@@ -71,13 +80,17 @@ const Header = props => {
 
     const renderLoggedIn = () => {
         let user = userService.currentUser;
-        console.log(user);
         if (user) {
-
+            const dashLink = user.isadmin ? 'admin' : 'user';
             return (
                 <div>
-                    <Link to="/admin/dashboard" className={classes.link}>
+                    <Link to={`/${dashLink}/dashboard`} className={classes.link}>
                         <Button color="inherit">Dashboard</Button>
+                    </Link>
+                    <Link to="/main/login" className={classes.link}>
+                        <Button color="inherit" onClick={handleLogout}>
+                            Logout
+            </Button>
                     </Link>
                 </div>
             )

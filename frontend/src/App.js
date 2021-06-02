@@ -15,11 +15,12 @@ import { EquipmentProvider } from './providers/equipmentContext';
 import { StaffProvider } from './providers/staffContext';
 import Home from './components/home';
 import Checkout from './components/checkout';
+import { OrderProvider } from './providers/orderContext';
 
 function App() {
 
   const stripe = loadStripe(
-    "pk_test_51Ipo7TSDDpZ34k6P9IaeHYV7pWYXIAgKvLW69GubrVnlAzqOJw9gmLUIrpltZ7sIxwCty7bCeVtmvm3L074TyX26009MOlwjs1"
+    "pk_test_Vmvhpm2TASsGcgF4RcyQfkF000KwucQJR1"
   );
 
   const theme = createMuiTheme({
@@ -28,7 +29,8 @@ function App() {
         main: blue[500],
       },
       secondary: {
-        main: green[500],
+        main: green[700],
+        color: 'white'
       },
     },
     transitions: {
@@ -50,25 +52,20 @@ function App() {
                   <Redirect to="/app" />
                 </Route>
 
-                <Route path="/admin/manageuser">
-                  <ManageUser />
-                </Route>
+                <OrderProvider>
+                  <Route path="/user">
+                    <UserDashboard />
+                  </Route>
 
-                <Route path="/admin">
-                  <Admin />
-                </Route>
+                  <Route path="/admin">
+                    <Admin />
+                  </Route>
 
-                <Route path="/app">
-                  <MainComponent />
-                </Route>
+                  <Route path="/app">
+                    <MainComponent />
+                  </Route>
 
-                <Route path="/user">
-                  <UserDashboard />
-                </Route>
-
-                <Route path="/checkout">
-                  <Checkout />
-                </Route>
+                </OrderProvider>
 
                 <Route path="/home">
                   <Home />

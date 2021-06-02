@@ -1,6 +1,6 @@
 import { Backdrop, Button, Card, CardContent, CircularProgress, Fade, makeStyles, Snackbar, TextField, Typography } from "@material-ui/core";
 import { createRef, useContext, useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useHistory, useParams } from "react-router";
 import app_config from "../../config";
 import { EquipmentContext } from "../../providers/equipmentContext";
 import cssClasses from "../cssClasses";
@@ -34,6 +34,7 @@ const EquipmentDetails = () => {
     const wrapper = createRef();
     const url = app_config.api_url + '/';
     const [open, setOpen] = useState(false);
+    const history = useHistory();
 
 
     const fetchEquipment = () => {
@@ -114,6 +115,11 @@ const EquipmentDetails = () => {
         setOpen(false);
     };
 
+    const handleOrder = () => {
+        sessionStorage.setItem('order-item', JSON.stringify(equipmentData));
+        history.push('/app/checkout');
+    }
+
     if (equipmentData)
         return (
             <div className="col-md-10 mx-auto" >
@@ -144,6 +150,7 @@ const EquipmentDetails = () => {
                         <p>{equipmentData.features}</p>
                         <h1>{equipmentData.price}</h1>
 
+                        <Button className="mt-5" variant="contained" color="primary" onClick={handleOrder}>Order Now</Button>
                     </div>
                 </div>
 

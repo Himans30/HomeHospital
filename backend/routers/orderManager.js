@@ -29,9 +29,9 @@ router.get('/getall', (req, res) => {
         })
 })
 
-router.get('/getbyid/:id', (req, res) => {
+router.get('/getbyuser/:id', (req, res) => {
 
-    Model.findById(req.params.id)
+    Model.find({ user: req.params.id }).populate('user').populate('equipment')
         .then(data => {
             console.log('user data fetched by id');
             res.status(200).json(data);
