@@ -1,13 +1,14 @@
 import { Formik } from "formik";
 import { Link } from "react-router-dom";
+import { NursingContext } from "../../providers/nursingContext";
 
 const { useContext } = require("react");
 
 
-const ServiceForm = props => {
-    // const service = useContext(ServiceContext);
+const NursingForm = props => {
+    const nursing = useContext(NursingContext);
 
-    const serviceForm = {
+    const nursingForm = {
         fullname: '',
         timing: '',
         shift: '',
@@ -17,7 +18,7 @@ const ServiceForm = props => {
         console.log(value);
         setSubmitting = true;
 
-        // service.addUser(value)
+        nursing.addUser(value)
 
         //     .then(res => console.log(res));
     }
@@ -30,7 +31,7 @@ const ServiceForm = props => {
             <div className="card">
                 <div className="card-body">
                     <Formik
-                        initialValues={serviceForm}
+                        initialValues={nursingForm}
                         onSubmit={onFormSubmit}
                     >
                         {({
@@ -73,4 +74,4 @@ const ServiceForm = props => {
     )
 }
 
-export default ServiceForm;
+export default NursingForm;

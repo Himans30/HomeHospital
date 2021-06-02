@@ -2,7 +2,8 @@ import { Card, CardContent, makeStyles } from "@material-ui/core";
 import clsx from "clsx";
 import { Formik } from "formik";
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import Swal from "sweetalert2";
 import { UserContext } from "../../providers/userContext";
 import cssClasses from "../cssClasses";
 
@@ -21,6 +22,8 @@ const Register = () => {
     const globalStyles = cssClasses();
     const styles = useStyles();
 
+    const history = useHistory();
+
     const registerForm = {
         fullname: '',
         email: '',
@@ -36,14 +39,27 @@ const Register = () => {
         value['avatar'] = avatar;
         userService.addUser(value)
 
-            .then(res => console.log(res));
+            .then(res => {
+                console.log(res)
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Signup Success',
+                    text: 'You have registered sucessfully'
+                })
+                    .then(d => {
+                        history.push('/app/login');
+                    })
+            });
     }
+
 
     const showAvatar = () => {
         if (imgpath) {
-            return <img src={imgpath} className="img-fluid" />;
+            return (
+                <img src={imgpath} className="img-fluid" />
+            )
         }
-    };
+    }
 
     const uploadImage = (event) => {
         const data = new FormData();
@@ -119,8 +135,8 @@ const Register = () => {
                         )}
                     </Formik>
                 </CardContent>
-            </Card>
-        </div>
+            </Card >
+        </div >
 
 
 

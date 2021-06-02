@@ -53,14 +53,14 @@ const ListStaff = () => {
             <Card className={clsx(styles.card)}>
                 <CardContent className={styles.cardBody}>
                     <h1>Newborn Baby and Mother Care</h1>
-                    <Link to="/app/liststaff"> Hire Now</Link>
+                    <Link to="/app/nursingform"> Hire Now</Link>
                 </CardContent>
             </Card>
 
             <Card className={clsx(styles.card)}>
                 <CardContent className={styles.cardBody}>
                     <h1>Nursing</h1>
-                    <Link to="/app/serviceform"> Hire Now</Link>
+                    <Link to="/app/nursingform"> Hire Now</Link>
 
                 </CardContent>
             </Card>
@@ -68,7 +68,7 @@ const ListStaff = () => {
             <Card className={clsx(styles.card)}>
                 <CardContent className={styles.cardBody}>
                     <h1>Critical Care</h1>
-                    <Button>Hire Now</Button>
+                    <Link to="/app/nursingform"> Hire Now</Link>
                 </CardContent>
             </Card>
 
