@@ -1,4 +1,4 @@
-const Model = require('../models/serviceModel');
+const Model = require('../models/nursingModel');
 const router = require('express').Router();
 
 
@@ -7,7 +7,7 @@ router.post('/add', (req, res) => {
 
     new Model(data).save()
         .then(data => {
-            console.log('equipment data saved');
+            console.log('hire form data saved');
             res.status(200).json({ message: 'success' });
         })
         .catch(err => {
@@ -32,7 +32,7 @@ router.get('/getbyuser/:id', (req, res) => {
 
     Model.find({ user: req.params.id })
         .then(data => {
-            console.log('equipment data fetched by id');
+            console.log('nursing form data fetched by id');
             res.status(200).json(data);
         })
         .catch(err => {

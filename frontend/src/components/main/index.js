@@ -10,7 +10,7 @@ import listEquipments from './listEquipments';
 import ListEquipments from './listEquipments';
 import ListStaff from './liststaff';
 import EquipmentDetails from './equipmentDetails';
-import ServiceForm from './serviceform';
+import NursingForm from './nursingform';
 
 const drawerWidth = 240;
 
@@ -50,7 +50,7 @@ const MainComponent = () => {
                 <Route path={`${path}/listequipments`} component={ListEquipments} />
                 <Route path={`${path}/equipmentdetails/:id`} component={EquipmentDetails} />
                 <Route path={`${path}/liststaff`} component={ListStaff} />
-                <Route path={`${path}/liststaff`} component={ServiceForm} />
+                <Route path={`${path}/liststaff`} component={NursingForm} />
             </Switch>
         </div>
     )
