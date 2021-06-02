@@ -70,7 +70,7 @@ const Login = () => {
     return (
 
 
-        <div className="col-md-3 mx-auto">
+        <div className="col-md-7 mx-auto">
             <Card className={clsx(globalStyles.card, styles.card)}>
                 <CardContent>
                     <Formik
@@ -106,7 +106,7 @@ const Login = () => {
                                 </div>
 
                                 <div className="text-center">
-                                    <button className="btn btn-warning mt-5 w-100">Submit</button>
+                                    <button className="btn btn-primary mt-5 w-100">Submit</button>
                                 </div>
                                 <div className="row">
 

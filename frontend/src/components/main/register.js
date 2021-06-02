@@ -126,7 +126,7 @@ const Register = () => {
                                 />
 
                                 <div className="text-center">
-                                    <button className="btn btn-warning mt-5 w-100">Submit</button>
+                                    <button className="btn btn-primary mt-5 w-100">Submit</button>
                                 </div>
 
                                 <p className="mt-3 text-center">Already Registered? <Link to="/app/login">Login Here</Link></p>
