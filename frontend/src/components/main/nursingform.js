@@ -20,7 +20,7 @@ const NursingForm = props => {
 
         nursing.addUser(value)
 
-            .then(res => console.log(res));
+        //     .then(res => console.log(res));
     }
 
     return (

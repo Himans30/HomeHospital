@@ -1,33 +1,28 @@
 import { useState } from 'react';
-import DrawerComponent from '../drawer';
 import Header from '../header';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import { useRouteMatch, Switch, Route, Redirect } from 'react-router';
-import Profile from '../profile';
 import Login from './login';
 import Register from './register';
-import listEquipments from './listEquipments';
 import ListEquipments from './listEquipments';
 import ListStaff from './liststaff';
 import EquipmentDetails from './equipmentDetails';
 import NursingForm from './nursingform';
+import Checkout from './checkout';
+import ForgotPassword from './forgotpassword';
 
 const drawerWidth = 240;
 
 const MainComponent = () => {
 
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
+
+    let { path, url } = useRouteMatch();
 
     const handleDrawerOpen = () => {
         console.log('drawer opened');
         setOpen(true);
     };
-
-    const handleDrawerClose = () => {
-        setOpen(false);
-    };
-
-    let { path, url } = useRouteMatch();
 
     const drawerOptions = [
         {
@@ -49,7 +44,9 @@ const MainComponent = () => {
                 <Route path={`${path}/register`} component={Register} />
                 <Route path={`${path}/listequipments`} component={ListEquipments} />
                 <Route path={`${path}/equipmentdetails/:id`} component={EquipmentDetails} />
+                <Route path={`${path}/checkout`} component={Checkout} />
                 <Route path={`${path}/liststaff`} component={ListStaff} />
+                <Route path={`${path}/reset`} component={ForgotPassword} />
                 <Route path={`${path}/liststaff`} component={NursingForm} />
             </Switch>
         </div>

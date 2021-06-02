@@ -1,15 +1,25 @@
-import { Checkbox, FormControlLabel, Grid } from "@material-ui/core";
+import { Card, CardContent, Checkbox, FormControlLabel, Grid, makeStyles } from "@material-ui/core";
+import clsx from "clsx";
 import { Formik } from "formik";
 import { useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import Swal from "sweetalert2";
 import { UserContext } from "../../providers/userContext";
+import cssClasses from "../cssClasses";
 
+const useStyles = makeStyles(theme => ({
+    card: {
+        marginTop: '10rem'
+    }
+}))
 
 const Login = () => {
 
     const userService = useContext(UserContext);
     const history = useHistory();
+
+    const globalStyles = cssClasses();
+    const styles = useStyles();
 
     const loginForm = {
         email: '',
@@ -60,9 +70,9 @@ const Login = () => {
     return (
 
 
-        <div className="col-md-6 mx-auto">
-            <div className="card">
-                <div className="card-body">
+        <div className="col-md-3 mx-auto">
+            <Card className={clsx(globalStyles.card, styles.card)}>
+                <CardContent>
                     <Formik
                         initialValues={loginForm}
                         onSubmit={onFormSubmit}
@@ -112,8 +122,8 @@ const Login = () => {
                             </form>
                         )}
                     </Formik>
-                </div>
-            </div>
+                </CardContent>
+            </Card>
         </div>
 
 
