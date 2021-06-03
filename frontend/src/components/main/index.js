@@ -11,7 +11,7 @@ import NursingForm from './nursingform';
 import Checkout from './checkout';
 import ForgotPassword from './forgotpassword';
 
-const drawerWidth = 240;
+const drawerWidth = 0;
 
 const MainComponent = () => {
 
