@@ -47,7 +47,7 @@ const MainComponent = () => {
                 <Route path={`${path}/checkout`} component={Checkout} />
                 <Route path={`${path}/liststaff`} component={ListStaff} />
                 <Route path={`${path}/reset`} component={ForgotPassword} />
-                <Route path={`${path}/liststaff`} component={NursingForm} />
+                <Route path={`${path}/nursingform`} component={NursingForm} />
             </Switch>
         </div>
     )
