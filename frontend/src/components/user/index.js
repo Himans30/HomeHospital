@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
             duration: theme.transitions.duration.shortest,
         }),
         marginLeft: 60,
+        height: '100vh'
     },
     contentShift: {
         transition: theme.transitions.create('margin', {
@@ -81,13 +82,13 @@ const UserDashboard = () => {
 
             <div className={clsx(classes.content, {
                 [classes.contentShift]: open,
-            })}>
+            }, 'user-layout')}>
                 <Switch>
+
+                    <Redirect exact path={`${path}/dashboard`} to={`${path}/profile`} />
+                    <Redirect exact path={`${path}`} to={`${path}/profile`} />
                     <Route path={`${path}/profile`} component={Profile} />
                     <Route path={`${path}/manageorder`} component={ManageUserOrders} />
-
-                    <Redirect exact path={`${path}/dashboard`} to={`${path}/profile`}>
-                    </Redirect>
                 </Switch>
             </div>
         </div>

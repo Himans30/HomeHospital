@@ -1,7 +1,7 @@
-import { AppBar, Button, IconButton, Toolbar, Typography } from "@material-ui/core";
+import { AppBar, Avatar, Button, IconButton, Toolbar, Typography } from "@material-ui/core";
 import MenuIcon from '@material-ui/icons/Menu';
 import { makeStyles } from '@material-ui/core/styles';
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import app_config from '../config';
 import clsx from "clsx";
@@ -13,7 +13,9 @@ const Header = props => {
     const drawerWidth = props.drawerWidth;
     const handleDrawerOpen = props.handleDrawerOpen;
     const userService = useContext(UserContext);
+    const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
     const history = useHistory();
+    const url = app_config.api_url + '/';
 
 
     const useStyles = makeStyles((theme) => ({
@@ -54,7 +56,7 @@ const Header = props => {
         sessionStorage.removeItem("user");
         userService.setLoggedin(false);
         userService.setCurrentUser(null);
-        history.push("/app/login");
+        history.push("/app");
     };
 
     const classes = useStyles();
@@ -121,7 +123,6 @@ const Header = props => {
                 <Typography variant="h6" className={classes.title}>
                     {app_config.projectTitle}
                 </Typography>
-                {renderLoggedIn()}
                 <Link to="/app/listequipments" className={classes.link}>
                     <Button color="inherit">Equipments</Button>
                 </Link>
@@ -129,6 +130,9 @@ const Header = props => {
                 <Link to="/app/liststaff" className={classes.link}>
                     <Button color="inherit">Services</Button>
                 </Link>
+                {renderLoggedIn()}
+                <Avatar src={url + currentUser.avatar} />
+
             </Toolbar>
         </AppBar>
     )
