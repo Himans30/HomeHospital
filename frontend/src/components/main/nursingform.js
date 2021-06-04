@@ -10,16 +10,16 @@ const NursingForm = props => {
 
     const nursingForm = {
         name: '',
-        age:'',
-        gender:'',
-        types_of_illnetypes_of_illnees:'',
-        address:'',
-        mob_no:'',
-        email_address:'',
+        age: '',
+        gender: '',
+        types_of_illnetypes_of_illnees: '',
+        address: '',
+        mob_no: '',
+        email_address: '',
         timing: '',
         shift: '',
-        medical_report:'',
-        health_condtion:''
+        medical_report: '',
+        health_condtion: ''
     };
 
     const onFormSubmit = (value, { setSubmitting }) => {
@@ -28,7 +28,7 @@ const NursingForm = props => {
 
         nursing.addUser(value)
 
-        //     .then(res => console.log(res));
+            .then(res => console.log(res));
     }
 
     return (
