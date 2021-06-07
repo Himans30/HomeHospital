@@ -124,7 +124,10 @@ const Header = props => {
             <Toolbar>
                 {showMenuButton()}
                 <Typography variant="h6" className={classes.title}>
-                    {app_config.projectTitle}
+                    {/* {app_config.projectTitle} */}
+                    <Link to="/home" className={classes.link}>
+                    <Button color="inherit">{app_config.projectTitle}</Button>
+                </Link>
                 </Typography>
                 <Link to="/app/listequipments" className={classes.link}>
                     <Button color="inherit">Equipments</Button>

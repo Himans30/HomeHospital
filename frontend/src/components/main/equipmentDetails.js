@@ -149,9 +149,15 @@ const EquipmentDetails = () => {
                         <p>{equipmentData.description}</p>
                         <p>{equipmentData.features}</p>
                         <h1>{equipmentData.price}</h1>
+                        
+                        <div className="row">
+                        <Button className="col-md-5 mt-5" variant="contained" color="primary" onClick={handleOrder}>Order Now</Button>
 
-                        <Button className="mt-5" variant="contained" color="primary" onClick={handleOrder}>Order Now</Button>
+                        <Button className="col-md-5 mt-5" variant="contained" color="primary" onClick={handleOrder}>Rent Now</Button> 
+                        </div>
+                        
                     </div>
+                    
                 </div>
 
                 <h3>Reviews</h3>

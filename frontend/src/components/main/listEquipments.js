@@ -215,9 +215,9 @@ const ListEquipments = () => {
     return (
         <div>
             <h1 className="text-center">List Equipments</h1>
-            <div className="col-md-11 mx-auto">
+            <div className="col-md-12 mx-auto">
                 <div className="row justify-content-center">
-                    <div className="col-md-3">
+                    <div className="col-md-2">
                         {renderOptions()}
                     </div>
                     <div className="col-md-8">
@@ -257,14 +257,10 @@ const ListEquipments = () => {
                                                         <div className="row">
                                                             <div className="col">
                                                                 <Button color={'primary'} fullWidth className={styles.cta}>
-                                                                    <Link to={`/app/equipmentdetails/${equipment._id}`}>Buy Now</Link> <ChevronRightRounded />
+                                                                    <Link to={`/app/equipmentdetails/${equipment._id}`}>View More</Link> <ChevronRightRounded />
                                                                 </Button>
                                                             </div>
-                                                            <div className="col">
-                                                                <Button color={'primary'} fullWidth className={styles.cta}>
-                                                                    Rent Now <ChevronRightRounded />
-                                                                </Button>
-                                                            </div>
+                                                         
                                                         </div>
                                                     </CardContent>
                                                 </Card>
