@@ -6,7 +6,6 @@ import { ThemeProvider } from "@material-ui/core";
 import { createMuiTheme } from '@material-ui/core/styles';
 import { blue, green } from '@material-ui/core/colors';
 import Admin from './components/admin';
-import ManageUser from './components/admin/manageuser';
 import UserDashboard from './components/user';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
@@ -14,7 +13,6 @@ import MainComponent from './components/main';
 import { EquipmentProvider } from './providers/equipmentContext';
 import { StaffProvider } from './providers/staffContext';
 import Home from './components/home';
-import Checkout from './components/checkout';
 import { OrderProvider } from './providers/orderContext';
 
 function App() {

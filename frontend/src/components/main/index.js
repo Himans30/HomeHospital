@@ -10,6 +10,7 @@ import EquipmentDetails from './equipmentDetails';
 import NursingForm from './nursingform';
 import Checkout from './checkout';
 import ForgotPassword from './forgotpassword';
+import Rent from '../user/rent';
 
 const drawerWidth = 0;
 
@@ -45,6 +46,7 @@ const MainComponent = () => {
                 <Route path={`${path}/listequipments`} component={ListEquipments} />
                 <Route path={`${path}/equipmentdetails/:id`} component={EquipmentDetails} />
                 <Route path={`${path}/checkout`} component={Checkout} />
+                <Route path={`${path}/rent`} component={Rent} />
                 <Route path={`${path}/liststaff`} component={ListStaff} />
                 <Route path={`${path}/reset`} component={ForgotPassword} />
                 <Route path={`${path}/nursingform`} component={NursingForm} />

@@ -63,16 +63,6 @@ const ListEquipments = () => {
             });
     }
 
-    const getCategories = () => {
-        const categories = new Set();
-        for (let eq of equipmentList) {
-            categories.add(eq.category);
-        }
-
-        console.log(categories);
-        return categories;
-    }
-
     const searchProduct = e => {
         equipmentService.getAll()
             .then(data => {
@@ -215,63 +205,61 @@ const ListEquipments = () => {
     return (
         <div>
             <h1 className="text-center">List Equipments</h1>
-            <div className="col-md-12 mx-auto">
-                <div className="row justify-content-center">
-                    <div className="col-md-2">
-                        {renderOptions()}
-                    </div>
-                    <div className="col-md-8">
-                        <Card className="mb-5">
-                            <CardContent>
-                                <div className="input-group w-100">
-                                    <input className="form-control" value={keyword} onChange={e => { setKeyword(e.target.value) }} />
-                                    <div className="input-group-append">
-                                        <Button onClick={searchProduct}>Search</Button>
-                                    </div>
+            <div className="row justify-content-center">
+                <div className="col-md-2">
+                    {renderOptions()}
+                </div>
+                <div className="col-md-9">
+                    <Card className="mb-5">
+                        <CardContent>
+                            <div className="input-group w-100">
+                                <input className="form-control" value={keyword} onChange={e => { setKeyword(e.target.value) }} />
+                                <div className="input-group-append">
+                                    <Button onClick={searchProduct}>Search</Button>
                                 </div>
-                            </CardContent>
-                        </Card>
-                        <Card>
-                            <CardContent>
-                                <div className="row">
-                                    {
-                                        equipmentList.map(equipment => (
+                            </div>
+                        </CardContent>
+                    </Card>
+                    <Card>
+                        <CardContent>
+                            <div className="row">
+                                {
+                                    equipmentList.map(equipment => (
 
-                                            <div className="col-md-3 mt-5" key={equipment._id}>
-                                                <Card className={clsx(styles.root, shadowStyles.root)}>
-                                                    <CardMedia
-                                                        classes={mediaStyles}
-                                                        image={
-                                                            url + equipment.avatar
+                                        <div className="col-md-3 mt-5" key={equipment._id}>
+                                            <Card className={clsx(styles.root, shadowStyles.root)}>
+                                                <CardMedia
+                                                    classes={mediaStyles}
+                                                    image={
+                                                        url + equipment.avatar
+                                                    }
+                                                />
+                                                <CardContent className={styles.content}>
+                                                    <TextInfoContent
+                                                        classes={textCardContentStyles}
+                                                        overline={'March 20, 2019'}
+                                                        heading={equipment.name}
+                                                        body={
+                                                            equipment.description
                                                         }
                                                     />
-                                                    <CardContent className={styles.content}>
-                                                        <TextInfoContent
-                                                            classes={textCardContentStyles}
-                                                            overline={'March 20, 2019'}
-                                                            heading={equipment.name}
-                                                            body={
-                                                                equipment.description
-                                                            }
-                                                        />
-                                                        <div className="row">
-                                                            <div className="col">
-                                                                <Button color={'primary'} fullWidth className={styles.cta}>
-                                                                    <Link to={`/app/equipmentdetails/${equipment._id}`}>View More</Link> <ChevronRightRounded />
-                                                                </Button>
-                                                            </div>
-                                                         
+                                                    <div className="row">
+                                                        <div className="col">
+                                                            <Button color={'primary'} fullWidth className={styles.cta}>
+                                                                <Link to={`/app/equipmentdetails/${equipment._id}`}>View More</Link> <ChevronRightRounded />
+                                                            </Button>
                                                         </div>
-                                                    </CardContent>
-                                                </Card>
-                                            </div>
-                                        ))
-                                    }
-                                </div>
-                            </CardContent>
-                        </Card>
 
-                    </div>
+                                                    </div>
+                                                </CardContent>
+                                            </Card>
+                                        </div>
+                                    ))
+                                }
+                            </div>
+                        </CardContent>
+                    </Card>
+
                 </div>
             </div>
         </div>

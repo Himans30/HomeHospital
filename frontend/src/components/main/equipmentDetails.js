@@ -120,6 +120,11 @@ const EquipmentDetails = () => {
         history.push('/app/checkout');
     }
 
+    const handleRent = () => {
+        sessionStorage.setItem('order-item', JSON.stringify(equipmentData));
+        history.push('/app/rent');
+    }
+
     if (equipmentData)
         return (
             <div className="col-md-10 mx-auto" >
@@ -148,16 +153,17 @@ const EquipmentDetails = () => {
                         </Typography>
                         <p>{equipmentData.description}</p>
                         <p>{equipmentData.features}</p>
-                        <h1>{equipmentData.price}</h1>
-                        
-                        <div className="row">
-                        <Button className="col-md-5 mt-5" variant="contained" color="primary" onClick={handleOrder}>Order Now</Button>
+                        <h1>₹{equipmentData.price}/-</h1>
 
-                        <Button className="col-md-5 mt-5" variant="contained" color="primary" onClick={handleOrder}>Rent Now</Button> 
+                        <div className="row">
+                            <Button className="col-md-5 mt-5" variant="contained" color="primary" onClick={handleOrder}>Order Now</Button>
+                            {
+                                equipmentData.rentable ? <Button className="col-md-5 mt-5" variant="contained" color="primary" onClick={handleRent}>Rent Now</Button> : ''
+                            }
                         </div>
-                        
+
                     </div>
-                    
+
                 </div>
 
                 <h3>Reviews</h3>
