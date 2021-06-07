@@ -53,6 +53,8 @@ const Home = () => {
                         <i className="bi bi-list mobile-nav-toggle"></i>
                     </nav>
                     <Link to="/app/listequipments" className="appointment-btn scrollto">View Equipments</Link>
+                    <Link to="/app/register" className="appointment-btn scrollto">Register</Link>
+                    <Link to="/app/Login" className="appointment-btn scrollto">Login</Link>
 
                 </div>
             </header>
