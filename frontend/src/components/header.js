@@ -90,7 +90,7 @@ const Header = props => {
                     <Link to={`/${dashLink}/dashboard`} className={classes.link}>
                         <Avatar src={url + currentUser.avatar} />
                     </Link>
-                    <Link to="/main/login" className={classes.link}>
+                    <Link to="/app/login" className={classes.link}>
                         <Button color="inherit" onClick={handleLogout}>
                             Logout
             </Button>
