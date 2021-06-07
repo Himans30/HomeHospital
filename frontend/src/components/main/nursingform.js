@@ -2,11 +2,13 @@ import { Formik } from "formik";
 import { Link } from "react-router-dom";
 import { NursingContext } from "../../providers/nursingContext";
 
-const { useContext } = require("react");
+const { useContext, default: React } = require("react");
 
 
 const NursingForm = props => {
-    const nursing = useContext(NursingContext);
+    const nursing = React.useContext(NursingContext);
+    const nursingService = React.useContext(NursingContext);
+    const [open, setOpen] = React.useState(false);
 
     const nursingForm = {
         name: '',
@@ -22,13 +24,17 @@ const NursingForm = props => {
         health_condtion: ''
     };
 
+    
+
     const onFormSubmit = (value, { setSubmitting }) => {
         console.log(value);
         setSubmitting = true;
 
-        nursing.addUser(value)
+        nursingService.addNursing(value)
 
-            .then(res => console.log(res));
+            .then(res => {console.log(res)
+            setOpen(true);
+            });
     }
 
     return (
