@@ -72,31 +72,34 @@ const ManageUserOrders = props => {
                         </AccordionSummary>
                         <AccordionDetails>
 
-                            <div className="row">
+                            <div className="w-100">
                                 <div className="col-4">
                                     <p>Description</p>
                                 </div>
+
                                 <div className="col-8">
+                                    <hr />
                                     <p>{order.equipment.description}</p>
                                 </div>
                             </div>
-                            <br />
 
-                            <div className="row">
+                            <div className="w-100">
                                 <div className="col-4">
                                     <p>Features</p>
                                 </div>
                                 <div className="col-8">
+                                    <hr />
                                     <p>{order.equipment.features}</p>
                                 </div>
                             </div>
                             <br />
 
-                            <div className="row">
+                            <div className="w-100">
                                 <div className="col-4">
                                     <p>Price</p>
                                 </div>
                                 <div className="col-8">
+                                    <hr />
                                     <p className="h3">Rs. {order.equipment.price}</p>
                                 </div>
                             </div>

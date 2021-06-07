@@ -37,6 +37,7 @@ const Header = props => {
         },
         root: {
             flexGrow: 1,
+            display: 'flex',
         },
         menuButton: {
             marginRight: theme.spacing(2),
@@ -56,7 +57,7 @@ const Header = props => {
         sessionStorage.removeItem("user");
         userService.setLoggedin(false);
         userService.setCurrentUser(null);
-        history.push("/app");
+        history.push("/app/login");
     };
 
     const classes = useStyles();
@@ -81,19 +82,21 @@ const Header = props => {
 
 
     const renderLoggedIn = () => {
-        let user = userService.currentUser;
-        if (user) {
-            const dashLink = user.isadmin ? 'admin' : 'user';
+        // let user = userService.currentUser;
+        if (currentUser) {
+            const dashLink = currentUser.isadmin ? 'admin' : 'user';
             return (
-                <div>
+                <div className={classes.root}>
                     <Link to={`/${dashLink}/dashboard`} className={classes.link}>
-                        <Button color="inherit">Dashboard</Button>
+                        <Avatar src={url + currentUser.avatar} />
                     </Link>
                     <Link to="/main/login" className={classes.link}>
                         <Button color="inherit" onClick={handleLogout}>
                             Logout
             </Button>
                     </Link>
+
+
                 </div>
             )
         } else {
@@ -131,7 +134,6 @@ const Header = props => {
                     <Button color="inherit">Services</Button>
                 </Link>
                 {renderLoggedIn()}
-                <Avatar src={url + currentUser.avatar} />
 
             </Toolbar>
         </AppBar>

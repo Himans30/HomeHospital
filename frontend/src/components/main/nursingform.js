@@ -32,9 +32,6 @@ const NursingForm = props => {
     }
 
     return (
-
-
-
         <div className="col-md-6 mx-auto">
             <div className="card">
                 <div className="card-body">

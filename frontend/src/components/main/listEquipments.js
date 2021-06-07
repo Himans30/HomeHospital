@@ -35,7 +35,9 @@ const ListEquipments = () => {
 
     const equipmentService = React.useContext(EquipmentContext);
     const [equipmentList, setEquipmentList] = React.useState([])
-    const [val, setVal] = React.useState(1);
+    const [val, setVal] = React.useState('All');
+    const [priceFilter, setPriceFilter] = React.useState({ min: 1200, max: 5000 })
+    const categories = ['All', ...app_config.equipmentCategories];
 
     const styles = useStyles();
     const mediaStyles = useFourThreeCardMediaStyles();
@@ -49,13 +51,17 @@ const ListEquipments = () => {
 
     React.useEffect(() => {
 
+        fetchEquipments();
+
+    }, [])
+
+    const fetchEquipments = () => {
         equipmentService.getAll()
             .then(data => {
                 setEquipmentList(data)
                 console.log(data);
             });
-
-    }, [])
+    }
 
     const getCategories = () => {
         const categories = new Set();
@@ -147,6 +153,26 @@ const ListEquipments = () => {
         getContentAnchorEl: null
     };
 
+    const filterProducts = (e) => {
+        setVal(e.target.value);
+        if (e.target.value == 'All') {
+            fetchEquipments();
+            return;
+        }
+        equipmentService.getAll()
+            .then(data => {
+                setEquipmentList(data)
+                let newList = data.filter(equipment => (equipment.category.toLowerCase().includes(e.target.value.toLowerCase())))
+                console.log(newList);
+                setEquipmentList(newList);
+                console.log(data);
+            });
+    }
+
+    const setPrice = (e) => {
+        console.log(priceFilter)
+    }
+
 
     const renderOptions = () => {
         return (
@@ -161,12 +187,15 @@ const ListEquipments = () => {
                             MenuProps={menuProps}
                             IconComponent={iconComponent}
                             value={val}
-                            onChange={e => { setVal(e.target.value) }}
+                            onChange={filterProducts}
                         >
-                            <MenuItem value={0}>Principle</MenuItem>
-                            <MenuItem value={1}>Sketch</MenuItem>
-                            <MenuItem value={2}>Photoshop</MenuItem>
-                            <MenuItem value={3}>Framer</MenuItem>
+                            {
+                                categories.map((cat, index) => {
+                                    return (
+                                        <MenuItem key={index} value={cat}>{cat}</MenuItem>
+                                    )
+                                })
+                            }
                         </Select>
                     </FormControl>
 
@@ -175,7 +204,8 @@ const ListEquipments = () => {
                     <PriceSlider
                         ThumbComponent={SliderThumb}
                         getAriaLabel={(index) => (index === 0 ? 'Minimum price' : 'Maximum price')}
-                        defaultValue={[20, 40]}
+                        defaultValue={[priceFilter.min, priceFilter.max]}
+                        onChange={setPrice}
                     />
                 </CardContent>
             </Card>

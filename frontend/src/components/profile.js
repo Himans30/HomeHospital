@@ -25,7 +25,6 @@ const Profile = props => {
 
     useEffect(() => {
 
-        document.getElementsByClassName('user-layout')[0].classList.add('user-profile');
 
 
     }, [])
