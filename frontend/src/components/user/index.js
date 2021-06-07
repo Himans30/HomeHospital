@@ -1,12 +1,15 @@
 import { useState } from 'react';
 import DrawerComponent from '../drawer';
 import Header from '../header';
-import AccountBoxIcon from '@material-ui/icons/AccountBox';
+import PersonSharpIcon from '@material-ui/icons/PersonSharp';
 import { useRouteMatch, Switch, Route, Redirect } from 'react-router';
 import Profile from '../profile';
 import ManageUserOrders from './manageUserOrders';
 import { makeStyles } from '@material-ui/core';
 import clsx from 'clsx';
+import AddShoppingCartRoundedIcon from '@material-ui/icons/AddShoppingCartRounded';
+import BubbleChartRoundedIcon from '@material-ui/icons/BubbleChartRounded';
+import AttachMoneySharpIcon from '@material-ui/icons/AttachMoneySharp';
 
 const drawerWidth = 240;
 
@@ -49,22 +52,22 @@ const UserDashboard = () => {
     const drawerOptions = [
         {
             name: "Profile",
-            icon: <AccountBoxIcon />,
+            icon: <PersonSharpIcon />,
             link: `${url}/profile`
         },
         {
             name: "Manage Orders",
-            icon: <AccountBoxIcon />,
+            icon: <AddShoppingCartRoundedIcon />,
             link: `${url}/manageorder`
         },
         {
             name: "Manage Services",
-            icon: <AccountBoxIcon />,
+            icon: <BubbleChartRoundedIcon />,
             link: `${url}/services`
         },
         {
             name: "Current Rents",
-            icon: <AccountBoxIcon />,
+            icon: <AttachMoneySharpIcon  />,
             link: `${url}/rents`
         },
     ]
