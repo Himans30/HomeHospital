@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import DrawerComponent from '../drawer';
 import Header from '../header';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import PeopleIcon from '@material-ui/icons/People';
 import DashboardIcon from '@material-ui/icons/Dashboard';
-import { Route, BrowserRouter as Router, useRouteMatch, Switch, Link, Redirect } from 'react-router-dom';
+import { Route, BrowserRouter as Router, useRouteMatch, Switch, Link, Redirect, useHistory } from 'react-router-dom';
 import ManageUser from './manageuser';
 import AdminDashboard from './dashboard';
 import Profile from '../profile';
@@ -15,6 +15,7 @@ import AddStaff from './addstaff';
 import ManageEquipment from './manageequipment';
 import ManageStaff from './managestaff';
 import AddBoxIcon from '@material-ui/icons/AddBox';
+import Swal from 'sweetalert2';
 
 const drawerWidth = 240;
 
@@ -42,8 +43,10 @@ const Admin = () => {
     const [open, setOpen] = useState(true);
 
     const classes = useStyles();
+    const[currentUser,setCurrentUser]=useState(JSON.parse(sessionStorage.getItem('user')));
 
     let { path, url } = useRouteMatch();
+    const history = useHistory();
     console.log(path)
 
     const drawerOptions = [
@@ -83,6 +86,22 @@ const Admin = () => {
             link: "/admin/managestaff"
         },
     ]
+
+    useEffect(() => {
+        if(currentUser){
+            if(currentUser.isadmin)
+            {
+                return;
+            }
+        }
+        Swal.fire({
+            icon:'error',
+            title:'Not Permitted',
+            text:'You do not have admin permission'
+        })
+        history.push('/main/login');
+    },[])
+
 
     const handleDrawerOpen = () => {
         console.log('drawer opened');

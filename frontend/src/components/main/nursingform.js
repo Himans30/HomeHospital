@@ -7,7 +7,7 @@ const { useContext, default: React } = require("react");
 
 const NursingForm = props => {
     const nursing = React.useContext(NursingContext);
-    const nursingService = React.useContext(NursingContext);
+    const nursingService = React.useContext (NursingContext);
     const [open, setOpen] = React.useState(false);
 
     const nursingForm = {
