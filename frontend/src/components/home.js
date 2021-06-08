@@ -33,16 +33,16 @@ const Home = () => {
 
                             <li className="dropdown"><a href="#services"><span>Services</span> <i className="bi bi-chevron-down"></i></a>
                                 <ul>
-                                    <li><a href="/app/liststaff">Nurses</a></li>
-                                    {/* <li className="dropdown"><a href="#"><span>Deep Drop Down</span> <i className="bi bi-chevron-right"></i></a>
+                                    {/* <li><a href="/app/liststaff">Nurses</a></li> */}
+                                    <li className="dropdown"><a href="/app/liststaff"><span>Nurses</span> <i className="bi bi-chevron-right"></i></a>
                                         <ul>
-                                            <li><a href="#">Deep Drop Down 1</a></li>
-                                            <li><a href="#">Deep Drop Down 2</a></li>
-                                            <li><a href="#">Deep Drop Down 3</a></li>
-                                            <li><a href="#">Deep Drop Down 4</a></li>
-                                            <li><a href="#">Deep Drop Down 5</a></li>
+                                            <li><a href="/app/nursingform">Nursing</a></li>
+                                            <li><a href="/app/nursingform">Newborn Baby and Mother Care</a></li>
+                                            <li><a href="/app/nursingform">Critical Care</a></li>
+                                            <li><a href="/app/nursingform">Elder Care</a></li>
+                                            <li><a href="/app/nursingform">Trained Attendent</a></li>
                                         </ul>
-                                    </li> */}
+                                    </li>
                                     <li><a href="#">Ward Boy</a></li>
                                     <li><a href="/app/listequipments">Medical Equipment</a></li>
                                    
@@ -53,6 +53,8 @@ const Home = () => {
                         <i className="bi bi-list mobile-nav-toggle"></i>
                     </nav>
                     <Link to="/app/listequipments" className="appointment-btn scrollto">View Equipments</Link>
+                    <Link to="/app/register" className="appointment-btn scrollto">Register</Link>
+                    <Link to="/app/Login" className="appointment-btn scrollto">Login</Link>
 
                 </div>
             </header>

@@ -46,6 +46,7 @@ const Profile = props => {
             <Card className={clsx(baseClasses.card, customClasses.card)}>
                 <CardContent>
                     <div className="row">
+                    <h3 className="text-center">Manage Profile</h3>
                         <div className="col-md-4">
                             <img src={url + currentUser.avatar} className="img-fluid" />
                         </div>
@@ -62,8 +63,6 @@ const Profile = props => {
                                     isSubmitting
                                 }) => (
                                     <form onSubmit={handleSubmit}>
-
-                                        <h3 className="text-center">Register Here</h3>
 
                                         <TextField label="Full Name" variant="filled" name="fullname" className={baseClasses.input} onChange={handleChange} value={values.fullname} />
                                         <TextField label="Email" variant="filled" name="email" className={baseClasses.input} onChange={handleChange} value={values.email} />

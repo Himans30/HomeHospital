@@ -71,6 +71,19 @@ const ListStaff = () => {
                     <Link to="/app/nursingform"> Hire Now</Link>
                 </CardContent>
             </Card>
+            <Card className={clsx(styles.card)}>
+                <CardContent className={styles.cardBody}>
+                    <h1>Trained Attendent</h1>
+                    <Link to="/app/nursingform"> Hire Now</Link>
+                </CardContent>
+            </Card>
+            <Card className={clsx(styles.card)}>
+                <CardContent className={styles.cardBody}>
+                    <h1>Elder Care</h1>
+                    <Link to="/app/nursingform"> Hire Now</Link>
+                </CardContent>
+            </Card>
+         
 
         </div>
     )
