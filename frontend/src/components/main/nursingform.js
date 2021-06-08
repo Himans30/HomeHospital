@@ -1,8 +1,9 @@
 import { Formik } from "formik";
+import React from "react";
 import { Link } from "react-router-dom";
 import { NursingContext } from "../../providers/nursingContext";
 
-const { useContext, default: React } = require("react");
+
 
 
 const NursingForm = props => {
@@ -100,7 +101,7 @@ const NursingForm = props => {
                                     <button className="btn btn-primary mt-5 w-100">Submit</button>
                                 </div>
 
-                                <p className="mt-3 text-center">Already Registered? <Link to="/app/login">Login Here</Link></p>
+
 
                             </form>
                         )}
