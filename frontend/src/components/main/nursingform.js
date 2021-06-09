@@ -3,11 +3,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { NursingContext } from "../../providers/nursingContext";
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 271cb92ebcaff2e82960746d28aac7a6e524eb6d
 
 const NursingForm = props => {
     const nursing = React.useContext(NursingContext);
@@ -27,7 +24,7 @@ const NursingForm = props => {
         health_condtion: ''
     };
 
-
+    
 
     const onFormSubmit = (value, { setSubmitting }) => {
         console.log(value);
@@ -35,9 +32,8 @@ const NursingForm = props => {
 
         nursingService.addNursing(value)
 
-            .then(res => {
-                console.log(res)
-                setOpen(true);
+            .then(res => {console.log(res)
+            setOpen(true);
             });
     }
 
