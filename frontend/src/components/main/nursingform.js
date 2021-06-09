@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { NursingContext } from "../../providers/nursingContext";
 
 
+
+
 const NursingForm = props => {
     const nursing = React.useContext(NursingContext);
     const nursingService = React.useContext (NursingContext);
@@ -13,17 +15,16 @@ const NursingForm = props => {
         name: '',
         age: '',
         gender: '',
-        types_of_illnetypes_of_illnees: '',
+        types_of_illness: '',
         address: '',
-        mob_no: '',
+        mobile_no: '',
         email_address: '',
         timing: '',
         shift: '',
-        medical_report: '',
         health_condtion: ''
     };
 
-
+    
 
     const onFormSubmit = (value, { setSubmitting }) => {
         console.log(value);
@@ -31,9 +32,8 @@ const NursingForm = props => {
 
         nursingService.addNursing(value)
 
-            .then(res => {
-                console.log(res)
-                setOpen(true);
+            .then(res => {console.log(res)
+            setOpen(true);
             });
     }
 
@@ -53,7 +53,7 @@ const NursingForm = props => {
                         }) => (
                             <form onSubmit={handleSubmit}>
 
-                                <h3 className="text-center">Register Here</h3>
+                                <h3 className="text-center">Patient Form</h3>
 
                                 <div className="row">
                                     <div className="col-md mt-5">
@@ -67,32 +67,31 @@ const NursingForm = props => {
                                 <input type="number" className="form-control" id="age" onChange={handleChange} value={values.age} />
 
                                 <label className="mt-4">Gender</label>
-                                <input type="number" className="form-control" id="gender" onChange={handleChange} value={values.gender} />
+                                <input type="text" className="form-control" id="gender" onChange={handleChange} value={values.gender} />
 
                                 <label className="mt-4">Types of illness</label>
-                                <input type="number" className="form-control" id="types_of_illnees" onChange={handleChange} value={values.types_of_illnees} />
+                                <input type="text" className="form-control" id="types_of_illnees" onChange={handleChange} value={values.types_of_illnees} />
 
                                 <label className="mt-4">Address</label>
-                                <input type="number" className="form-control" id="address" onChange={handleChange} value={values.address} />
+                                <input type="text" className="form-control" id="address" onChange={handleChange} value={values.address} />
 
                                 <label className="mt-4">Mobile No</label>
-                                <input type="number" className="form-control" id="mobile_no" onChange={handleChange} value={values.mobile_no} />
+                                <input type="text" className="form-control" id="mobile_no" onChange={handleChange} value={values.mobile_no} />
 
                                 <label className="mt-4">Email Address</label>
-                                <input type="number" className="form-control" id="email_address" onChange={handleChange} value={values.email_address} />
+                                <input type="email" className="form-control" id="email_address" onChange={handleChange} value={values.email_address} />
 
                                 <label className="mt-4">Timing</label>
-                                <input type="number" className="form-control" id="timing" onChange={handleChange} value={values.timing} />
+                                <input type="text" className="form-control" id="timing" onChange={handleChange} value={values.timing} />
 
 
                                 <label className="mt-4">Shift</label>
-                                <input type="email" className="form-control" id="shift" onChange={handleChange} value={values.shift} />
+                                <input type="text" className="form-control" id="shift" onChange={handleChange} value={values.shift} />
 
-                                <label className="mt-4">Medical Report</label>
-                                <input type="number" className="form-control" id="medical_report" onChange={handleChange} value={values.medical_report} />
+                                
 
                                 <label className="mt-4">Health Condition</label>
-                                <input type="number" className="form-control" id="health_condtion" onChange={handleChange} value={values.health_condtion} />
+                                <input type="text" className="form-control" id="health_condtion" onChange={handleChange} value={values.health_condtion} />
 
 
 
@@ -100,7 +99,7 @@ const NursingForm = props => {
                                     <button className="btn btn-primary mt-5 w-100">Submit</button>
                                 </div>
 
-                                <p className="mt-3 text-center">Already Registered? <Link to="/app/login">Login Here</Link></p>
+
 
                             </form>
                         )}
