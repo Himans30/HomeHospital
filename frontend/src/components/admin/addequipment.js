@@ -3,6 +3,7 @@ import Alert from "@material-ui/lab/Alert";
 import { Formik } from "formik";
 
 import React from "react";
+import app_config from "../../config";
 import { EquipmentContext } from "../../providers/equipmentContext";
 import cssClasses from "../cssClasses";
 
@@ -13,6 +14,7 @@ const AddEquipment = () => {
     const [imgpath, setImgPath] = React.useState("");
     const baseStyles = cssClasses();
     const [open, setOpen] = React.useState(false);
+    const categories = app_config.equipmentCategories;
 
     const equipmentForm = {
         name: '',
@@ -140,7 +142,12 @@ const AddEquipment = () => {
                                     <label htmlFor="name">Category</label>
                                 </div>
                                 <datalist id="categories">
-                                    <option value="A" />
+                                {
+                                    categories.map(category => {
+                                        return <option value={category} key={category} />
+                                    })
+                                }
+                                    
                                     <option value="B" />
                                     <option value="C" />
                                 </datalist>

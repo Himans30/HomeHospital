@@ -1,5 +1,6 @@
 import { AppBar, Avatar, Button, IconButton, Toolbar, Typography } from "@material-ui/core";
 import MenuIcon from '@material-ui/icons/Menu';
+import AccountCircle from '@material-ui/icons/AccountCircle';
 import { makeStyles } from '@material-ui/core/styles';
 import { useContext, useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
@@ -42,12 +43,18 @@ const Header = props => {
         menuButton: {
             marginRight: theme.spacing(2),
         },
-        title: {
-            flexGrow: 1,
-        },
         link: {
             color: 'white',
-            textDecoration: 'none'
+            textDecoration: 'none',
+            "&:hover, &:focus": {
+                color: theme.palette.primary,
+                backgroundColor: 'white'
+            }
+        },
+        siteTitle: {
+            fontSize: '1.5em',
+            textDecoration: 'none',
+            flexGrow: 1,
         }
 
     }));
@@ -86,15 +93,21 @@ const Header = props => {
         if (currentUser) {
             const dashLink = currentUser.isadmin ? 'admin' : 'user';
             return (
-                <div className={classes.root}>
-                    <Link to={`/${dashLink}/dashboard`} className={classes.link}>
-                        <Avatar src={url + currentUser.avatar} />
+                <div>
+                    <Link className={classes.link}>
+
                     </Link>
-                    <Link to="/app/login" className={classes.link}>
-                        <Button color="inherit" onClick={handleLogout}>
-                            Logout
-            </Button>
-                    </Link>
+                    <IconButton
+                        component={Link} to={`/${dashLink}/dashboard`}
+                        aria-label="account of current user"
+                        aria-controls="menu-appbar"
+                        color="inherit"
+                    >
+                        <AccountCircle />
+                    </IconButton>
+                    <Button color="inherit" onClick={handleLogout}>
+                        Logout
+                    </Button>
 
 
                 </div>
@@ -102,13 +115,8 @@ const Header = props => {
         } else {
             return (
                 <div>
-                    <Link to="/app/login" className={classes.link}>
-                        <Button color="inherit">Login</Button>
-                    </Link>
-
-                    <Link to="/app/register" className={classes.link}>
-                        <Button color="inherit">Register</Button>
-                    </Link>
+                    <Button component={Link} to={'/app/login'} color="inherit">Login</Button>
+                    <Button component={Link} to={'/app/register'} color="inherit">Register</Button>
                 </div>
             )
         }
@@ -123,19 +131,13 @@ const Header = props => {
             })}>
             <Toolbar>
                 {showMenuButton()}
-                <Typography variant="h6" className={classes.title}>
-                    {/* {app_config.projectTitle} */}
-                    <Link to="/home" className={classes.link}>
-                    <Button color="inherit">{app_config.projectTitle}</Button>
-                </Link>
+                <Typography variant="h6" className={classes.siteTitle} color="inherit" component={Link} to="/home">
+                    {app_config.projectTitle}
                 </Typography>
                 <Link to="/app/listequipments" className={classes.link}>
-                    <Button color="inherit">Equipments</Button>
                 </Link>
-
-                <Link to="/app/liststaff" className={classes.link}>
-                    <Button color="inherit">Services</Button>
-                </Link>
+                <Button component={Link} to={'/app/listequipments'} color="inherit">Equipments</Button>
+                <Button component={Link} to={'/app/liststaff'} color="inherit">Services</Button>
                 {renderLoggedIn()}
 
             </Toolbar>
