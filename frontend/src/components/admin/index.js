@@ -16,6 +16,7 @@ import ManageEquipment from './manageequipment';
 import ManageStaff from './managestaff';
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import Swal from 'sweetalert2';
+import ManageNursing from './managenursing';
 
 const drawerWidth = 240;
 
@@ -85,6 +86,11 @@ const Admin = () => {
             icon: <PeopleIcon />,
             link: "/admin/managestaff"
         },
+        {
+            name: "ManageNursing",
+            icon: <PeopleIcon />,
+            link: "/admin/managenursing"
+        },
     ]
 
     useEffect(() => {
@@ -133,6 +139,7 @@ const Admin = () => {
                     <Route path={`${path}/addstaff`} component={AddStaff} />
                     <Route path={`${path}/manageequipment`} component={ManageEquipment} />
                     <Route path={`${path}/managestaff`} component={ManageStaff} />
+                    <Route path={`${path}/managenursing`} component={ManageNursing} />
 
                 </Switch>
 

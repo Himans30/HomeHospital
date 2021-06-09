@@ -6,7 +6,7 @@ const schema = new mongoose.Schema({
     gender:String,
     types_of_illness:String,
     address:String,
-    mob_no:number,
+    mobile_no:number,
     email_address:String,
     timing:number ,
     shift: number,
