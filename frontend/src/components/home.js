@@ -26,12 +26,12 @@ const Home = () => {
 
                     <nav id="navbar" className="navbar order-last order-lg-0">
                         <ul>
-                            <li><a className="nav-link scrollto active" href="#hero">Home</a></li>
-                            <li><a className="nav-link scrollto" href="#about">About</a></li>
+                            <li><a className="nav-link scrollto " href="#hero">Home</a></li>
+                            <li><a className="nav-link scrollto " href="#about">About</a></li>
                             {/* <li><a className="nav-link scrollto" href="#services">Services</a></li> */}
                             
 
-                            <li className="dropdown"><a href="#services"><span>Services</span> <i className="bi bi-chevron-down"></i></a>
+                            <li className="dropdown"><a href="#services"><span>Services</span> <i className="bi bi-chevron-down "></i></a>
                                 <ul>
                                     {/* <li><a href="/app/liststaff">Nurses</a></li> */}
                                     <li className="dropdown"><a href="/app/liststaff"><span>Nurses</span> <i className="bi bi-chevron-right"></i></a>
@@ -48,11 +48,15 @@ const Home = () => {
                                    
                                 </ul>
                             </li>
-                            <li><a className="nav-link scrollto" href="#contact">Contact</a></li>
+                            <li><a className="nav-link scrollto " href="#contact">Contact</a></li>
+                            <li>
+                            <Link to="/app/listequipments" className="nav-link scrollto ">View Equipments</Link>
+                            </li>
+                            
                         </ul>
                         <i className="bi bi-list mobile-nav-toggle"></i>
                     </nav>
-                    <Link to="/app/listequipments" className="appointment-btn scrollto">View Equipments</Link>
+                   
                     <Link to="/app/register" className="appointment-btn scrollto">Register</Link>
                     <Link to="/app/Login" className="appointment-btn scrollto">Login</Link>
 
