@@ -9,6 +9,7 @@ import { makeStyles } from '@material-ui/core';
 import clsx from 'clsx';
 import AddShoppingCartRoundedIcon from '@material-ui/icons/AddShoppingCartRounded';
 import BubbleChartRoundedIcon from '@material-ui/icons/BubbleChartRounded';
+import AttachMoneySharpIcon from '@material-ui/icons/AttachMoneySharp';
 import Zoom from 'react-reveal/Zoom'
 import Swal from 'sweetalert2';
 import ManageServices from './manageServices';
@@ -70,11 +71,11 @@ const UserDashboard = () => {
             icon: <BubbleChartRoundedIcon />,
             link: `${url}/services`
         },
-        // {
-        //     name: "Current Rents",
-        //     icon: <AttachMoneySharpIcon  />,
-        //     link: `${url}/rents`
-        // },
+        {
+            name: "Current Rents",
+            icon: <AttachMoneySharpIcon  />,
+            link: `${url}/rents`
+        },
     ]
 
     useEffect(() => {

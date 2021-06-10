@@ -1,3 +1,5 @@
+import { Fade, Snackbar } from "@material-ui/core";
+import Alert from "@material-ui/lab/Alert";
 import { Formik } from "formik";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -9,6 +11,8 @@ import { NursingContext } from "../../providers/nursingContext";
 const NursingForm = props => {
     const nursing = React.useContext(NursingContext);
     const nursingService = React.useContext(NursingContext);
+    const [avatar, setAvatar] = React.useState("");
+    const [imgpath, setImgPath] = React.useState("");
     const [open, setOpen] = React.useState(false);
 
     const nursingForm = {
@@ -21,12 +25,14 @@ const NursingForm = props => {
         email_address: '',
         timing: '',
         shift: '',
-        health_condtion: ''
+        health_condtion: '',
+        avatar:''
     };
 
 
 
     const onFormSubmit = (value, { setSubmitting }) => {
+        value['avatar'] = avatar;
         console.log(value);
         setSubmitting = true;
 
@@ -38,8 +44,56 @@ const NursingForm = props => {
             });
     }
 
+    
+    const showAvatar = () => {
+        if (imgpath) {
+            return (
+                <img src={imgpath} className="img-fluid" />
+            )
+        }
+    }
+
+    const uploadImage = (event) => {
+        const data = new FormData();
+        data.append('image', event.target.files[0]);
+        setAvatar(event.target.files[0].name);
+        nursingService.uploadImage(data)
+            .then(res => console.log(res));
+
+        var mimeType = event.target.files[0].type;
+        if (mimeType.match(/image\/*/) == null) {
+            // erroMsg = 'Only images are supported.';
+            return;
+        }
+
+        var reader = new FileReader();
+        reader.readAsDataURL(event.target.files[0]);
+        reader.onload = (_event) => {
+            setImgPath(reader.result);
+        };
+    }
+
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        setOpen(false);
+    };
+
+
     return (
         <div className="col-md-6 mx-auto">
+           <Snackbar
+                onClose={handleClose}
+                autoHideDuration={2000}
+                anchorOrigin={{ vertical: "top", horizontal: "right" }}
+                open={open}
+                TransitionComponent={Fade}
+            >
+
+                <Alert  onClose={handleClose} severity="success">Equipment Successfully Added</Alert>
+            </Snackbar>
             <div className="card">
                 <div className="card-body">
                     <Formik
@@ -69,6 +123,11 @@ const NursingForm = props => {
 
                                 <label className="mt-4">Gender</label>
                                 <input type="text" className="form-control" id="gender" onChange={handleChange} value={values.gender} />
+
+                                <div >
+                               {showAvatar()}
+                                 <input className="form-control" type="file" onChange={uploadImage} />
+                               </div>
 
                                 <label className="mt-4">Types of illness</label>
                                 <input type="text" className="form-control" id="types_of_illnees" onChange={handleChange} value={values.types_of_illnees} />

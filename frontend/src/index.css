@@ -18,7 +18,7 @@ code {
       rgba(0, 0, 0, 0.582),
       rgba(0, 0, 0, 0.356)
     ),
-    url(./components/images/profile-back.jpg) no-repeat;
+    url(./components/images/b1.jpg) no-repeat;
   background-position: top;
   background-size: cover;
 }

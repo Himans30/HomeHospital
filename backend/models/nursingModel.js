@@ -13,6 +13,7 @@ const schema = new mongoose.Schema({
     health_condtion: String,
     created: Date,
     data: Object,
+    avatar:String,
     user: { type: mongoose.Types.ObjectId, ref: "Users" }
 })
 
