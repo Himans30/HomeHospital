@@ -8,7 +8,7 @@ import { Bar } from 'react-chartjs-2';
 import { EquipmentContext } from "../../providers/equipmentContext";
 import { NursingContext } from "../../providers/nursingContext";
 import { OrderContext } from "../../providers/orderContext";
-import { StaffContext } from "../../providers/staffContext";
+
 
 
 
@@ -34,17 +34,17 @@ const AdminDashboard = props => {
     const [usersList, setUsersList] = useState([]);
     const [equipmentList, setEquipmentList] = useState([]);
     const [orderList, setOrderList] = useState([]);
-    const [staffList, setStaffList] = useState([]);
+
 
     const [regData, setRegData] = useState({});
     const [equipmentData, setEquipmentData] = useState({});
-    const [staffData, setStaffData] = useState({});
+ 
 
     const useService = useContext(UserContext)
     const equipmentService = useContext(EquipmentContext);
     const bookingService = useContext(NursingContext);
     const orderService = useContext(OrderContext);
-    const staffService = useContext(StaffContext);
+ 
 
     const fetchUsers = () => {
         return useService.getAllUsers()
@@ -63,14 +63,8 @@ const AdminDashboard = props => {
                 return data
             })
     }
-    const fetchStaff = () => {
-        return staffService.getAll()
-            .then(data => {
-                console.log(data);
-                setStaffList(data);
-                return data
-            })
-    }
+   
+  
 
 
     useEffect(() => {
@@ -84,11 +78,7 @@ const AdminDashboard = props => {
                 console.log(data);
                 prepareEqData(data);
             })
-            fetchStaff()
-            .then(data => {
-                console.log(data);
-                prepareEqData(data);
-            })
+          
     }, [])
 
     const prepareRegData = async users => {
@@ -112,16 +102,7 @@ const AdminDashboard = props => {
     }
 
     
-    const prepareStData = async users => {
-        getDatewiseValues(users, 'created').then(data => {
-            console.log(data)
-            let reg = {};
-            reg['dates'] = data[0];
-            reg['values'] = data[1];
-            setStaffData(reg);
-        });
-    }
-
+    
 
     const getDatewiseValues = async (records, colname) => {
         console.log(records);
@@ -233,10 +214,10 @@ const AdminDashboard = props => {
                         <CardContent>
                             <div className="row">
                                 <div className="col-8">
-                                    <p className={customClasses.infoTitle}>Staff : </p>
+                                    <p className={customClasses.infoTitle}>equipment: </p>
                                 </div>
                                 <div className="col-4 mx-auto">
-                                    <p className={customClasses.info}>{staffList.length}</p>
+                                    <p className={customClasses.info}>{equipmentList.length}</p>
                                 </div>
                             </div>
                         </CardContent>

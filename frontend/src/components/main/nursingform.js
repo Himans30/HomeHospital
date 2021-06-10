@@ -10,7 +10,7 @@ import { NursingContext } from "../../providers/nursingContext";
 
 const NursingForm = props => {
     const nursing = React.useContext(NursingContext);
-    const nursingService = React.useContext(NursingContext);
+    const manageService = React.useContext(NursingContext);
     const [avatar, setAvatar] = React.useState("");
     const [imgpath, setImgPath] = React.useState("");
     const [open, setOpen] = React.useState(false);
@@ -36,7 +36,7 @@ const NursingForm = props => {
         console.log(value);
         setSubmitting = true;
 
-        nursingService.addNursing(value)
+        manageService.addNursing(value)
 
             .then(res => {
                 console.log(res)
@@ -57,7 +57,7 @@ const NursingForm = props => {
         const data = new FormData();
         data.append('image', event.target.files[0]);
         setAvatar(event.target.files[0].name);
-        nursingService.uploadImage(data)
+        manageService.uploadImage(data)
             .then(res => console.log(res));
 
         var mimeType = event.target.files[0].type;

@@ -228,12 +228,12 @@ const ListNursings = () => {
 
                                         <div className="col-md-3 mt-5" key={nursing._id}>
                                             <Card className={clsx(styles.root, shadowStyles.root)}>
-                                                {/* <CardMedia
+                                                <CardMedia
                                                     classes={mediaStyles}
                                                     image={
                                                         url + nursing.avatar
                                                     }
-                                                /> */}
+                                                />
                                                 <CardContent className={styles.content}>
                                                     <TextInfoContent
                                                         classes={textCardContentStyles}

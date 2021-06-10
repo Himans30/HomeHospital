@@ -27,6 +27,15 @@ export const NursingProvider = props => {
             .then(response => response.json());
     }
 
+    const uploadImage = data => {
+        const requestOptions = {
+            method: 'POST',
+            body: data
+        }
+
+        return fetch(app_config.api_url + '/util/addimg', requestOptions)
+            .then(response => response.json());
+    }
 
 
     const getNursingById = id => {
@@ -54,6 +63,7 @@ export const NursingProvider = props => {
         getNursingById,
         getAll,
         deleteNursing,
+        uploadImage
 
     }
 
