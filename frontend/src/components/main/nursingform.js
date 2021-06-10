@@ -8,7 +8,7 @@ import { NursingContext } from "../../providers/nursingContext";
 
 const NursingForm = props => {
     const nursing = React.useContext(NursingContext);
-    const nursingService = React.useContext (NursingContext);
+    const nursingService = React.useContext(NursingContext);
     const [open, setOpen] = React.useState(false);
 
     const nursingForm = {
@@ -24,7 +24,7 @@ const NursingForm = props => {
         health_condtion: ''
     };
 
-    
+
 
     const onFormSubmit = (value, { setSubmitting }) => {
         console.log(value);
@@ -32,8 +32,9 @@ const NursingForm = props => {
 
         nursingService.addNursing(value)
 
-            .then(res => {console.log(res)
-            setOpen(true);
+            .then(res => {
+                console.log(res)
+                setOpen(true);
             });
     }
 
@@ -88,7 +89,7 @@ const NursingForm = props => {
                                 <label className="mt-4">Shift</label>
                                 <input type="text" className="form-control" id="shift" onChange={handleChange} value={values.shift} />
 
-                                
+
 
                                 <label className="mt-4">Health Condition</label>
                                 <input type="text" className="form-control" id="health_condtion" onChange={handleChange} value={values.health_condtion} />
