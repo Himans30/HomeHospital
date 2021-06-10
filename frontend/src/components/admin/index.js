@@ -44,7 +44,7 @@ const Admin = () => {
     const [open, setOpen] = useState(true);
 
     const classes = useStyles();
-    const[currentUser,setCurrentUser]=useState(JSON.parse(sessionStorage.getItem('user')));
+    const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
 
     let { path, url } = useRouteMatch();
     const history = useHistory();
@@ -72,11 +72,6 @@ const Admin = () => {
             link: "/admin/addequipment"
         },
         {
-            name: "AddStaff",
-            icon: <AddBoxIcon />,
-            link: "/admin/addstaff"
-        },
-        {
             name: "ManageEquipment",
             icon: <PeopleIcon />,
             link: "/admin/manageequipment"
@@ -94,19 +89,18 @@ const Admin = () => {
     ]
 
     useEffect(() => {
-        if(currentUser){
-            if(currentUser.isadmin)
-            {
+        if (currentUser) {
+            if (currentUser.isadmin) {
                 return;
             }
         }
         Swal.fire({
-            icon:'error',
-            title:'Not Permitted',
-            text:'You do not have admin permission'
+            icon: 'error',
+            title: 'Not Permitted',
+            text: 'You do not have admin permission'
         })
         history.push('/main/login');
-    },[])
+    }, [])
 
 
     const handleDrawerOpen = () => {
@@ -136,7 +130,6 @@ const Admin = () => {
                     <Route path={`${path}/dashboard`} component={AdminDashboard} />
                     <Route path={`${path}/manageuser`} component={ManageUser} />
                     <Route path={`${path}/addequipment`} component={AddEquipment} />
-                    <Route path={`${path}/addstaff`} component={AddStaff} />
                     <Route path={`${path}/manageequipment`} component={ManageEquipment} />
                     <Route path={`${path}/managestaff`} component={ManageStaff} />
                     <Route path={`${path}/managenursing`} component={ManageNursing} />

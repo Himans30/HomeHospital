@@ -9,8 +9,9 @@ import { makeStyles } from '@material-ui/core';
 import clsx from 'clsx';
 import AddShoppingCartRoundedIcon from '@material-ui/icons/AddShoppingCartRounded';
 import BubbleChartRoundedIcon from '@material-ui/icons/BubbleChartRounded';
-import AttachMoneySharpIcon from '@material-ui/icons/AttachMoneySharp';
+import Zoom from 'react-reveal/Zoom'
 import Swal from 'sweetalert2';
+import ManageServices from './manageServices';
 
 const drawerWidth = 240;
 
@@ -39,7 +40,7 @@ const UserDashboard = () => {
     const [open, setOpen] = useState(true);
     const classes = useStyles();
 
-    const[currentUser,setCurrentUser]=useState(JSON.parse(sessionStorage.getItem('user')));
+    const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
     const history = useHistory();
 
     const handleDrawerOpen = () => {
@@ -69,27 +70,25 @@ const UserDashboard = () => {
             icon: <BubbleChartRoundedIcon />,
             link: `${url}/services`
         },
-        {
-            name: "Current Rents",
-            icon: <AttachMoneySharpIcon  />,
-            link: `${url}/rents`
-        },
+        // {
+        //     name: "Current Rents",
+        //     icon: <AttachMoneySharpIcon  />,
+        //     link: `${url}/rents`
+        // },
     ]
 
     useEffect(() => {
-        if(currentUser)
-           
-            {
-                return;
-            }
-    
+        if (currentUser) {
+            return;
+        }
+
         Swal.fire({
-            icon:'error',
-            title:'Not Permitted',
-            text:'You do not have admin permission'
+            icon: 'error',
+            title: 'Not Permitted',
+            text: 'You do not have admin permission'
         })
         history.push('/main/login');
-    },[])
+    }, [])
 
     return (
         <div>
@@ -101,18 +100,19 @@ const UserDashboard = () => {
                 handleDrawerClose={handleDrawerClose}
                 drawerOptions={drawerOptions} />
 
-
             <div className={clsx(classes.content, {
                 [classes.contentShift]: open,
             }, 'user-layout')}>
                 <Switch>
-
                     <Redirect exact path={`${path}/dashboard`} to={`${path}/profile`} />
                     <Redirect exact path={`${path}`} to={`${path}/profile`} />
                     <Route path={`${path}/profile`} component={Profile} />
                     <Route path={`${path}/manageorder`} component={ManageUserOrders} />
+                    <Route path={`${path}/services`} component={ManageServices} />
                 </Switch>
             </div>
+
+
         </div>
     )
 }
