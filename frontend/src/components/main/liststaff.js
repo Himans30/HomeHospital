@@ -31,18 +31,10 @@ const useStyles = makeStyles(() => ({
 
 const ListStaff = () => {
 
-    const staffService = React.useContext(StaffContext);
-    const [staffList, setStaffList] = React.useState([])
-
     const styles = useStyles();
 
     React.useEffect(() => {
 
-        staffService.getAll()
-            .then(data => {
-                setStaffList(data)
-                console.log(data);
-            });
 
     }, [])
 
@@ -83,7 +75,7 @@ const ListStaff = () => {
                     <Link to="/app/nursingform"> Hire Now</Link>
                 </CardContent>
             </Card>
-         
+
 
         </div>
     )

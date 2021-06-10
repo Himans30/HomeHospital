@@ -11,7 +11,6 @@ import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import MainComponent from './components/main';
 import { EquipmentProvider } from './providers/equipmentContext';
-import { StaffProvider } from './providers/staffContext';
 import Home from './components/home';
 import { OrderProvider } from './providers/orderContext';
 import { NursingProvider } from './providers/nursingContext';

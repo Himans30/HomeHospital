@@ -54,7 +54,7 @@ export const NursingProvider = props => {
         getNursingById,
         getAll,
         deleteNursing,
-        
+
     }
 
     return (

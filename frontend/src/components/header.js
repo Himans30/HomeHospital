@@ -94,9 +94,6 @@ const Header = props => {
             const dashLink = currentUser.isadmin ? 'admin' : 'user';
             return (
                 <div>
-                    <Link className={classes.link}>
-
-                    </Link>
                     <IconButton
                         component={Link} to={`/${dashLink}/dashboard`}
                         aria-label="account of current user"

@@ -26,7 +26,6 @@ const Profile = props => {
     useEffect(() => {
 
 
-
     }, [])
 
     const onFormSubmit = (value, { setSubmitting }) => {
@@ -46,7 +45,7 @@ const Profile = props => {
             <Card className={clsx(baseClasses.card, customClasses.card)}>
                 <CardContent>
                     <div className="row">
-                    <h3 className="text-center">Manage Profile</h3>
+                        <h3 className="text-center">Manage Profile</h3>
                         <div className="col-md-4">
                             <img src={url + currentUser.avatar} className="img-fluid" />
                         </div>
