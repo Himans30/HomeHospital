@@ -20,8 +20,8 @@ const AddEquipment = () => {
         name: '',
         description: '',
         features: '',
-        price: '',
-        rentprice: '',
+        price: 0,
+        rentPrice: 0,
         rentable: false,
         category: '',
         avatar: '',
@@ -94,7 +94,7 @@ const AddEquipment = () => {
             </Snackbar>
             <Card className={baseStyles.card}>
                 <CardContent>
-                   
+
                     <Formik
                         initialValues={equipmentForm}
                         onSubmit={onFormSubmit}
@@ -118,7 +118,7 @@ const AddEquipment = () => {
                                     </div>
                                     <div className="col-md mt-5">
                                         <div className="form-floating mb-3">
-                                            <input type="text" className="form-control" id="price" onChange={handleChange} value={values.price} placeholder=" " />
+                                            <input type="number" className="form-control" id="price" onChange={handleChange} value={values.price} placeholder=" " />
                                             <label htmlFor="name">Price</label>
                                         </div>
                                     </div>
@@ -126,7 +126,7 @@ const AddEquipment = () => {
 
 
                                 <div className="form-floating mb-3">
-                                    <input type="text" className="form-control" id="rentprice" onChange={handleChange} value={values.rentprice} placeholder=" " />
+                                    <input type="number" className="form-control" id="rentPrice" onChange={handleChange} value={values.rentPrice} placeholder=" " />
                                     <label htmlFor="name">Rent Price</label>
                                 </div>
 
@@ -135,27 +135,27 @@ const AddEquipment = () => {
                                     label="Rentable"
                                 />
 
-                      
+
 
                                 <div className="form-floating mb-3">
                                     <input type="text" list="categories" className="form-control" id="category" onChange={handleChange} value={values.category} placeholder=" " />
                                     <label htmlFor="name">Category</label>
                                 </div>
                                 <datalist id="categories">
-                                {
-                                    categories.map(category => {
-                                        return <option value={category} key={category} />
-                                    })
-                                }
-                                    
+                                    {
+                                        categories.map(category => {
+                                            return <option value={category} key={category} />
+                                        })
+                                    }
+
                                     <option value="B" />
                                     <option value="C" />
                                 </datalist>
 
-                               <div >
-                               {showAvatar()}
-                                 <input className="form-control" type="file" onChange={uploadImage} />
-                               </div>
+                                <div >
+                                    {showAvatar()}
+                                    <input className="form-control" type="file" onChange={uploadImage} />
+                                </div>
 
                                 <div className="row">
                                     <div className="col-md">
