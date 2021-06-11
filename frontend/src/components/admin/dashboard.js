@@ -34,16 +34,18 @@ const AdminDashboard = props => {
     const [usersList, setUsersList] = useState([]);
     const [equipmentList, setEquipmentList] = useState([]);
     const [orderList, setOrderList] = useState([]);
-
+    const [nursingrList, setNursingList] = useState([]);
 
     const [regData, setRegData] = useState({});
     const [equipmentData, setEquipmentData] = useState({});
+    const [nursingData, setNursingData] = useState({});
  
 
     const useService = useContext(UserContext)
     const equipmentService = useContext(EquipmentContext);
     const bookingService = useContext(NursingContext);
     const orderService = useContext(OrderContext);
+    const nursingService = useContext(NursingContext);
  
 
     const fetchUsers = () => {
@@ -64,6 +66,14 @@ const AdminDashboard = props => {
             })
     }
    
+    const fetchNursing = () => {
+        return nursingService.getAll()
+            .then(data => {
+                console.log(data);
+                setNursingList(data);
+                return data
+            })
+    }
   
 
 
@@ -73,10 +83,18 @@ const AdminDashboard = props => {
                 console.log(data);
                 prepareRegData(data);
             })
+
+
         fetchEquipments()
             .then(data => {
                 console.log(data);
                 prepareEqData(data);
+            })
+
+            fetchNursing()
+            .then(data => {
+                console.log(data);
+                prepareNrData(data);
             })
           
     }, [])
@@ -101,6 +119,15 @@ const AdminDashboard = props => {
         });
     }
 
+    const prepareNrData = async users => {
+        getDatewiseValues(users, 'created').then(data => {
+            console.log(data)
+            let reg = {};
+            reg['dates'] = data[0];
+            reg['values'] = data[1];
+            setNursingData(reg);
+        });
+    }
     
     
 
@@ -214,10 +241,10 @@ const AdminDashboard = props => {
                         <CardContent>
                             <div className="row">
                                 <div className="col-8">
-                                    <p className={customClasses.infoTitle}>equipment: </p>
+                                    <p className={customClasses.infoTitle}>Service Booking: </p>
                                 </div>
                                 <div className="col-4 mx-auto">
-                                    <p className={customClasses.info}>{equipmentList.length}</p>
+                                    <p className={customClasses.info}>{nursingrList.length}</p>
                                 </div>
                             </div>
                         </CardContent>
