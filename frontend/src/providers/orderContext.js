@@ -36,11 +36,18 @@ export const OrderProvider = props => {
             .then(response => response.json());
     }
 
+    const getAll = () => {
+
+        return fetch(url + '/getall')
+            .then(response => response.json());
+    }
+
 
     const toProvide = {
         addOrder,
         updateOrder,
-        getOrderByUser
+        getOrderByUser,
+        getAll
     }
 
     return (

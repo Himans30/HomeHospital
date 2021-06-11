@@ -39,6 +39,7 @@ const AdminDashboard = props => {
     const [regData, setRegData] = useState({});
     const [equipmentData, setEquipmentData] = useState({});
     const [nursingData, setNursingData] = useState({});
+    const [orderData, setOrderData] = useState({});
  
 
     const useService = useContext(UserContext)
@@ -75,7 +76,14 @@ const AdminDashboard = props => {
             })
     }
   
-
+    const fetchOrder = () => {
+        return orderService.getAll()
+            .then(data => {
+                console.log(data);
+                setOrderList(data);
+                return data
+            })
+    }
 
     useEffect(() => {
         fetchUsers()
@@ -95,6 +103,11 @@ const AdminDashboard = props => {
             .then(data => {
                 console.log(data);
                 prepareNrData(data);
+            })
+            fetchOrder()
+            .then(data => {
+                console.log(data);
+                prepareOrData(data);
             })
           
     }, [])
@@ -126,6 +139,16 @@ const AdminDashboard = props => {
             reg['dates'] = data[0];
             reg['values'] = data[1];
             setNursingData(reg);
+        });
+    }
+
+    const prepareOrData = async users => {
+        getDatewiseValues(users, 'created').then(data => {
+            console.log(data)
+            let reg = {};
+            reg['dates'] = data[0];
+            reg['values'] = data[1];
+            setOrderData(reg);
         });
     }
     
@@ -255,10 +278,10 @@ const AdminDashboard = props => {
                         <CardContent>
                             <div className="row">
                                 <div className="col-8">
-                                    <p className={customClasses.infoTitle}>Registrations : </p>
+                                    <p className={customClasses.infoTitle}>Order : </p>
                                 </div>
                                 <div className="col-4 mx-auto">
-                                    <p className={customClasses.info}>{usersList.length}</p>
+                                    <p className={customClasses.info}>{orderList.length}</p>
                                 </div>
                             </div>
                         </CardContent>
