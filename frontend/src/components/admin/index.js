@@ -122,9 +122,13 @@ const Admin = () => {
                 handleDrawerClose={handleDrawerClose}
                 drawerOptions={drawerOptions} />
 
+            {/* <div className={clsx(classes.content, {
+                [classes.contentShift]: open,
+            })}> */}
+
             <div className={clsx(classes.content, {
                 [classes.contentShift]: open,
-            })}>
+            }, 'user-layout')}>
                 <Switch>
                     <Route path={`${path}/profile`} component={Profile} />
                     <Route path={`${path}/dashboard`} component={AdminDashboard} />

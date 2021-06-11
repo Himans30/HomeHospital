@@ -15,8 +15,8 @@ code {
 .user-layout {
   background: linear-gradient(
       to right,
-      rgba(0, 0, 0, 0.582),
-      rgba(0, 0, 0, 0.356)
+      rgba(135, 185, 201, 0.582),
+      rgba(108, 118, 167, 0.356)
     ),
     url(./components/images/b1.jpg) no-repeat;
   background-position: top;
