@@ -157,7 +157,7 @@ const AddEquipment = () => {
                                     <option value="Health Monitoring" />
                                     <option value="Life Support Equipment" />
                                     <option value="Diagnostic Equipment" />
-                                    <option value="Life Supports" />
+                
                                     <option value="Durable Medical Equipment (DME)" />
                                     
 
