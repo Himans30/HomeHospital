@@ -106,6 +106,7 @@ const Header = props => {
                         Logout
                     </Button>
 
+                    <Button component={Link} to={'/admin/dashboard'} color="inherit">Dashboard</Button>
 
                 </div>
             )
