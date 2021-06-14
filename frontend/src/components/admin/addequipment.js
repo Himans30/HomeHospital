@@ -185,7 +185,7 @@ const AddEquipment = () => {
 
 
                                 <div className="text-center">
-                                    <button className="btn btn-warning mt-5 w-100">Submit</button>
+                                    <button className="btn btn-primary mt-5 w-100">Submit</button>
                                 </div>
 
 
