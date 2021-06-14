@@ -18,6 +18,7 @@ import AddBoxIcon from '@material-ui/icons/AddBox';
 import Swal from 'sweetalert2';
 import ManageNursing from './managenursing';
 import ManageUserOrders from '../user/manageUserOrders';
+import LocalGroceryStoreIcon from '@material-ui/icons/LocalGroceryStore';
 
 const drawerWidth = 240;
 
@@ -89,7 +90,7 @@ const Admin = () => {
         },
         {
             name: "ManageOrder",
-            icon: <PeopleIcon />,
+            icon: <LocalGroceryStoreIcon />,
             link: "/admin/manageUserOrders"
         },
     ]
