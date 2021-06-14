@@ -65,7 +65,7 @@ const Admin = () => {
         {
             name: "ManageUsers",
             icon: <PeopleIcon />,
-            link: "/admin/manageusers"
+            link: "/admin/manageuser"
         },
         {
             name: "AddEquipment",
