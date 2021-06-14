@@ -141,7 +141,7 @@ const Admin = () => {
                     <Route path={`${path}/manageuser`} component={ManageUser} />
                     <Route path={`${path}/addequipment`} component={AddEquipment} />
                     <Route path={`${path}/manageequipment`} component={ManageEquipment} />
-                    <Route path={`${path}/managestaff`} component={ManageStaff} />
+                    {/* <Route path={`${path}/managestaff`} component={ManageStaff} /> */}
                     <Route path={`${path}/managenursing`} component={ManageNursing} />
                     <Route path={`${path}/manageUserorders`} component={ManageUserOrders} />
 
