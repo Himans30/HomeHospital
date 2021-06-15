@@ -11,13 +11,33 @@ import NursingForm from './nursingform';
 import Checkout from './checkout';
 import ForgotPassword from './forgotpassword';
 import Rent from '../user/rent';
+import clsx from 'clsx';
+import { makeStyles } from '@material-ui/core';
 
 const drawerWidth = 0;
+const useStyles = makeStyles((theme) => ({
+    content: {
+        flexGrow: 1,
+        padding: theme.spacing(3),
+        transition: theme.transitions.create('margin', {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.shortest,
+        }),
+        
+    },
+    contentShift: {
+        transition: theme.transitions.create('margin', {
+            easing: theme.transitions.easing.easeOut,
+            duration: theme.transitions.duration.shortest,
+        }),
+       
+    },
+}));
 
 const MainComponent = () => {
 
     const [open, setOpen] = useState(true);
-
+    const classes = useStyles();
     let { path, url } = useRouteMatch();
 
     const handleDrawerOpen = () => {
@@ -36,7 +56,9 @@ const MainComponent = () => {
     return (
         <div>
             <Header open={open} setOpen={setOpen} drawerWidth={drawerWidth} handleDrawerOpen={handleDrawerOpen} />
-
+            <div className={clsx(classes.content, {
+                [classes.contentShift]: open,
+            }, 'user-layout1')}>
             <Switch>
                 <Route exact path="/app">
                     <Redirect to="/app/login" />
@@ -51,6 +73,7 @@ const MainComponent = () => {
                 <Route path={`${path}/reset`} component={ForgotPassword} />
                 <Route path={`${path}/nursingform`} component={NursingForm} />
             </Switch>
+            </div>
         </div>
     )
 }

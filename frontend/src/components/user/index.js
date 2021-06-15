@@ -88,7 +88,7 @@ const UserDashboard = () => {
             title: 'Not Permitted',
             text: 'You do not have admin permission'
         })
-        history.push('/main/login');
+        history.push('/app/login');
     }, [])
 
     return (
