@@ -94,16 +94,7 @@ const Login = () => {
 
                                 <input type="password" className="form-control" id="password" onChange={handleChange} value={values.password} />
 
-                                <div>
-                                    <Grid container alignItems="center" justify="space-between" />
-                                    <Grid item>
-                                        <FormControlLabel control={
-                                            <Checkbox
-                                                color="primary"
-                                            />
-                                        } label="Remember me" />
-                                    </Grid>
-                                </div>
+                               
 
                                 <div className="text-center">
                                     <button className="btn btn-primary mt-5 w-100">Submit</button>

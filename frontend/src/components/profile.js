@@ -69,7 +69,7 @@ const Profile = props => {
                                         <TextField type="password" label="Password" name="password" variant="filled" className={baseClasses.input} onChange={handleChange} value={values.password} />
 
                                         <div className="text-center">
-                                            <Button className="mt-5 w-100">Submit</Button>
+                                        <button className="btn btn-primary mt-5 w-100">Submit</button>
                                         </div>
 
                                     </form>

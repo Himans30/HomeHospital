@@ -18,6 +18,7 @@ import AddBoxIcon from '@material-ui/icons/AddBox';
 import Swal from 'sweetalert2';
 import ManageNursing from './managenursing';
 import ManageUserOrders from '../user/manageUserOrders';
+import LocalGroceryStoreIcon from '@material-ui/icons/LocalGroceryStore';
 
 const drawerWidth = 240;
 
@@ -65,7 +66,7 @@ const Admin = () => {
         {
             name: "ManageUsers",
             icon: <PeopleIcon />,
-            link: "/admin/manageusers"
+            link: "/admin/manageuser"
         },
         {
             name: "AddEquipment",
@@ -89,7 +90,7 @@ const Admin = () => {
         },
         {
             name: "ManageOrder",
-            icon: <PeopleIcon />,
+            icon: <LocalGroceryStoreIcon />,
             link: "/admin/manageUserOrders"
         },
     ]
@@ -105,7 +106,7 @@ const Admin = () => {
             title: 'Not Permitted',
             text: 'You do not have admin permission'
         })
-        history.push('/main/login');
+        history.push('/app/login');
     }, [])
 
 
@@ -137,7 +138,7 @@ const Admin = () => {
                     <Route path={`${path}/manageuser`} component={ManageUser} />
                     <Route path={`${path}/addequipment`} component={AddEquipment} />
                     <Route path={`${path}/manageequipment`} component={ManageEquipment} />
-                    <Route path={`${path}/managestaff`} component={ManageStaff} />
+                    {/* <Route path={`${path}/managestaff`} component={ManageStaff} /> */}
                     <Route path={`${path}/managenursing`} component={ManageNursing} />
                     <Route path={`${path}/manageUserorders`} component={ManageUserOrders} />
 

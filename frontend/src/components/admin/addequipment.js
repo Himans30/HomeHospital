@@ -125,16 +125,22 @@ const AddEquipment = () => {
                                 </div>
 
 
-                                <div className="form-floating mb-3">
-                                    <input type="number" className="form-control" id="rentPrice" onChange={handleChange} value={values.rentPrice} placeholder=" " />
-                                    <label htmlFor="name">Rent Price</label>
-                                </div>
+
+                             
 
                                 <FormControlLabel
                                     control={<Checkbox checked={values.rentable} value={values.rentable} id="rentable" onChange={handleChange} />}
                                     label="Rentable"
                                 />
 
+{
+                                    values.rentable ? (
+                                        <div className="form-floating mb-3">
+                                            <input type="text" className="form-control" id="rentprice" onChange={handleChange} value={values.rentprice} placeholder=" " />
+                                            <label htmlFor="name">Rent Price</label>
+                                        </div>
+                                    ) : ''
+                                }
 
 
                                 <div className="form-floating mb-3">
@@ -148,8 +154,13 @@ const AddEquipment = () => {
                                         })
                                     }
 
-                                    <option value="B" />
-                                    <option value="C" />
+                                    <option value="Health Monitoring" />
+                                    <option value="Life Support Equipment" />
+                                    <option value="Diagnostic Equipment" />
+                
+                                    <option value="Durable Medical Equipment (DME)" />
+                                    
+
                                 </datalist>
 
                                 <div >
@@ -174,7 +185,7 @@ const AddEquipment = () => {
 
 
                                 <div className="text-center">
-                                    <button className="btn btn-warning mt-5 w-100">Submit</button>
+                                    <button className="btn btn-primary mt-5 w-100">Submit</button>
                                 </div>
 
 
