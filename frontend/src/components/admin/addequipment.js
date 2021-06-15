@@ -126,17 +126,17 @@ const AddEquipment = () => {
 
 
 
-                             
+
 
                                 <FormControlLabel
                                     control={<Checkbox checked={values.rentable} value={values.rentable} id="rentable" onChange={handleChange} />}
                                     label="Rentable"
                                 />
 
-{
+                                {
                                     values.rentable ? (
                                         <div className="form-floating mb-3">
-                                            <input type="text" className="form-control" id="rentprice" onChange={handleChange} value={values.rentprice} placeholder=" " />
+                                            <input type="text" className="form-control" id="rentPrice" onChange={handleChange} value={values.rentPrice} placeholder=" " />
                                             <label htmlFor="name">Rent Price</label>
                                         </div>
                                     ) : ''
@@ -157,9 +157,9 @@ const AddEquipment = () => {
                                     <option value="Health Monitoring" />
                                     <option value="Life Support Equipment" />
                                     <option value="Diagnostic Equipment" />
-                
+
                                     <option value="Durable Medical Equipment (DME)" />
-                                    
+
 
                                 </datalist>
 

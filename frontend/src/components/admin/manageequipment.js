@@ -47,43 +47,45 @@ const ManageEquipment = props => {
                         </AccordionSummary>
                         <AccordionDetails>
 
-                            <div className="row">
-                                <div className="col-4">
-                                    <p>Description</p>
+                            <div style={{ display: 'block' }}>
+                                <div className="row">
+                                    <div className="col-4">
+                                        <p>Description</p>
+                                    </div>
+                                    <div className="col-8">
+                                        <p>{equipment.description}</p>
+                                    </div>
                                 </div>
-                                <div className="col-8">
-                                    <p>{equipment.description}</p>
-                                </div>
-                            </div>
-                            <br />
+                                <br />
 
-                            <div className="row">
-                                <div className="col-4">
-                                    <p>Features</p>
+                                <div className="row">
+                                    <div className="col-4">
+                                        <p>Features</p>
+                                    </div>
+                                    <div className="col-8">
+                                        <p>{equipment.features}</p>
+                                    </div>
                                 </div>
-                                <div className="col-8">
-                                    <p>{equipment.features}</p>
-                                </div>
-                            </div>
-                            <br />
+                                <br />
 
-                            <div className="row">
-                                <div className="col-4">
-                                    <p>Price</p>
+                                <div className="row">
+                                    <div className="col-4">
+                                        <p>Price</p>
+                                    </div>
+                                    <div className="col-8">
+                                        <p>{equipment.price}</p>
+                                    </div>
                                 </div>
-                                <div className="col-8">
-                                    <p>{equipment.price}</p>
-                                </div>
-                            </div>
 
-                            <Button varaint="outline">Update</Button>
-                            <Button
-                                varaint="outline"
-                                color="secondary"
-                                onClick={(e) => deleteEquipment(equipment._id)}
-                            >
-                                Delete
-                  </Button>
+                                <Button varaint="outline">Update</Button>
+                                <Button
+                                    varaint="outline"
+                                    color="secondary"
+                                    onClick={(e) => deleteEquipment(equipment._id)}
+                                >
+                                    Delete
+                                </Button>
+                            </div>
                         </AccordionDetails>
                     </Accordion>
                 );

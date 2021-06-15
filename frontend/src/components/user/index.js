@@ -13,6 +13,7 @@ import AttachMoneySharpIcon from '@material-ui/icons/AttachMoneySharp';
 import Zoom from 'react-reveal/Zoom'
 import Swal from 'sweetalert2';
 import ManageServices from './manageServices';
+import ManageRents from './manageRents';
 
 const drawerWidth = 240;
 
@@ -73,7 +74,7 @@ const UserDashboard = () => {
         },
         {
             name: "Current Rents",
-            icon: <AttachMoneySharpIcon  />,
+            icon: <AttachMoneySharpIcon />,
             link: `${url}/rents`
         },
     ]
@@ -109,6 +110,7 @@ const UserDashboard = () => {
                     <Redirect exact path={`${path}`} to={`${path}/profile`} />
                     <Route path={`${path}/profile`} component={Profile} />
                     <Route path={`${path}/manageorder`} component={ManageUserOrders} />
+                    <Route path={`${path}/rents`} component={ManageRents} />
                     <Route path={`${path}/services`} component={ManageServices} />
                 </Switch>
             </div>
