@@ -72,6 +72,7 @@ const Rent = props => {
         order['data'] = { 'address': userForm.address };
         order['equipment'] = equipmentDetails._id;
         order['created'] = new Date();
+        order['isrent'] = true;
         orderService.addOrder(order)
             .then(res => {
                 console.log(res);
