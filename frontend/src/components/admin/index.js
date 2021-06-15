@@ -128,10 +128,6 @@ const Admin = () => {
                 handleDrawerClose={handleDrawerClose}
                 drawerOptions={drawerOptions} />
 
-            {/* <div className={clsx(classes.content, {
-                [classes.contentShift]: open,
-            })}> */}
-
             <div className={clsx(classes.content, {
                 [classes.contentShift]: open,
             }, 'user-layout')}>

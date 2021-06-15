@@ -107,13 +107,13 @@ const EquipmentDetails = () => {
         }
     }
 
-    const handleClose = (event, reason) => {
-        if (reason === 'clickaway') {
-            return;
-        }
+        const handleClose = (event, reason) => {
+            if (reason === 'clickaway') {
+                return;
+            }
 
-        setOpen(false);
-    };
+            setOpen(false);
+        };
 
     const handleOrder = () => {
         sessionStorage.setItem('order-item', JSON.stringify(equipmentData));
