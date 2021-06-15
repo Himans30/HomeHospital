@@ -12,6 +12,7 @@ const utilRouter = require('./routers/utils');
 const reviewRouter = require('./routers/reviewManager');
 const orderRouter = require('./routers/orderManager');
 const nursingRouter = require('./routers/nursingManager');
+const rentRouter = require('./routers/rentManager');
 
 const cors = require('cors');
 
@@ -24,6 +25,7 @@ app.use('/staff', staffRouter);
 app.use('/review', reviewRouter);
 app.use('/order', orderRouter);
 app.use('/nursing', nursingRouter);
+app.use('/rent', rentRouter);
 
 app.use(express.static('./uploads'));
 

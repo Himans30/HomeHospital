@@ -1,15 +1,14 @@
 const mongoose = require('../connection');
 
 const schema = new mongoose.Schema({
-    equipment: { type: mongoose.Types.ObjectId, ref: 'Equipments' },
+    service: { type: mongoose.Types.ObjectId, ref: 'Nursing' },
     user: { type: mongoose.Types.ObjectId, ref: 'Users' },
     created: Date,
     data: Object,
-    isrent: Boolean
 })
 
 
-const model = mongoose.model('Orders', schema);
+const model = mongoose.model('ServiceRents', schema);
 
 module.exports = model;
 
