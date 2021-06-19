@@ -46,7 +46,8 @@ const ManageNursing = props => {
                             <Typography>{nursing.name}</Typography>
                         </AccordionSummary>
                         <AccordionDetails>
-
+                            <div style={{display:'block'}}>
+                                
                             <div className="row">
                                 <div className="col-4">
                                     <p>Age</p>
@@ -139,6 +140,7 @@ const ManageNursing = props => {
                             >
                                 Delete
                   </Button>
+                            </div>
                         </AccordionDetails>
                     </Accordion>
                 );
