@@ -5,9 +5,7 @@ const app_config = {
         'Health Monitoring',
         'Life Support Equipment',
         'Diagnostic Equipment',
-        'Durable Medical Equipment (DME)'
-
-        
+        'Durable Medical Equipment (DME)'   
     ]
 }
 

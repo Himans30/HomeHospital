@@ -19,6 +19,7 @@ import Swal from 'sweetalert2';
 import ManageNursing from './managenursing';
 import ManageUserOrders from '../user/manageUserOrders';
 import LocalGroceryStoreIcon from '@material-ui/icons/LocalGroceryStore';
+import UpdateEquipment from './updateEquipment';
 
 const drawerWidth = 240;
 
@@ -138,9 +139,9 @@ const Admin = () => {
                     <Route path={`${path}/manageuser`} component={ManageUser} />
                     <Route path={`${path}/addequipment`} component={AddEquipment} />
                     <Route path={`${path}/manageequipment`} component={ManageEquipment} />
-                    {/* <Route path={`${path}/managestaff`} component={ManageStaff} /> */}
                     <Route path={`${path}/managenursing`} component={ManageNursing} />
                     <Route path={`${path}/manageUserorders`} component={ManageUserOrders} />
+                    <Route path={`${path}/updatequipment/:id`} component={UpdateEquipment} />
 
                 </Switch>
 

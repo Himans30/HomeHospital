@@ -47,7 +47,7 @@ function App() {
             <EquipmentProvider>
               <NursingProvider>
                 <Route exact path="/">
-                  <Redirect to="/app" />
+                  <Redirect to="/home" />
                 </Route>
 
                 <OrderProvider>

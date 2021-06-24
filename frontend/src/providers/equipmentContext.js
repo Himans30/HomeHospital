@@ -27,6 +27,17 @@ export const EquipmentProvider = props => {
             .then(response => response.json());
     }
 
+    const updateEquipment = (id, data) => {
+        const requestOptions = {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        }
+
+        return fetch(url + '/update/' + id, requestOptions)
+            .then(response => response.json());
+    }
+
     const uploadImage = data => {
         const requestOptions = {
             method: 'POST',
@@ -89,7 +100,8 @@ export const EquipmentProvider = props => {
         getAll,
         uploadImage,
         deleteEquipment,
-        AddRating
+        AddRating,
+        updateEquipment
     }
 
     return (

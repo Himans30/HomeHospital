@@ -77,7 +77,7 @@ const ManageEquipment = props => {
                                     </div>
                                 </div>
 
-                                <Button varaint="outline">Update</Button>
+                                <Button varaint="outline" component={Link} to={`/admin/updatequipment/${equipment._id}`}>Update</Button>
                                 <Button
                                     varaint="outline"
                                     color="secondary"
