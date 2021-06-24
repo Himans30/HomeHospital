@@ -310,67 +310,32 @@ const AdminDashboard = props => {
                     </Card>
                 </div>
             </div>
-            <div className="row">
-                <div className="col-md-5">
+          
+                <div className='row'>
+                <div className="col-md-6">
                     <Card className={clsx(baseClasses.card, customClasses.card)}>
                         <CardContent>
-                            <Typography className={baseClasses.title} color="textSecondary" gutterBottom>
-                                Word of the Day
-                  </Typography>
-                            <Typography className={baseClasses.pos} color="textSecondary">
-                                adjective
-                  </Typography>
-                            <Typography variant="body2" component="p">
-                                well meaning and kindly.
-                    <br />
-                                {'"a benevolent smile"'}
-                            </Typography>
+                            {drawBar(orderData.dates, orderData.values, 'Orders')}
                         </CardContent>
                         <CardActions>
                             <Button size="small">Learn More</Button>
                         </CardActions>
                     </Card>
                 </div>
-                <div className="col-md-7">
+                <div className="col-md-6">
                     <Card className={clsx(baseClasses.card, customClasses.card)}>
                         <CardContent>
-                            <Typography className={baseClasses.title} color="textSecondary" gutterBottom>
-                                Word of the Day
-                  </Typography>
-                            <Typography className={baseClasses.pos} color="textSecondary">
-                                adjective
-                  </Typography>
-                            <Typography variant="body2" component="p">
-                                well meaning and kindly.
-                    <br />
-                                {'"a benevolent smile"'}
-                            </Typography>
+                            {drawBar(nursingData.dates, nursingData.values, 'Nursing')}
                         </CardContent>
                         <CardActions>
                             <Button size="small">Learn More</Button>
                         </CardActions>
                     </Card>
                 </div>
-            </div>
+                </div>
+           
 
-            <Card className={clsx(baseClasses.card, customClasses.card)}>
-                <CardContent className={baseClasses.card.backgroundColor}>
-                    <Typography className={baseClasses.title} color="textSecondary" gutterBottom>
-                        Word of the Day
-                  </Typography>
-                    <Typography className={baseClasses.pos} color="textSecondary">
-                        adjective
-                  </Typography>
-                    <Typography variant="body2" component="p">
-                        well meaning and kindly.
-                    <br />
-                        {'"a benevolent smile"'}
-                    </Typography>
-                </CardContent>
-                <CardActions>
-                    <Button size="small">Learn More</Button>
-                </CardActions>
-            </Card>
+            
 
 
         </div>
