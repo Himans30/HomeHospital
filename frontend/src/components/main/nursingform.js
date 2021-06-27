@@ -92,7 +92,7 @@ const NursingForm = props => {
                 TransitionComponent={Fade}
             >
 
-                <Alert  onClose={handleClose} severity="success">Equipment Successfully Added</Alert>
+                <Alert  onClose={handleClose} severity="success">Form  Successfully Submited</Alert>
             </Snackbar>
             <div className="card">
                 <div className="card-body">
@@ -124,10 +124,7 @@ const NursingForm = props => {
                                 <label className="mt-4">Gender</label>
                                 <input type="text" className="form-control" id="gender" onChange={handleChange} value={values.gender} />
 
-                                <div >
-                               {showAvatar()}
-                                 <input className="form-control" type="file" onChange={uploadImage} />
-                               </div>
+                                
 
                                 <label className="mt-4">Types of illness</label>
                                 <input type="text" className="form-control" id="types_of_illnees" onChange={handleChange} value={values.types_of_illnees} />

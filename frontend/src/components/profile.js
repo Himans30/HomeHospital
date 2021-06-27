@@ -35,7 +35,7 @@ const Profile = props => {
                 Swal.fire({
                     icon: 'success',
                     title: 'Welldone!',
-                    text: 'You have successfully registered'
+                    text: 'You have successfully Updated'
                 })
             })
     }
