@@ -18,7 +18,7 @@ import { NursingProvider } from './providers/nursingContext';
 function App() {
 
   const stripe = loadStripe(
-    "pk_test_Vmvhpm2TASsGcgF4RcyQfkF000KwucQJR1"
+    "pk_test_51InFnsSJ9UKCtISEpNJl4j7gCljjZRP0Tm95xENmtL5ETPpMYnxr1GnkwRyN5FHq3uTdRDTyN0hrTJNxfS6TbkVa003YOTi4RO"
   );
 
   const theme = createMuiTheme({
