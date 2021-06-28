@@ -48,7 +48,8 @@ const ManageServices = props => {
                             </AccordionSummary>
                             <AccordionDetails>
 
-                                <div className="row">
+                               <div style={{displat:'block'}}>
+                               <div className="row">
                                     <div className="col-4">
                                         <p>Age</p>
                                     </div>
@@ -140,6 +141,7 @@ const ManageServices = props => {
                                 >
                                     Delete
               </Button>
+                               </div>
                             </AccordionDetails>
                         </Accordion>
 

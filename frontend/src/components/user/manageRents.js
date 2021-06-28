@@ -100,7 +100,7 @@ const ManageRents = props => {
                                 </div>
                                 <div className="col-8">
                                     <hr />
-                                    <p className="h3">Rs. {order.equipment.price}</p>
+                                    <p className="h3">Rs. {order.equipment.rentPrice}</p>
                                 </div>
                             </div>
                         </AccordionDetails>
