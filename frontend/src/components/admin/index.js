@@ -17,6 +17,7 @@ import ManageStaff from './managestaff';
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import Swal from 'sweetalert2';
 import ManageNursing from './managenursing';
+import ManageContact from './managecontact';
 import ManageUserOrders from '../user/manageUserOrders';
 import LocalGroceryStoreIcon from '@material-ui/icons/LocalGroceryStore';
 import UpdateEquipment from './updateEquipment';
@@ -94,6 +95,11 @@ const Admin = () => {
             icon: <LocalGroceryStoreIcon />,
             link: "/admin/manageUserOrders"
         },
+        {
+            name: "Contact Us",
+            icon: <PeopleIcon />,
+            link: "/admin/contact"
+        },
     ]
 
     useEffect(() => {
@@ -140,8 +146,10 @@ const Admin = () => {
                     <Route path={`${path}/addequipment`} component={AddEquipment} />
                     <Route path={`${path}/manageequipment`} component={ManageEquipment} />
                     <Route path={`${path}/managenursing`} component={ManageNursing} />
+                    <Route path={`${path}/managecontact`} component={ManageContact} />
                     <Route path={`${path}/manageUserorders`} component={ManageUserOrders} />
                     <Route path={`${path}/updatequipment/:id`} component={UpdateEquipment} />
+                    
 
                 </Switch>
 

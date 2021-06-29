@@ -24,11 +24,10 @@ const Contact = props => {
 
 
     const onFormSubmit = (value, { setSubmitting }) => {
-        value['avatar'] = avatar;
         console.log(value);
         setSubmitting = true;
 
-        manageService.addNursing(value)
+        manageService.addContact(value)
 
             .then(res => {
                 console.log(res)

@@ -8,6 +8,7 @@ import ListEquipments from './listEquipments';
 import ListStaff from './liststaff';
 import EquipmentDetails from './equipmentDetails';
 import NursingForm from './nursingform';
+import Contact from './contact';
 import Checkout from './checkout';
 import ForgotPassword from './forgotpassword';
 import Rent from '../user/rent';
@@ -72,6 +73,7 @@ const MainComponent = () => {
                 <Route path={`${path}/liststaff`} component={ListStaff} />
                 <Route path={`${path}/reset`} component={ForgotPassword} />
                 <Route path={`${path}/nursingform`} component={NursingForm} />
+                <Route path={`${path}/contact`} component={Contact} />
             </Switch>
             </div>
         </div>
