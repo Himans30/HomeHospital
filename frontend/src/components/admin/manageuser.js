@@ -52,7 +52,7 @@ import {
                 <h5>{user.username}</h5>
                 <br />
   
-                <Button varaint="outline">Update</Button>
+                
                 <Button
                   varaint="outline"
                   color="secondary"

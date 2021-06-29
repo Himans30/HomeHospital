@@ -2,6 +2,7 @@ import { Button, Card, CardContent, CircularProgress, makeStyles, TextField } fr
 import clsx from "clsx";
 import { Formik } from "formik";
 import { useContext, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import app_config from "../config";
 import { UserContext } from "../providers/userContext";
@@ -17,14 +18,19 @@ const Profile = props => {
 
     const baseClasses = cssClasses();
     const customClasses = customStyles();
-
+    const { id } = useParams();
     const userService = useContext(UserContext);
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(true);
+    const [updateForm, setUpdateForm] = useState({});
     const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
     const url = app_config.api_url + '/';
 
     useEffect(() => {
-
+        userService.getUserById(id)
+        .then(data => {
+            console.log(data);
+            setUpdateForm(data);
+        })
 
     }, [])
 

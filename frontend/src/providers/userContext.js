@@ -50,6 +50,11 @@ export const UserProvider = props => {
             .then(response => response.json());
     }
 
+    const getUserById = id => {
+
+        return fetch(url + '/getbyid/' + id)
+            .then(response => response.json());
+    }
     const getAllUsers = () => {
 
         return fetch(url + '/getall')
@@ -81,7 +86,7 @@ export const UserProvider = props => {
         setLoggedin,
         setCurrentUser,
         uploadImage,
-
+        getUserById,
         addUser,
         updateUser,
         getUserByEmail,

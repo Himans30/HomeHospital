@@ -322,7 +322,7 @@ const AdminDashboard = props => {
                         </CardActions>
                     </Card>
                 </div>
-                <div className="col-md-6">
+                {/* <div className="col-md-6">
                     <Card className={clsx(baseClasses.card, customClasses.card)}>
                         <CardContent>
                             {drawBar(nursingData.dates, nursingData.values, 'Nursing')}
@@ -331,7 +331,7 @@ const AdminDashboard = props => {
                             <Button size="small">Learn More</Button>
                         </CardActions>
                     </Card>
-                </div>
+                </div> */}
                 </div>
            
 
