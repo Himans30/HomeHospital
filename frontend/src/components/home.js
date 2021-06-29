@@ -222,7 +222,7 @@ const Home = () => {
                             <div className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
                                 <div className="icon-box">
                                     <div className="icon"><i className="fas fa-heartbeat"></i></div>
-                                    <h4><a href="">Ward Boy's</a></h4>
+                                    <h4><a href="/app/liststaff">Ward Boy's</a></h4>
                                     <p>Ward boys are primarily responsible for providing care to a patient, an elderly person, chronically sick person or to a mentally and physically disabled person</p>
                                 </div>
                             </div>
