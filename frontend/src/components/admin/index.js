@@ -95,11 +95,11 @@ const Admin = () => {
             icon: <LocalGroceryStoreIcon />,
             link: "/admin/manageUserOrders"
         },
-        {
-            name: "Contact Us",
-            icon: <PeopleIcon />,
-            link: "/admin/contact"
-        },
+        // {
+        //     name: "Contact Us",
+        //     icon: <PeopleIcon />,
+        //     link: "/admin/contact"
+        // },
     ]
 
     useEffect(() => {

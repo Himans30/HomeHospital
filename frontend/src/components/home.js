@@ -70,7 +70,7 @@ const Home = () => {
                 <div className="container">
                     <h1>Welcome to HomeHospital</h1>
                     {/* <h2>We are team of talented designers making websites with Bootstrap</h2> */}
-                    <a href="#about" className="btn-get-started scrollto">Get Started</a>
+                    {/* <a href="#about" className="btn-get-started scrollto">Get Started</a> */}
                 </div>
             </section>
 

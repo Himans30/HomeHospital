@@ -189,14 +189,14 @@ const ListEquipments = () => {
                         </Select>
                     </FormControl>
 
-                    <p className="mt-4">Price</p>
+                    {/* <p className="mt-4">Price</p>
                     <hr />
                     <PriceSlider
                         ThumbComponent={SliderThumb}
                         getAriaLabel={(index) => (index === 0 ? 'Minimum price' : 'Maximum price')}
                         defaultValue={[priceFilter.min, priceFilter.max]}
                         onChange={setPrice}
-                    />
+                    /> */}
                 </CardContent>
             </Card>
         )
