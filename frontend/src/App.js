@@ -15,6 +15,7 @@ import Home from './components/home';
 import { OrderProvider } from './providers/orderContext';
 import { NursingProvider } from './providers/nursingContext';
 import { ContactProvider } from './providers/contactContext';
+import { StaffProvider } from './providers/staffContext';
 
 function App() {
 
@@ -48,6 +49,8 @@ function App() {
             <EquipmentProvider>
               <NursingProvider>
               <ContactProvider>
+              <StaffProvider>
+
               <Route exact path="/">
                   <Redirect to="/home" />
                 </Route>
@@ -70,6 +73,8 @@ function App() {
                 <Route path="/home">
                   <Home />
                 </Route>
+
+              </StaffProvider>
               </ContactProvider>
               </NursingProvider>
             </EquipmentProvider>

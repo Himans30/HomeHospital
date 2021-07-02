@@ -88,6 +88,7 @@ const EquipmentDetails = () => {
             return (
                 <Card>
                     <CardContent>
+                    <h3>Reviews</h3>
                         <Rating onChange={handleRate} value={rating}></Rating>
                         <TextField
                             className="w-100"
@@ -153,7 +154,7 @@ const EquipmentDetails = () => {
                         </Typography>
                         <p>{equipmentData.description}</p>
                         <p>{equipmentData.features}</p>
-                        <h1>₹{equipmentData.price}/-</h1>
+                        <h1>₹{equipmentData.price}</h1>
 
                         <div className="row">
                             <Button className="col-md-5 mt-5" variant="contained" color="primary" onClick={handleOrder}>Order Now</Button>
@@ -166,7 +167,7 @@ const EquipmentDetails = () => {
 
                 </div>
 
-                <h3>Reviews</h3>
+               
                 <hr />
                 {
                     renderReviews()

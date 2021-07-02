@@ -55,6 +55,9 @@ const Home = () => {
                             <li>
                             <Link to="/app/listequipments" className="nav-link scrollto ">View Equipments</Link>
                             </li>
+                            <li>
+                            <Link to="/app/listedstaff" className="nav-link scrollto ">View Staff</Link>
+                            </li>
                             
                         </ul>
                         <i className="bi bi-list mobile-nav-toggle"></i>

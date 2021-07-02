@@ -32,7 +32,7 @@ router.get('/getall', (req, res) => {
 
 router.get('/getbyid/:id', (req, res) => {
 
-    Model.findById(req.params.id)
+    Model.findById(req.params.id).populate({ path: 'reviews', populate: { path: 'user' } })
         .then(data => {
             console.log('staff data fetched by id');
             res.status(200).json(data);
@@ -75,6 +75,20 @@ router.delete('/delete/:id', (req, res) => {
     Model.findByIdAndDelete(req.params.id)
         .then(data => {
             console.log('staff data deleted');
+            res.status(200).json(data);
+        })
+        .catch(err => {
+            console.error(err);
+            res.status(500).json(err);
+        })
+})
+router.put('/addreview/:id', (req, res) => {
+
+    let data = req.body;
+
+    Model.findByIdAndUpdate(req.params.id, { $push: data })
+        .then(data => {
+            console.log('staff data updated');
             res.status(200).json(data);
         })
         .catch(err => {

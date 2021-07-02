@@ -55,6 +55,33 @@ export const StaffProvider = props => {
             .then(response => response.json());
     }
 
+    
+    const AddRating = (id, reviewData) => {
+
+
+        return newRating(reviewData)
+            .then(data => {
+                const requestOptions = {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ reviews: data._id })
+                }
+                return fetch(url + '/addreview/' + id, requestOptions)
+                    .then(response => response.json());
+            })
+
+    }
+
+    const newRating = (data) => {
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        }
+
+        return fetch(app_config.api_url + '/review/add', requestOptions)
+            .then(response => response.json());
+    }
 
     const toProvide = {
 
@@ -62,7 +89,8 @@ export const StaffProvider = props => {
         getStaffById,
         getAll,
         uploadImage,
-        deleteStaff
+        deleteStaff,
+        AddRating,
     }
 
     return (

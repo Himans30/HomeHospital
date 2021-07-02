@@ -49,6 +49,7 @@ export const UserProvider = props => {
         return fetch(url + '/getbyemail/' + email)
             .then(response => response.json());
     }
+    
 
     const getUserById = id => {
 
@@ -60,6 +61,8 @@ export const UserProvider = props => {
         return fetch(url + '/getall')
             .then(response => response.json());
     }
+    
+    
 
     const uploadImage = (data) => {
         const requestOptions = {
@@ -90,6 +93,7 @@ export const UserProvider = props => {
         addUser,
         updateUser,
         getUserByEmail,
+     
         getAllUsers,
         Logout
     }

@@ -5,6 +5,7 @@ const schema = new mongoose.Schema({
     avatar: String,
     designation: String,
     rentPrice: Number,
+    reviews: [{ type: mongoose.Types.ObjectId, ref: "Reviews" }]
 })
 
 

@@ -7,6 +7,7 @@ import Register from './register';
 import ListEquipments from './listEquipments';
 import ListStaff from './liststaff';
 import EquipmentDetails from './equipmentDetails';
+import StaffDetails from './staffDetails';
 import NursingForm from './nursingform';
 import Contact from './contact';
 import Checkout from './checkout';
@@ -14,6 +15,7 @@ import ForgotPassword from './forgotpassword';
 import Rent from '../user/rent';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core';
+import Listedstaff from './listedstaff';
 
 const drawerWidth = 0;
 const useStyles = makeStyles((theme) => ({
@@ -68,9 +70,11 @@ const MainComponent = () => {
                 <Route path={`${path}/register`} component={Register} />
                 <Route path={`${path}/listequipments`} component={ListEquipments} />
                 <Route path={`${path}/equipmentdetails/:id`} component={EquipmentDetails} />
+                <Route path={`${path}/staffdetails/:id`} component={StaffDetails} />
                 <Route path={`${path}/checkout`} component={Checkout} />
                 <Route path={`${path}/rent`} component={Rent} />
                 <Route path={`${path}/liststaff`} component={ListStaff} />
+                <Route path={`${path}/listedstaff`} component={Listedstaff} />
                 <Route path={`${path}/reset`} component={ForgotPassword} />
                 <Route path={`${path}/nursingform`} component={NursingForm} />
                 <Route path={`${path}/contact`} component={Contact} />

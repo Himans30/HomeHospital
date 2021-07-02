@@ -76,15 +76,20 @@ const Admin = () => {
             link: "/admin/addequipment"
         },
         {
+            name: "AddStaff",
+            icon: <AddBoxIcon />,
+            link: "/admin/addstaff"
+        },
+        {
             name: "ManageEquipment",
             icon: <PeopleIcon />,
             link: "/admin/manageequipment"
         },
-        // {
-        //     name: "ManageStaff",
-        //     icon: <PeopleIcon />,
-        //     link: "/admin/managestaff"
-        // },
+        {
+            name: "ManageStaff",
+            icon: <PeopleIcon />,
+            link: "/admin/managestaff"
+        },
         {
             name: "ManageBooking",
             icon: <PeopleIcon />,
@@ -145,6 +150,8 @@ const Admin = () => {
                     <Route path={`${path}/manageuser`} component={ManageUser} />
                     <Route path={`${path}/addequipment`} component={AddEquipment} />
                     <Route path={`${path}/manageequipment`} component={ManageEquipment} />
+                    <Route path={`${path}/addstaff`} component={AddStaff} />
+                    <Route path={`${path}/managestaff`} component={ManageStaff} />
                     <Route path={`${path}/managenursing`} component={ManageNursing} />
                     <Route path={`${path}/managecontact`} component={ManageContact} />
                     <Route path={`${path}/manageUserorders`} component={ManageUserOrders} />

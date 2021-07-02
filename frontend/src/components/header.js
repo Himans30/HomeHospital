@@ -135,6 +135,7 @@ const Header = props => {
                 <Link to="/app/listequipments" className={classes.link}>
                 </Link>
                 <Button component={Link} to={'/app/listequipments'} color="inherit">Equipments</Button>
+                <Button component={Link} to={'/app/listedstaff'} color="inherit">Staff</Button>
                 <Button component={Link} to={'/app/liststaff'} color="inherit">Services</Button>
                 {renderLoggedIn()}
 
