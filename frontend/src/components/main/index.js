@@ -16,6 +16,7 @@ import Rent from '../user/rent';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core';
 import Listedstaff from './listedstaff';
+import ListContact from './listContact';
 
 const drawerWidth = 0;
 const useStyles = makeStyles((theme) => ({
@@ -74,6 +75,7 @@ const MainComponent = () => {
                 <Route path={`${path}/checkout`} component={Checkout} />
                 <Route path={`${path}/rent`} component={Rent} />
                 <Route path={`${path}/liststaff`} component={ListStaff} />
+                <Route path={`${path}/listcontact`} component={ListContact} />
                 <Route path={`${path}/listedstaff`} component={Listedstaff} />
                 <Route path={`${path}/reset`} component={ForgotPassword} />
                 <Route path={`${path}/nursingform`} component={NursingForm} />

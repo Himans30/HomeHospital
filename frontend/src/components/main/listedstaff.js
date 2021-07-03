@@ -103,7 +103,7 @@ const ListedStaff = () => {
                                             <CardContent className={styles.content}>
                                                 <TextInfoContent
                                                     classes={textCardContentStyles}
-                                                    overline={'March 20, 2019'}
+                                                   
                                                     heading={staff.name}
                                                     body={
                                                         staff.description,
