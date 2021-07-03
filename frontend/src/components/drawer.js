@@ -100,8 +100,8 @@ const DrawerComponent = props => {
             <Divider />
             <List>
                 <ListItem button >
-                    <ListItemIcon><MailIcon /></ListItemIcon>
-                    <ListItemText primary={"primary"} />
+                    {/* <ListItemIcon><MailIcon /></ListItemIcon> */}
+                    {/* <ListItemText primary={"primary"} /> */}
                 </ListItem>
             </List>
         </Drawer>
