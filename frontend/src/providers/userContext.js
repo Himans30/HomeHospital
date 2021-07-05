@@ -75,6 +75,11 @@ export const UserProvider = props => {
         );
     };
 
+    const deleteUser = id => {
+
+        return fetch(url + '/delete/' + id, { method: 'DELETE' })
+            .then(response => response.json());
+    }
 
     const Logout = () => {
         sessionStorage.removeItem('user');
@@ -85,15 +90,14 @@ export const UserProvider = props => {
     const toProvide = {
         loggedin,
         currentUser,
-
         setLoggedin,
         setCurrentUser,
         uploadImage,
         getUserById,
         addUser,
         updateUser,
+        deleteUser,
         getUserByEmail,
-     
         getAllUsers,
         Logout
     }
