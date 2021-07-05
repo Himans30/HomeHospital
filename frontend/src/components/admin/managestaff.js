@@ -103,9 +103,9 @@ const ManageStaff = props => {
                                     />
                                 </CardContent>
                                 <Box px={2} pb={2} mt={-1}>
-                                    <IconButton>
+                                    {/* <IconButton>
                                         <EditIcon />
-                                    </IconButton>
+                                    </IconButton> */}
                                     <IconButton onClick={e => deleteStaff(staff._id)}>
                                         <DeleteIcon />
                                     </IconButton>
