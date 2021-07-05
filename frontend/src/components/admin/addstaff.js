@@ -87,14 +87,7 @@ const AddStaff = () => {
             <div className="card">
                 <div className="card-body">
                     <h3 className="text-center">Add staff Here</h3>
-                    <div className="row mt-5" style={{ height: '10rem' }}>
-                        <div className="col-md-4 mx-auto">
-                            {showAvatar()}
-                        </div>
-                        <div className="col-md-8">
-                            <input className="form-control" type="file" onChange={uploadImage} />
-                        </div>
-                    </div>
+                    
 
                     <Formik
                         initialValues={staffForm}
@@ -120,6 +113,16 @@ const AddStaff = () => {
                                     <input type="text" className="form-control" id="rentPrice" onChange={handleChange} value={values.rentPrice} placeholder=" " />
                                     <label htmlFor="name">Rent Price</label>
                                 </div>
+
+                                <div className="row mt-5" style={{ height: '10rem' }}>
+                        <div className="col-md-4 mx-auto">
+                            {showAvatar()}
+                        </div>
+                        <div className="col-md-8">
+                            <input className="form-control" type="file" onChange={uploadImage} />
+                        </div>
+                    </div>
+                    
 
                                 <div className="text-center">
                                     <button className="btn btn-warning mt-5 w-100">Submit</button>
