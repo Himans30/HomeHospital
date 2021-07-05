@@ -45,13 +45,16 @@ import {
                 <Typography>{user.fullname}</Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <h5>{user.email}</h5>
+                {/* <h5>{user.email}</h5>
                 <br />
                 <h5>{user.password}</h5>
                 <br />
                 <h5>{user.username}</h5>
-                <br />
+                <br /> */}
+                <p>{user.email}</p>
+                <p>{user.username}</p>
   
+                <br/>
                 
                 <Button
                   varaint="outline"
